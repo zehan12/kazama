@@ -1,0 +1,32 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@react-store/core": "workspace:*",
+    "geist": "latest",
+    "lucide-react": "latest",
+    "next": "latest",
+    "next-themes": "^0.4.6",
+    "react": "latest",
+    "react-dom": "latest",
+    "shiki": "^4.0.2",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}
