@@ -56,29 +56,35 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
     const model = models[key];
     dispatchers[key] = {};
 
-    if (model.reducers) {
-      for (const rKey in model.reducers) {
-        dispatchers[key][rKey] = (payload: any) => {
-          const nextState = produce(state[key], (draft: any) => {
-            const ret = model.reducers[rKey](draft, payload);
-            if (ret !== undefined) {
-              return ret;
-            }
-          });
-          if (nextState !== state[key]) {
-            pastStates.push(state);
-            futureStates = [];
-            
-            state = { ...state, [key]: nextState };
-            
-            if (devTools) {
-              devTools.send({ type: `${key}/${rKey}`, payload }, state);
-            }
-            
-            notify();
+    const reducers = {
+      setState: (prevState: any, payload: any) => ({
+        ...prevState,
+        ...payload,
+      }),
+      ...model.reducers,
+    };
+
+    for (const rKey in reducers) {
+      dispatchers[key][rKey] = (payload: any) => {
+        const nextState = produce(state[key], (draft: any) => {
+          const ret = reducers[rKey](draft, payload);
+          if (ret !== undefined) {
+            return ret;
           }
-        };
-      }
+        });
+        if (nextState !== state[key]) {
+          pastStates.push(state);
+          futureStates = [];
+          
+          state = { ...state, [key]: nextState };
+          
+          if (devTools) {
+            devTools.send({ type: `${key}/${rKey}`, payload }, state);
+          }
+          
+          notify();
+        }
+      };
     }
   }
 
@@ -103,7 +109,7 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
             const context = {
               ...dispatchers[key],
             };
-            const result = await effectFuncs[eKey].call(context, payload, state[key]);
+            const result = await effectFuncs[eKey].call(context, payload, state);
             effectsState = produce(effectsState, (draft) => {
               draft[key][eKey] = { isLoading: false, error: null };
             });
@@ -188,6 +194,21 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
     return [localState, dispatchers[key]];
   };
 
+  const useModelState = (key: string) => {
+    return useSyncExternalStore(
+      (listener) => {
+        listeners.add(listener);
+        return () => listeners.delete(listener);
+      },
+      () => state[key],
+      () => state[key]
+    );
+  };
+
+  const useModelDispatchers = (key: string) => {
+    return dispatchers[key];
+  };
+
   const useModelEffectsState = (key: string) => {
     const localEffects = useSyncExternalStore(
       (listener) => {
@@ -201,6 +222,31 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
     return localEffects;
   };
 
+  const useModelEffectsLoading = (key: string) => {
+    const effects = useModelEffectsState(key);
+    const loadingState: Record<string, boolean> = {};
+    for (const eKey in effects) {
+      loadingState[eKey] = effects[eKey].isLoading;
+    }
+    return loadingState;
+  };
+
+  const useModelEffectsError = (key: string) => {
+    const effects = useModelEffectsState(key);
+    const errorState: Record<string, { error: any; value: boolean }> = {};
+    for (const eKey in effects) {
+      errorState[eKey] = {
+        error: effects[eKey].error,
+        value: !!effects[eKey].error,
+      };
+    }
+    return errorState;
+  };
+
+  const getModel = (key: string) => [state[key], dispatchers[key]];
+  const getModelState = (key: string) => state[key];
+  const getModelDispatchers = (key: string) => dispatchers[key];
+
   const withModel = (key: string) => (Component: any) => {
     return (props: any) => {
       const [modelState, modelDispatchers] = useModel(key);
@@ -212,7 +258,14 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
   return {
     Provider,
     useModel,
+    useModelState,
+    useModelDispatchers,
     useModelEffectsState,
+    useModelEffectsLoading,
+    useModelEffectsError,
+    getModel,
+    getModelState,
+    getModelDispatchers,
     withModel,
     getState,
     undo,
