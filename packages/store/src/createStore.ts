@@ -1,16 +1,10 @@
 import React, { createContext, useMemo } from 'react';
-import { useSyncExternalStore } from 'react';
 import { produce } from 'immer';
+import { StoreConfig } from './types';
+import { createHooks } from './hooks';
+import { createHOCs } from './hocs';
 
-export function createModel<State, Reducers, Effects>(model: {
-  state: State;
-  reducers?: Reducers;
-  effects?: (dispatch: any) => Effects;
-}) {
-  return model;
-}
-
-export function createStore(models: Record<string, any>, config?: { name?: string }) {
+export function createStore(models: Record<string, any>, config?: StoreConfig) {
   const listeners = new Set<() => void>();
   let state: Record<string, any> = {};
   let effectsState: Record<string, any> = {};
@@ -23,7 +17,6 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
     effectsState[key] = {};
   }
 
-  // Connect to Redux DevTools
   const devTools =
     typeof window !== 'undefined' && (window as any).__REDUX_DEVTOOLS_EXTENSION__
       ? (window as any).__REDUX_DEVTOOLS_EXTENSION__.connect({ name: config?.name || 'React Store' })
@@ -32,7 +25,6 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
   if (devTools) {
     devTools.init(state);
     
-    // Subscribe to time-travel events
     devTools.subscribe((message: any) => {
       if (message.type === 'DISPATCH' && message.state) {
         state = JSON.parse(message.state);
@@ -45,13 +37,16 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
     return state;
   }
 
+  function getEffectsState() {
+    return effectsState;
+  }
+
   function notify() {
     listeners.forEach((listener) => listener());
   }
 
   const dispatchers: Record<string, any> = {};
   
-  // First initialize dispatchers and reducers
   for (const key in models) {
     const model = models[key];
     dispatchers[key] = {};
@@ -88,7 +83,6 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
     }
   }
 
-  // Then initialize effects, passing all dispatchers so they can call each other
   for (const key in models) {
     const model = models[key];
     if (model.effects) {
@@ -181,92 +175,20 @@ export function createStore(models: Record<string, any>, config?: { name?: strin
     return React.createElement(StoreContext.Provider, { value: true }, children);
   };
 
-  const useModel = (key: string) => {
-    const localState = useSyncExternalStore(
-      (listener) => {
-        listeners.add(listener);
-        return () => listeners.delete(listener);
-      },
-      () => state[key],
-      () => state[key]
-    );
-
-    return [localState, dispatchers[key]];
-  };
-
-  const useModelState = (key: string) => {
-    return useSyncExternalStore(
-      (listener) => {
-        listeners.add(listener);
-        return () => listeners.delete(listener);
-      },
-      () => state[key],
-      () => state[key]
-    );
-  };
-
-  const useModelDispatchers = (key: string) => {
-    return dispatchers[key];
-  };
-
-  const useModelEffectsState = (key: string) => {
-    const localEffects = useSyncExternalStore(
-      (listener) => {
-        listeners.add(listener);
-        return () => listeners.delete(listener);
-      },
-      () => effectsState[key],
-      () => effectsState[key]
-    );
-
-    return localEffects;
-  };
-
-  const useModelEffectsLoading = (key: string) => {
-    const effects = useModelEffectsState(key);
-    const loadingState: Record<string, boolean> = {};
-    for (const eKey in effects) {
-      loadingState[eKey] = effects[eKey].isLoading;
-    }
-    return loadingState;
-  };
-
-  const useModelEffectsError = (key: string) => {
-    const effects = useModelEffectsState(key);
-    const errorState: Record<string, { error: any; value: boolean }> = {};
-    for (const eKey in effects) {
-      errorState[eKey] = {
-        error: effects[eKey].error,
-        value: !!effects[eKey].error,
-      };
-    }
-    return errorState;
-  };
+  const hooks = createHooks(getState, getEffectsState, dispatchers, listeners);
+  const hocs = createHOCs(hooks);
 
   const getModel = (key: string) => [state[key], dispatchers[key]];
   const getModelState = (key: string) => state[key];
   const getModelDispatchers = (key: string) => dispatchers[key];
 
-  const withModel = (key: string) => (Component: any) => {
-    return (props: any) => {
-      const [modelState, modelDispatchers] = useModel(key);
-      const modelProps = { [key]: [modelState, modelDispatchers] };
-      return React.createElement(Component, { ...props, ...modelProps });
-    };
-  };
-
   return {
     Provider,
-    useModel,
-    useModelState,
-    useModelDispatchers,
-    useModelEffectsState,
-    useModelEffectsLoading,
-    useModelEffectsError,
+    ...hooks,
+    ...hocs,
     getModel,
     getModelState,
     getModelDispatchers,
-    withModel,
     getState,
     undo,
     redo,
