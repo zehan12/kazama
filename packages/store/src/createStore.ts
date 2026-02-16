@@ -141,8 +141,9 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
           try {
             const context = {
               ...dispatchers[key],
+              ...(config?.request ? { request: config.request } : {}),
             };
-            const result = await effectFuncs[eKey].call(context, payload, state);
+            const result = await effectFuncs[eKey].call(context, payload, state, config?.request);
             effectsState = produce(effectsState, (draft) => {
               draft[key][eKey] = { isLoading: false, error: null };
             });

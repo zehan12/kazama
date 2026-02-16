@@ -13,4 +13,5 @@ export interface PersistConfig {
 export interface StoreConfig {
   name?: string;
   persist?: PersistConfig;
+  request?: any;
 }
