@@ -17,6 +17,23 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
     effectsState[key] = {};
   }
 
+  if (config?.persist && typeof window !== 'undefined') {
+    try {
+      const storage = config.persist.storage === 'sessionStorage' ? window.sessionStorage : window.localStorage;
+      const stored = storage.getItem(config.persist.key);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        for (const key in parsed) {
+          if (state[key] !== undefined) {
+            state[key] = { ...state[key], ...parsed[key] };
+          }
+        }
+      }
+    } catch (e) {
+      console.error('Failed to parse persisted state', e);
+    }
+  }
+
   const devTools =
     typeof window !== 'undefined' && (window as any).__REDUX_DEVTOOLS_EXTENSION__
       ? (window as any).__REDUX_DEVTOOLS_EXTENSION__.connect({ name: config?.name || 'React Store' })
@@ -41,8 +58,30 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
     return effectsState;
   }
 
+  let isNotifying = false;
   function notify() {
+    if (isNotifying) return;
+    isNotifying = true;
+    
     listeners.forEach((listener) => listener());
+    
+    if (config?.persist && typeof window !== 'undefined') {
+      try {
+        const storage = config.persist.storage === 'sessionStorage' ? window.sessionStorage : window.localStorage;
+        let stateToSave: Record<string, any> = state;
+        if (config.persist.allowlist) {
+          stateToSave = {};
+          config.persist.allowlist.forEach(k => {
+            if (state[k] !== undefined) stateToSave[k] = state[k];
+          });
+        }
+        storage.setItem(config.persist.key, JSON.stringify(stateToSave));
+      } catch (e) {
+        console.error('Failed to persist state', e);
+      }
+    }
+    
+    isNotifying = false;
   }
 
   const dispatchers: Record<string, any> = {};
