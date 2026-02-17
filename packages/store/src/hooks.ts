@@ -1,10 +1,14 @@
 import { useSyncExternalStore } from 'react';
+import { useRequest as useAhooksRequest } from 'ahooks';
+import type { Options, Result, Service, Plugin } from 'ahooks/lib/useRequest/src/types';
+import type { AxiosRequestConfig } from 'axios';
 
 export function createHooks(
   getState: () => Record<string, any>,
   getEffectsState: () => Record<string, any>,
   dispatchers: Record<string, any>,
-  listeners: Set<() => void>
+  listeners: Set<() => void>,
+  requestClient?: any
 ) {
   const useModel = (key: string) => {
     const localState = useSyncExternalStore(
@@ -68,6 +72,38 @@ export function createHooks(
     return errorState;
   };
 
+  const useRequest = <TData, TParams extends any[]>(
+    service: string | AxiosRequestConfig | Service<TData, TParams>,
+    options?: Options<TData, TParams>,
+    plugins?: Plugin<TData, TParams>[]
+  ) => {
+    let s: Service<TData, TParams>;
+    if (typeof service === 'function') {
+      s = service as Service<TData, TParams>;
+    } else if (typeof service === 'string') {
+      s = async (...extraOptions: TParams) => {
+        if (!requestClient) throw new Error('No request client configured in createStore(models, { request: client })');
+        return requestClient({ url: service, ...extraOptions });
+      };
+    } else {
+      const config = service as AxiosRequestConfig;
+      s = async (...extraOptions: TParams) => {
+        if (!requestClient) throw new Error('No request client configured in createStore(models, { request: client })');
+        return requestClient({ ...config, ...extraOptions });
+      };
+    }
+    const req = useAhooksRequest(s, {
+      manual: true,
+      ...options,
+    }, plugins);
+    
+    return {
+      ...req,
+      request: req.run,
+      requestAsync: req.runAsync,
+    };
+  };
+
   return {
     useModel,
     useModelState,
@@ -75,5 +111,6 @@ export function createHooks(
     useModelEffectsState,
     useModelEffectsLoading,
     useModelEffectsError,
+    useRequest,
   };
 }

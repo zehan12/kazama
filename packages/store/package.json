@@ -21,6 +21,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "ahooks": "^3.9.7",
+    "axios": "^1.18.1",
     "immer": "^10.0.0"
   },
   "peerDependencies": {
