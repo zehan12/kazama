@@ -2,6 +2,7 @@ import { useSyncExternalStore } from 'react';
 import { useRequest as useAhooksRequest } from 'ahooks';
 import type { Options, Result, Service, Plugin } from 'ahooks/lib/useRequest/src/types';
 import type { AxiosRequestConfig } from 'axios';
+import { request as defaultRequest } from './request';
 
 export function createHooks(
   getState: () => Record<string, any>,
@@ -78,18 +79,17 @@ export function createHooks(
     plugins?: Plugin<TData, TParams>[]
   ) => {
     let s: Service<TData, TParams>;
+    const activeRequest = requestClient || defaultRequest;
     if (typeof service === 'function') {
       s = service as Service<TData, TParams>;
     } else if (typeof service === 'string') {
       s = async (...extraOptions: TParams) => {
-        if (!requestClient) throw new Error('No request client configured in createStore(models, { request: client })');
-        return requestClient({ url: service, ...extraOptions });
+        return activeRequest({ url: service, ...extraOptions });
       };
     } else {
       const config = service as AxiosRequestConfig;
       s = async (...extraOptions: TParams) => {
-        if (!requestClient) throw new Error('No request client configured in createStore(models, { request: client })');
-        return requestClient({ ...config, ...extraOptions });
+        return activeRequest({ ...config, ...extraOptions });
       };
     }
     const req = useAhooksRequest(s, {
