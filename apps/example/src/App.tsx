@@ -34,6 +34,30 @@ function BackgroundJobDashboard() {
   );
 }
 
+function DirectApiRequest() {
+  // 1.5 Auto-fetching API request using useRequest (no store models needed!)
+  // By passing `manual: false`, it makes the API request IMMEDIATELY when the component mounts.
+  const { data, loading, error } = useRequest('/api/dashboard-stats', { manual: false });
+
+  return (
+    <div style={{ padding: 20, border: '1px solid #ccc', margin: '20px 0', backgroundColor: '#f9f9f9' }}>
+      <h2>Direct API Request (Auto-fetch)</h2>
+      <p>This component uses <code>useRequest</code> to fetch data directly on mount, without going through the store effects.</p>
+      
+      {loading ? (
+        <p>Loading stats directly from API...</p>
+      ) : error ? (
+        <p style={{ color: 'red' }}>Error loading stats</p>
+      ) : (
+        <div>
+          <p><strong>Active Users:</strong> {data?.activeUsers}</p>
+          <p><strong>Total Sales:</strong> ${data?.totalSales}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ComplexWorkflowAuth() {
   // 2. Complex Workflow (login via store effects)
   const [{ user, isLoggedIn }, dispatchers] = useModel('auth');
@@ -91,6 +115,7 @@ function App() {
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', maxWidth: 800, margin: '0 auto', padding: 20 }}>
       <h1>@react-store/core - Architecture Showcase</h1>
+      <DirectApiRequest />
       <BackgroundJobDashboard />
       <ComplexWorkflowAuth />
       <LargeSharedState />

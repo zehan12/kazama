@@ -14,6 +14,11 @@ mock.onGet('/api/background-job').reply(() => {
   if (attempt % 3 !== 0) return [500, { error: 'Internal Server Error' }];
   return [200, { status: 'Job Completed!' }];
 });
+
+mock.onGet('/api/dashboard-stats').reply(200, {
+  activeUsers: 1420,
+  totalSales: 9450,
+});
 // -------------------------------------------
 
 // 1. Setup global request interceptors
