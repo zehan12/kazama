@@ -2,7 +2,7 @@ import { useSyncExternalStore } from 'react';
 import { useRequest as useAhooksRequest } from 'ahooks';
 import type { Options, Result, Service, Plugin } from 'ahooks/lib/useRequest/src/types';
 import type { AxiosRequestConfig } from 'axios';
-import { request as defaultRequest } from './request';
+import { request as defaultRequest } from '../network/request';
 
 export function createHooks(
   getState: () => Record<string, any>,

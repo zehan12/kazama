@@ -1,8 +1,8 @@
 import React, { createContext, useMemo } from 'react';
 import { produce } from 'immer';
-import { StoreConfig } from './types';
-import { createHooks } from './hooks';
-import { createHOCs } from './hocs';
+import type { StoreConfig } from '../types';
+import { createHooks } from '../react/hooks';
+import { createHOCs } from '../react/hocs';
 
 export function createStore(models: Record<string, any>, config?: StoreConfig) {
   const listeners = new Set<() => void>();
@@ -41,7 +41,7 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
 
   if (devTools) {
     devTools.init(state);
-    
+
     devTools.subscribe((message: any) => {
       if (message.type === 'DISPATCH' && message.state) {
         state = JSON.parse(message.state);
@@ -62,9 +62,9 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
   function notify() {
     if (isNotifying) return;
     isNotifying = true;
-    
+
     listeners.forEach((listener) => listener());
-    
+
     if (config?.persist && typeof window !== 'undefined') {
       try {
         const storage = config.persist.storage === 'sessionStorage' ? window.sessionStorage : window.localStorage;
@@ -80,12 +80,12 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
         console.error('Failed to persist state', e);
       }
     }
-    
+
     isNotifying = false;
   }
 
   const dispatchers: Record<string, any> = {};
-  
+
   for (const key in models) {
     const model = models[key];
     dispatchers[key] = {};
@@ -109,13 +109,13 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
         if (nextState !== state[key]) {
           pastStates.push(state);
           futureStates = [];
-          
+
           state = { ...state, [key]: nextState };
-          
+
           if (devTools) {
             devTools.send({ type: `${key}/${rKey}`, payload }, state);
           }
-          
+
           notify();
         }
       };
@@ -132,12 +132,12 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
           effectsState = produce(effectsState, (draft) => {
             draft[key][eKey] = { isLoading: true, error: null };
           });
-          
+
           if (devTools) {
             devTools.send({ type: `${key}/${eKey}_START`, payload }, state);
           }
           notify();
-          
+
           try {
             const context = {
               ...dispatchers[key],
@@ -147,7 +147,7 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
             effectsState = produce(effectsState, (draft) => {
               draft[key][eKey] = { isLoading: false, error: null };
             });
-            
+
             if (devTools) {
               devTools.send({ type: `${key}/${eKey}_SUCCESS`, payload }, state);
             }
@@ -157,7 +157,7 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
             effectsState = produce(effectsState, (draft) => {
               draft[key][eKey] = { isLoading: false, error };
             });
-            
+
             if (devTools) {
               devTools.send({ type: `${key}/${eKey}_ERROR`, error }, state);
             }
@@ -207,7 +207,7 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
           }
         }
         if (stateChanged && devTools) {
-           devTools.init(state);
+          devTools.init(state);
         }
       }
     }, [initialStates]);
