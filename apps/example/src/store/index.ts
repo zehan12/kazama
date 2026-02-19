@@ -1,13 +1,11 @@
-import { createStore, createAxiosInstance, setAxiosInstance } from '@react-store/core';
+import { createStore, createRequestClient, setRequestClient } from '@react-store/core';
 import * as models from '../models';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-// -- Mocking API responses for the example --
+// 0. Setup Mock APIs
 const mock = new MockAdapter(axios, { delayResponse: 500 });
-mock.onPost('/api/login').reply(200, { name: 'Zehan', role: 'admin' });
 
-// We simulate a flaky background job endpoint
 let attempt = 0;
 mock.onGet('/api/background-job').reply(() => {
   attempt++;
@@ -21,9 +19,11 @@ mock.onGet('/api/dashboard-stats').reply(200, {
 });
 // -------------------------------------------
 
-// 1. Setup global request interceptors
-const axiosClient = createAxiosInstance()['default'];
-setAxiosInstance({
+// 1. Initialize global request client
+createRequestClient();
+
+// 2. Configure default client (no need to explicitly pass it!)
+setRequestClient({
   baseURL: 'http://localhost:3000',
   interceptors: {
     request: {
@@ -33,19 +33,23 @@ setAxiosInstance({
       }
     }
   }
-}, axiosClient);
-
-// 2. Create and export the store
-const store = createStore(models, {
-  name: 'ExampleStore',
-  request: axiosClient, // Inject global client!
 });
 
-export default store;
+// 3. Create Store instance
+export const store = createStore(models, {
+  name: 'ShowcaseStore',
+  persist: {
+    key: 'showcase_state',
+    storage: 'localStorage',
+    allowlist: ['auth'] // Only persist the auth model!
+  },
+});
+
 export const { 
+  Provider,
   useModel, 
-  useModelDispatchers, 
-  useModelState,
+  useModelState, 
+  useModelDispatchers,
   useModelEffectsLoading,
   useRequest 
 } = store;

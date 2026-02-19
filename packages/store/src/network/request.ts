@@ -3,24 +3,25 @@ import axios from 'axios';
 
 const DEFAULT_CONFIG = {};
 
-const axiosInstances: Record<string, any> = {
+const requestClients: Record<string, any> = {
   default: axios.create(DEFAULT_CONFIG),
 };
 
-export function createAxiosInstance(instanceName?: string) {
+export function createRequestClient(instanceName?: string) {
   if (instanceName) {
-    if (axiosInstances[instanceName]) {
-      return axiosInstances;
+    if (requestClients[instanceName]) {
+      return requestClients;
     }
-    axiosInstances[instanceName] = axios.create(DEFAULT_CONFIG);
+    requestClients[instanceName] = axios.create(DEFAULT_CONFIG);
   }
-  return axiosInstances;
+  return requestClients;
 }
 
-export function setAxiosInstance(requestConfig: any, axiosInstance: any) {
+export function setRequestClient(requestConfig: any, requestClient?: any) {
+  const client = requestClient || requestClients['default'];
   const { interceptors = {}, ...requestOptions } = requestConfig;
   Object.keys(requestOptions).forEach((key) => {
-    axiosInstance.defaults[key] = requestOptions[key];
+    client.defaults[key] = requestOptions[key];
   });
 
   function isExist(handlers: any[], [fulfilled, rejected]: any[]) {
@@ -32,8 +33,8 @@ export function setAxiosInstance(requestConfig: any, axiosInstance: any) {
       interceptors.request.onConfig || function (config: any) { return config; },
       interceptors.request.onError || function (error: any) { return Promise.reject(error); },
     ];
-    if (isExist(axiosInstance.interceptors.request.handlers, [fulfilled, rejected])) return;
-    axiosInstance.interceptors.request.use(fulfilled, rejected);
+    if (isExist(client.interceptors.request.handlers, [fulfilled, rejected])) return;
+    client.interceptors.request.use(fulfilled, rejected);
   }
 
   if (interceptors.response) {
@@ -41,8 +42,8 @@ export function setAxiosInstance(requestConfig: any, axiosInstance: any) {
       interceptors.response.onConfig || function (response: any) { return response; },
       interceptors.response.onError || function (error: any) { return Promise.reject(error); },
     ];
-    if (isExist(axiosInstance.interceptors.response.handlers, [fulfilled, rejected])) return;
-    axiosInstance.interceptors.response.use(fulfilled, rejected);
+    if (isExist(client.interceptors.response.handlers, [fulfilled, rejected])) return;
+    client.interceptors.response.use(fulfilled, rejected);
   }
 }
 
@@ -76,12 +77,12 @@ const request = async function <T = any, D = any>(options: any): Promise<T> {
       finalOptions = { url: options, ...arguments[1] };
     }
     const instanceName = finalOptions.instanceName ? finalOptions.instanceName : 'default';
-    const axiosInstance = createAxiosInstance()[instanceName];
-    if (typeof axiosInstance !== 'function') {
+    const client = createRequestClient()[instanceName];
+    if (typeof client !== 'function') {
       throw new Error(`unknown ${instanceName} in request method`);
     }
-    const response = await axiosInstance(finalOptions);
-    if (axiosInstance.defaults.withFullResponse || finalOptions.withFullResponse) {
+    const response = await client(finalOptions);
+    if (client.defaults.withFullResponse || finalOptions.withFullResponse) {
       return response;
     }
     return response.data;
