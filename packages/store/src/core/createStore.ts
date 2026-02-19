@@ -1,4 +1,3 @@
-import React, { createContext, useMemo } from 'react';
 import { produce } from 'immer';
 import type { StoreConfig } from '../types';
 import { createHooks } from '../react/hooks';
@@ -169,8 +168,6 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
     }
   }
 
-  const StoreContext = createContext<boolean>(false);
-
   function undo() {
     if (pastStates.length === 0) return;
     const previousState = pastStates.pop()!;
@@ -193,29 +190,7 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
     notify();
   }
 
-  const Provider = ({ initialStates, children }: any) => {
-    useMemo(() => {
-      if (initialStates) {
-        let stateChanged = false;
-        for (const key in initialStates) {
-          if (state[key] !== undefined) {
-            state = {
-              ...state,
-              [key]: { ...state[key], ...initialStates[key] }
-            };
-            stateChanged = true;
-          }
-        }
-        if (stateChanged && devTools) {
-          devTools.init(state);
-        }
-      }
-    }, [initialStates]);
-
-    return React.createElement(StoreContext.Provider, { value: true }, children);
-  };
-
-  const hooks = createHooks(getState, getEffectsState, dispatchers, listeners, config?.request, StoreContext);
+  const hooks = createHooks(getState, getEffectsState, dispatchers, listeners, config?.request);
   const hocs = createHOCs(hooks);
 
   const getModel = (key: string) => [state[key], dispatchers[key]];
@@ -223,7 +198,6 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
   const getModelDispatchers = (key: string) => dispatchers[key];
 
   return {
-    Provider,
     ...hooks,
     ...hocs,
     getModel,

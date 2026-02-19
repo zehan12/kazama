@@ -20,7 +20,7 @@ mock.onGet('/api/dashboard-stats').reply(200, {
 // -------------------------------------------
 
 // 1. Initialize global request instance
-createRequestInstance();
+const clientInstance = createRequestInstance()['default'];
 
 // 2. Configure default instance (no need to explicitly pass it!)
 setRequestInstance({
@@ -33,7 +33,7 @@ setRequestInstance({
       }
     }
   }
-});
+}, clientInstance);
 
 // 3. Create Store instance
 export const store = createStore(models, {
@@ -45,11 +45,10 @@ export const store = createStore(models, {
   },
 });
 
-export const { 
-  Provider,
-  useModel, 
-  useModelState, 
+export const {
+  useModel,
+  useModelState,
   useModelDispatchers,
   useModelEffectsLoading,
-  useRequest 
+  useRequest
 } = store;
