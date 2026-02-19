@@ -215,7 +215,7 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
     return React.createElement(StoreContext.Provider, { value: true }, children);
   };
 
-  const hooks = createHooks(getState, getEffectsState, dispatchers, listeners, config?.request);
+  const hooks = createHooks(getState, getEffectsState, dispatchers, listeners, config?.request, StoreContext);
   const hocs = createHOCs(hooks);
 
   const getModel = (key: string) => [state[key], dispatchers[key]];

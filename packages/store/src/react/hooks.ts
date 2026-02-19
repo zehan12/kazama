@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react';
+import { useSyncExternalStore, useContext } from 'react';
 import { useRequest as useAhooksRequest } from 'ahooks';
 import type { Options, Result, Service, Plugin } from 'ahooks/lib/useRequest/src/types';
 import type { AxiosRequestConfig } from 'axios';
@@ -9,9 +9,20 @@ export function createHooks(
   getEffectsState: () => Record<string, any>,
   dispatchers: Record<string, any>,
   listeners: Set<() => void>,
-  requestClient?: any
+  requestClient?: any,
+  StoreContext?: React.Context<boolean>
 ) {
+  const checkProvider = () => {
+    if (StoreContext) {
+      const hasProvider = useContext(StoreContext);
+      if (!hasProvider) {
+        throw new Error('You must wrap your application in <Provider> to use this hook.');
+      }
+    }
+  };
+
   const useModel = (key: string) => {
+    checkProvider();
     const localState = useSyncExternalStore(
       (listener) => {
         listeners.add(listener);
@@ -25,6 +36,7 @@ export function createHooks(
   };
 
   const useModelState = (key: string) => {
+    checkProvider();
     return useSyncExternalStore(
       (listener) => {
         listeners.add(listener);
@@ -36,10 +48,12 @@ export function createHooks(
   };
 
   const useModelDispatchers = (key: string) => {
+    checkProvider();
     return dispatchers[key];
   };
 
   const useModelEffectsState = (key: string) => {
+    checkProvider();
     const localEffects = useSyncExternalStore(
       (listener) => {
         listeners.add(listener);
@@ -53,6 +67,7 @@ export function createHooks(
   };
 
   const useModelEffectsLoading = (key: string) => {
+    checkProvider();
     const effects = useModelEffectsState(key);
     const loadingState: Record<string, boolean> = {};
     for (const eKey in effects) {
@@ -62,6 +77,7 @@ export function createHooks(
   };
 
   const useModelEffectsError = (key: string) => {
+    checkProvider();
     const effects = useModelEffectsState(key);
     const errorState: Record<string, { error: any; value: boolean }> = {};
     for (const eKey in effects) {
@@ -78,6 +94,7 @@ export function createHooks(
     options?: Options<TData, TParams>,
     plugins?: Plugin<TData, TParams>[]
   ) => {
+    checkProvider();
     let s: Service<TData, TParams>;
     const activeRequest = requestClient || defaultRequest;
     if (typeof service === 'function') {
