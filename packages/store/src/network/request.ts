@@ -3,25 +3,25 @@ import axios from 'axios';
 
 const DEFAULT_CONFIG = {};
 
-const requestClients: Record<string, any> = {
+const requestInstances: Record<string, any> = {
   default: axios.create(DEFAULT_CONFIG),
 };
 
-export function createRequestClient(instanceName?: string) {
+export function createRequestInstance(instanceName?: string) {
   if (instanceName) {
-    if (requestClients[instanceName]) {
-      return requestClients;
+    if (requestInstances[instanceName]) {
+      return requestInstances;
     }
-    requestClients[instanceName] = axios.create(DEFAULT_CONFIG);
+    requestInstances[instanceName] = axios.create(DEFAULT_CONFIG);
   }
-  return requestClients;
+  return requestInstances;
 }
 
-export function setRequestClient(requestConfig: any, requestClient?: any) {
-  const client = requestClient || requestClients['default'];
+export function setRequestInstance(requestConfig: any, requestInstance?: any) {
+  const instance = requestInstance || requestInstances['default'];
   const { interceptors = {}, ...requestOptions } = requestConfig;
   Object.keys(requestOptions).forEach((key) => {
-    client.defaults[key] = requestOptions[key];
+    instance.defaults[key] = requestOptions[key];
   });
 
   function isExist(handlers: any[], [fulfilled, rejected]: any[]) {
@@ -33,8 +33,8 @@ export function setRequestClient(requestConfig: any, requestClient?: any) {
       interceptors.request.onConfig || function (config: any) { return config; },
       interceptors.request.onError || function (error: any) { return Promise.reject(error); },
     ];
-    if (isExist(client.interceptors.request.handlers, [fulfilled, rejected])) return;
-    client.interceptors.request.use(fulfilled, rejected);
+    if (isExist(instance.interceptors.request.handlers, [fulfilled, rejected])) return;
+    instance.interceptors.request.use(fulfilled, rejected);
   }
 
   if (interceptors.response) {
@@ -42,8 +42,8 @@ export function setRequestClient(requestConfig: any, requestClient?: any) {
       interceptors.response.onConfig || function (response: any) { return response; },
       interceptors.response.onError || function (error: any) { return Promise.reject(error); },
     ];
-    if (isExist(client.interceptors.response.handlers, [fulfilled, rejected])) return;
-    client.interceptors.response.use(fulfilled, rejected);
+    if (isExist(instance.interceptors.response.handlers, [fulfilled, rejected])) return;
+    instance.interceptors.response.use(fulfilled, rejected);
   }
 }
 
@@ -77,12 +77,12 @@ const request = async function <T = any, D = any>(options: any): Promise<T> {
       finalOptions = { url: options, ...arguments[1] };
     }
     const instanceName = finalOptions.instanceName ? finalOptions.instanceName : 'default';
-    const client = createRequestClient()[instanceName];
-    if (typeof client !== 'function') {
+    const instance = createRequestInstance()[instanceName];
+    if (typeof instance !== 'function') {
       throw new Error(`unknown ${instanceName} in request method`);
     }
-    const response = await client(finalOptions);
-    if (client.defaults.withFullResponse || finalOptions.withFullResponse) {
+    const response = await instance(finalOptions);
+    if (instance.defaults.withFullResponse || finalOptions.withFullResponse) {
       return response;
     }
     return response.data;

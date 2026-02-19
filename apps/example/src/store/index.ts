@@ -1,4 +1,4 @@
-import { createStore, createRequestClient, setRequestClient } from '@react-store/core';
+import { createStore, createRequestInstance, setRequestInstance } from '@react-store/core';
 import * as models from '../models';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
@@ -19,11 +19,11 @@ mock.onGet('/api/dashboard-stats').reply(200, {
 });
 // -------------------------------------------
 
-// 1. Initialize global request client
-createRequestClient();
+// 1. Initialize global request instance
+createRequestInstance();
 
-// 2. Configure default client (no need to explicitly pass it!)
-setRequestClient({
+// 2. Configure default instance (no need to explicitly pass it!)
+setRequestInstance({
   baseURL: 'http://localhost:3000',
   interceptors: {
     request: {
