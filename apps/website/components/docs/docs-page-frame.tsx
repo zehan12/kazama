@@ -1,3 +1,5 @@
+import { DocsPager } from '@/components/docs/docs-pager'
+
 interface DocsPageFrameProps {
   eyebrow: string
   title: string
@@ -12,7 +14,7 @@ export function DocsPageFrame({
   children,
 }: DocsPageFrameProps) {
   return (
-    <section className="py-10 lg:py-16">
+    <section className="pt-10 pb-4 lg:pt-16 lg:pb-6">
       <div className="max-w-4xl">
         <p className="mb-3 text-xs font-mono text-dim">{eyebrow}</p>
         <h1 className="max-w-4xl text-2xl font-bold tracking-tight text-fg sm:text-3xl md:text-5xl">
@@ -23,6 +25,7 @@ export function DocsPageFrame({
         </p>
       </div>
       <div className="mt-10">{children}</div>
+      <DocsPager />
     </section>
   )
 }
