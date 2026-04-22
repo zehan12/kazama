@@ -9,8 +9,8 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
       <main className="flex-1">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:grid lg:grid-cols-[240px_minmax(0,1fr)] xl:grid-cols-[240px_minmax(0,1fr)_240px]">
-            <aside className="self-start pb-6 pt-8 lg:pb-0 lg:pt-0 lg:sticky lg:top-16 lg:h-[calc(100svh-4rem)] lg:overflow-y-auto lg:py-10 lg:border-r lg:border-line scrollbar-none">
-              <div className="lg:pr-8">
+            <aside className="self-start pb-6 pt-8 lg:pb-0 lg:pt-0 lg:sticky lg:top-16 lg:h-[calc(100svh-4rem)] lg:overflow-y-auto lg:py-10 lg:border-r lg:border-line scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              <div className="lg:pr-4">
                 <DocsSidebar />
               </div>
             </aside>
@@ -22,7 +22,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 {children}
               </div>
             </div>
-            <aside className="hidden xl:block self-start lg:sticky lg:top-16 lg:h-[calc(100svh-4rem)] py-10 overflow-y-auto scrollbar-none">
+            <aside className="hidden xl:block self-start lg:sticky lg:top-16 lg:h-[calc(100svh-4rem)] py-10 overflow-y-auto scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <div className="pl-8">
                 <DocsToc />
               </div>
