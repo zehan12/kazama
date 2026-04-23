@@ -20,7 +20,7 @@ export function DocsPageFrame({
         <h1 className="max-w-4xl text-2xl font-bold tracking-tight text-fg sm:text-3xl md:text-5xl">
           {title}
         </h1>
-        <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted">
+        <p className="mt-5 max-w-3xl leading-relaxed text-muted">
           {description}
         </p>
       </div>
