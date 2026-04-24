@@ -6,41 +6,52 @@ export const metadata: Metadata = {
   title: 'Time Travel | React Store',
 }
 
-const programmaticCode = `import store from '@/lib/store';
+const timeTravelCode = `import { store } from './store';
 
-// Move backward in time
-store.undo();
-
-// Move forward in time
-store.redo();`
+function EditorToolbar() {
+  return (
+    <div className="flex gap-4">
+      <button onClick={() => store.undo()}>
+        Undo
+      </button>
+      
+      <button onClick={() => store.redo()}>
+        Redo
+      </button>
+    </div>
+  );
+}`
 
 export default async function DocsTimeTravelPage() {
   return (
     <DocsPageFrame
-      eyebrow="debugging & features"
+      eyebrow="store management"
       title="Time Travel"
-      description="Leverage Redux DevTools for debugging, or build programmatic undo/redo right into your application."
+      description="Built-in undo and redo capabilities out of the box."
     >
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-12 text-fg">
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-fg">Redux DevTools Integration</h2>
+          <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            @react-store/core automatically connects to the Redux DevTools browser extension out-of-the-box. 
-            Every time a reducer fires, the new state is serialized and sent to the extension. This allows you to inspect payload data, 
-            monitor <code className="text-fg bg-surface px-1 py-0.5 rounded text-sm">_START</code> and <code className="text-fg bg-surface px-1 py-0.5 rounded text-sm">_SUCCESS</code> events for your async effects, 
-            and scrub back and forth through time to see how your UI responds.
+            Because <code>@react-store/core</code> enforces immutable state updates via Immer, it naturally keeps a history of state transitions. The library exposes a simple API to traverse this history.
           </p>
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-fg">Programmatic Undo / Redo</h2>
+          <h2 className="text-xl font-semibold">Using Undo and Redo</h2>
           <p className="text-muted leading-relaxed">
-            Because the store utilizes Immer for immutable updates, we maintain a history stack under the hood. 
-            This means you can provide undo/redo functionality directly to your users (perfect for WYSIWYG editors, canvas tools, or complex forms) with zero extra dependencies.
+            The store instance exports <code>undo()</code> and <code>redo()</code> functions. Calling these will instantly revert or advance the global state, and all subscribed components will re-render automatically.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base mt-4">
-            <CodeBlock code={programmaticCode} lang="typescript" filename="time-travel.ts" />
+          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+            <CodeBlock code={timeTravelCode} lang="tsx" filename="EditorToolbar.tsx" />
           </div>
+        </div>
+
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Redux DevTools Integration</h2>
+          <p className="text-muted leading-relaxed">
+            In addition to programmatic time-travel, if you have the <strong>Redux DevTools Extension</strong> installed in your browser, the store automatically connects to it. You can visually inspect every dispatched action, view the state diffs, and time-travel directly from your browser's developer tools.
+          </p>
         </div>
       </div>
     </DocsPageFrame>
