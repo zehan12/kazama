@@ -6,44 +6,65 @@ export const metadata: Metadata = {
   title: 'Async Effects | React Store',
 }
 
-const effectsCode = `const models = {
-  user: {
-    state: { data: null },
+const effectsCode = `import { createStore } from '@react-store/core';
+
+const models = {
+  auth: {
+    state: {
+      user: null,
+      isAuthenticated: false,
+    },
     reducers: {
-      set(state, payload) {
-        state.data = payload;
+      setUser(state, user) {
+        state.user = user;
+        state.isAuthenticated = !!user;
       }
     },
-    // Effects are for asynchronous logic
-    effects: (dispatch) => ({
-      async fetchUser(id: string) {
-        const res = await fetch(\`/api/users/\${id}\`);
-        const data = await res.json();
-        // Call synchronous reducers from effects
-        dispatch.user.set(data);
+    effects: (dispatchers) => ({
+      async login(credentials, rootState) {
+        // The framework automatically sets isLoading to true
+        
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          body: JSON.stringify(credentials)
+        });
+        
+        if (!response.ok) {
+          throw new Error('Invalid credentials'); 
+          // The framework catches this and sets the error state
+        }
+        
+        const user = await response.json();
+        
+        // Call a synchronous reducer to update the state
+        dispatchers.auth.setUser(user);
+        
+        // The framework automatically sets isLoading to false
       }
     })
   }
-}`
+};`
 
-const effectsComponent = `function UserProfile({ id }) {
-  const [state, dispatchers] = store.useModel('user');
+const componentCode = `import { store } from './store';
+
+function LoginForm() {
+  const dispatchers = store.useModelDispatchers('auth');
   
-  // Magic: Auto-tracked loading and error states!
-  const { fetchUser } = store.useModelEffectsState('user');
+  // Magically track loading and error states for specific effects!
+  const loading = store.useModelEffectsLoading('auth');
+  const errors = store.useModelEffectsError('auth');
+
+  const handleLogin = () => {
+    dispatchers.login({ username: 'admin', password: 'password' });
+  };
 
   return (
     <div>
-      {fetchUser.error && <p>Error: {fetchUser.error.message}</p>}
+      {errors.login?.value && <p className="error">{errors.login.error.message}</p>}
       
-      <button 
-        onClick={() => dispatchers.fetchUser(id)}
-        disabled={fetchUser.isLoading}
-      >
-        {fetchUser.isLoading ? 'Loading...' : 'Fetch'}
+      <button disabled={loading.login} onClick={handleLogin}>
+        {loading.login ? 'Logging in...' : 'Login'}
       </button>
-      
-      <p>{state.data?.name}</p>
     </div>
   );
 }`
@@ -51,30 +72,36 @@ const effectsComponent = `function UserProfile({ id }) {
 export default async function DocsAsyncEffectsPage() {
   return (
     <DocsPageFrame
-      eyebrow="data fetching"
+      eyebrow="store management"
       title="Async Effects"
-      description="Handle API calls and asynchronous logic with zero boilerplate and automatic status tracking."
+      description="Handle asynchronous logic with automated loading and error tracking."
     >
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-12 text-fg">
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-fg">Defining Effects</h2>
+          <h2 className="text-xl font-semibold">The Pain of Async State</h2>
           <p className="text-muted leading-relaxed">
-            While reducers must be synchronous and pure, you can define asynchronous logic in the <code className="text-fg bg-surface px-1 py-0.5 rounded text-sm">effects</code> block. 
-            Effects have access to the global <code className="text-fg bg-surface px-1 py-0.5 rounded text-sm">dispatch</code> object, allowing them to trigger reducers across any model.
+            In standard React, making an API call usually requires three <code>useState</code> hooks: one for the data, one for <code>isLoading</code>, and one for <code>error</code>. 
+            <code>@react-store/core</code> automates this entirely.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base mt-4">
-            <CodeBlock code={effectsCode} lang="typescript" filename="models.ts" />
-          </div>
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-fg">Auto-Tracked Loading & Errors</h2>
+          <h2 className="text-xl font-semibold">Writing Effects</h2>
           <p className="text-muted leading-relaxed">
-            The best feature of @react-store/core is its built-in effect tracker. You don't need to manually write reducers for <code className="text-fg bg-surface px-1 py-0.5 rounded text-sm">isLoading</code> or <code className="text-fg bg-surface px-1 py-0.5 rounded text-sm">isError</code> states. 
-            The store tracks the promise resolution lifecycle for you, just like React Query or Redux Saga, and exposes it via the <code className="text-fg bg-surface px-1 py-0.5 rounded text-sm">useModelEffectsState</code> hook.
+            Effects are defined as a function that returns an object of async functions. They receive the globally available <code>dispatchers</code> as an argument, allowing you to trigger reducers or other effects once your async task completes.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base mt-4">
-            <CodeBlock code={effectsComponent} lang="tsx" filename="Component.tsx" />
+          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+            <CodeBlock code={effectsCode} lang="typescript" filename="store.ts" />
+          </div>
+        </div>
+        
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Tracking Progress in Components</h2>
+          <p className="text-muted leading-relaxed">
+            You don't need to manually dispatch loading actions. Use the <code>useModelEffectsLoading</code> and <code>useModelEffectsError</code> hooks to tap into the automated tracking.
+          </p>
+          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+            <CodeBlock code={componentCode} lang="tsx" filename="LoginForm.tsx" />
           </div>
         </div>
       </div>
