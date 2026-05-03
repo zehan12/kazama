@@ -40,4 +40,7 @@ export const models = {
   }
 };
 
-export default createStore(models, { name: 'DemoStore' });
+const store = createStore(models, { name: 'DemoStore' });
+
+export const { useModel, useModelState, useModelDispatchers, useModelEffectsState, useRequest } = store;
+export default store;

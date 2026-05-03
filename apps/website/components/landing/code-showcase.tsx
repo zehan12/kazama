@@ -4,7 +4,10 @@ import { CopyButton } from '@/components/ui/copy-button'
 const basicExample = `import { createStore } from '@react-store/core';
 import { user } from './models/user';
 
-export default createStore({ user }, { name: 'AppStore' });`
+const store = createStore({ user }, { name: 'AppStore' });
+
+export const { useModel, useModelEffectsState } = store;
+export default store;`
 
 const modelExample = `
 export const user = {
@@ -30,11 +33,11 @@ export const user = {
   })
 };`
 
-const componentExample = `import store from './store';
+const componentExample = `import { useModel, useModelEffectsState } from './store';
 
 function UserProfile() {
-  const [state, dispatchers] = store.useModel('user');
-  const { getUserInfo } = store.useModelEffectsState('user');
+  const [state, dispatchers] = useModel('user');
+  const { getUserInfo } = useModelEffectsState('user');
 
   return (
     <div>

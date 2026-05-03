@@ -2,11 +2,11 @@
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/cn'
-import store from '@/lib/store'
+import store, { useModel, useModelEffectsState } from '@/lib/store'
 
 export function LiveDemo() {
-  const [state, dispatchers] = store.useModel('user');
-  const { getUserInfo } = store.useModelEffectsState('user');
+  const [state, dispatchers] = useModel('user');
+  const { getUserInfo } = useModelEffectsState('user');
 
   return (
     <section className="w-full border-b border-line bg-surface/50">

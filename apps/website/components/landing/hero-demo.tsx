@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { Plus, Minus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/cn'
-import store from '@/lib/store'
+import { useModel } from '@/lib/store'
 
 export function HeroDemo() {
-  const [state, dispatchers] = store.useModel('counter')
+  const [state, dispatchers] = useModel('counter')
 
   return (
     <>
