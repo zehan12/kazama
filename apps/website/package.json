@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-store/core": "workspace:*",
+    "developer-icons": "^7.0.1",
     "geist": "latest",
     "lucide-react": "latest",
     "next": "latest",

@@ -1,35 +1,35 @@
-import { ArrowLeftRight, Zap, Magnet, Package2, Eye, Sparkles } from 'lucide-react'
+import { Database, Link2, CloudDownload, Zap, Package2, ShieldCheck } from 'lucide-react'
 
 const features = [
   {
-    icon: ArrowLeftRight,
-    title: 'useSyncExternalStore',
-    description: 'Powered by React 18\'s native state synchronization hook for tear-free, concurrent-safe renders.',
+    icon: Database,
+    title: 'Global Store',
+    description: 'Fast, immutable global state powered by Immer.js and React 18\'s native useSyncExternalStore.',
+  },
+  {
+    icon: Link2,
+    title: 'URL State Management',
+    description: 'Type-safe URL query parameters seamlessly synced with component state using the useQueryState hook.',
+  },
+  {
+    icon: CloudDownload,
+    title: 'API & Request Client',
+    description: 'Powerful data fetching hooks with automatic caching, request deduplication, and loading states.',
   },
   {
     icon: Zap,
     title: 'Granular Re-renders',
-    description: 'Component re-renders are deeply optimized out-of-the-box. Subscribe to only what you need.',
-  },
-  {
-    icon: Magnet,
-    title: 'Immer Integration',
-    description: 'Write mutative state logic using Immer.js. No more deeply nested object spreads.',
+    description: 'Deeply optimized performance out-of-the-box. Components only re-render when their exact subscriptions change.',
   },
   {
     icon: Package2,
     title: 'Zero Redux Boilerplate',
-    description: 'Enjoy Redux DevTools and predictable state flows without the verbose action creators and dispatch types.',
+    description: 'Enjoy Redux DevTools support and predictable state flows without the verbose action creators or dispatch types.',
   },
   {
-    icon: Eye,
-    title: 'Async Trackers',
-    description: 'Async effects automatically track their loading and error states. Access them instantly with useModelEffectsState.',
-  },
-  {
-    icon: Sparkles,
-    title: 'TypeScript Native',
-    description: 'End-to-end type safety. State, reducers, and effects are fully inferred by the compiler.',
+    icon: ShieldCheck,
+    title: 'End-to-End Type Safety',
+    description: '100% written in TypeScript. Models, URL parsers, and API responses are strictly typed and fully inferred.',
   },
 ]
 

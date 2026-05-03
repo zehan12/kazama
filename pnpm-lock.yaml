@@ -17,6 +17,9 @@ importers:
       '@react-store/core':
         specifier: workspace:*
         version: link:../../packages/store
+      developer-icons:
+        specifier: ^7.0.1
+        version: 7.0.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       geist:
         specifier: latest
         version: 1.7.2(next@16.2.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
@@ -1490,6 +1493,12 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
+  developer-icons@7.0.1:
+    resolution: {integrity: sha512-QnC49krMtj41j4xeYTmYxRpjLPMgND+ew7UEIi45qTNJ6AT/d6eJtgO3RcMszQj4GSDlgJg90730QRGhhHXxTQ==}
+    peerDependencies:
+      react: ^18.2.0 || ^19.0.0
+      react-dom: ^18.2.0 || ^19.0.0
+
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
 
@@ -2853,6 +2862,11 @@ snapshots:
   dequal@2.0.3: {}
 
   detect-libc@2.1.2: {}
+
+  developer-icons@7.0.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+    dependencies:
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
 
   devlop@1.1.0:
     dependencies:
