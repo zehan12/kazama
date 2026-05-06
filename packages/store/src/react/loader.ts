@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
+import { useState, useEffect, useCallback, useMemo, useSyncExternalStore } from 'react';
 import { request as defaultRequest } from '../network/request';
 
 // Core Cache & Loader Client
@@ -140,36 +140,46 @@ export const defaultLoaderClient = new LoaderClient();
 // Hooks
 export function useLoader(options: LoaderOptions, client = defaultLoaderClient) {
   const hash = JSON.stringify(options.key);
+  // Guarantee stable key array reference across renders
+  const stableKey = useMemo(() => options.key, [hash]);
   const isEnabled = options.enabled !== false;
   
   // React Suspense integration
   if (options.suspense && isEnabled) {
-    const state = client.getLoaderState(options.key);
+    const state = client.getLoaderState(stableKey);
     const maxAge = options.maxAge ?? 0;
     const isStale = !state || (Date.now() - state.lastRevalidatedAt) > maxAge;
     if (!state?.data && isStale) {
-      throw client.fetchLoader(options); // Suspend
+      throw client.fetchLoader({ ...options, key: stableKey }); // Suspend
     }
   }
 
-  const loaderState = useSyncExternalStore(
-    (listener) => client.subscribe(options.key, listener),
-    () => client.getLoaderState(options.key) || {
-      data: options.initialData,
-      isLoading: options.initialData === undefined,
-      isFetching: true,
-      isError: false,
-      error: null,
-      lastRevalidatedAt: 0
-    },
-    () => client.getLoaderState(options.key)
+  const [defaultState] = useState(() => ({
+    data: options.initialData,
+    isLoading: options.initialData === undefined,
+    isFetching: true,
+    isError: false,
+    error: null,
+    lastRevalidatedAt: 0
+  }));
+
+  const subscribe = useCallback(
+    (listener: () => void) => client.subscribe(stableKey, listener),
+    [client, stableKey]
   );
+
+  const getSnapshot = useCallback(
+    () => client.getLoaderState(stableKey) || defaultState,
+    [client, stableKey, defaultState]
+  );
+
+  const loaderState = useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
 
   const fetch = useCallback(() => {
     if (isEnabled) {
-      client.fetchLoader(options);
+      client.fetchLoader({ ...options, key: stableKey });
     }
-  }, [hash, isEnabled]);
+  }, [stableKey, isEnabled]); // intentionally omitting client/options to prevent fetch looping
 
   // Polling / Intervals
   useEffect(() => {
