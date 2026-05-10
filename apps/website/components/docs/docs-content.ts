@@ -43,5 +43,11 @@ export const docsNav = [
       { href: '/docs/performance', label: 'Performance', description: 'Optimization techniques' },
       { href: '/docs/troubleshooting', label: 'Troubleshooting', description: 'Common issues and FAQs' },
     ]
+  },
+  {
+    title: 'Reference',
+    items: [
+      { href: '/docs/api', label: 'Core API', description: 'Complete API reference for functions and configurations' },
+    ]
   }
 ];
