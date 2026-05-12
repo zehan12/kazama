@@ -2,8 +2,8 @@ import { Metadata } from "next"
 import { ApiTable, ApiRow } from "@/components/ui/api-table"
 
 export const metadata: Metadata = {
-  title: "API Reference | React Store",
-  description: "Complete API reference for @react-store/core",
+  title: "API Reference | Musubi",
+  description: "Complete API reference for @musubi/core",
 }
 
 export default function ApiReferencePage() {
@@ -13,7 +13,7 @@ export default function ApiReferencePage() {
         <p className="text-sm font-mono text-dim mb-4">api</p>
         <h1 className="text-4xl font-bold text-fg mb-4 tracking-tight">Core API</h1>
         <p className="text-lg text-muted max-w-2xl leading-relaxed">
-          Every function, hook, configuration object, and default. The complete technical reference for <code className="text-sm bg-surface px-1.5 py-0.5 rounded-md text-fg">@react-store/core</code>.
+          Every function, hook, configuration object, and default. The complete technical reference for <code className="text-sm bg-surface px-1.5 py-0.5 rounded-md text-fg">@musubi/core</code>.
         </p>
       </div>
 
@@ -36,7 +36,7 @@ export default function ApiReferencePage() {
               prop="config.name"
               type="string"
               description="A name for the store, used primarily for Redux DevTools identification."
-              defaultValue='"React Store"'
+              defaultValue='"Musubi"'
             />
             <ApiRow
               prop="config.persist"

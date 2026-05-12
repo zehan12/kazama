@@ -13,7 +13,7 @@ export function DocsSidebar() {
     <div className="w-full">
       {/* Header section matching the image */}
       <div className="flex flex-col gap-2 mb-4 mt-3">
-        <span className="text-[13px] text-muted">@react-store/core</span>
+        <span className="text-[13px] text-muted">@musubi/core</span>
         <h2 className="text-xl font-semibold text-fg">Documentation</h2>
         <p className="text-[14px] text-muted mt-1 leading-relaxed">
           The modern, all-in-one state and API management library for React.
@@ -65,7 +65,7 @@ export function DocsSidebar() {
           GitHub
         </a>
         <a
-          href="https://npmjs.com/package/@react-store/core"
+          href="https://npmjs.com/package/@musubi/core"
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-2 text-[14px] font-medium text-muted hover:text-fg px-3 py-2 rounded-md hover:bg-line/50 transition-colors"

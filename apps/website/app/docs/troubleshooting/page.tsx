@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 
 export const metadata: Metadata = {
-  title: 'Troubleshooting | React Store',
+  title: 'Troubleshooting | Musubi',
 }
 
 export default async function DocsTroubleshootingPage() {

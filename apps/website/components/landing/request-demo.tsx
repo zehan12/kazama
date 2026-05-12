@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { useLoader } from '@react-store/core'
+import { useLoader } from '@musubi/core'
 
 function fetchUser() {
   return new Promise((resolve) => {

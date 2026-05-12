@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Async Effects | React Store',
+  title: 'Async Effects | Musubi',
 }
 
-const effectsCode = `import { createStore } from '@react-store/core';
+const effectsCode = `import { createStore } from '@musubi/core';
 
 const models = {
   auth: {
@@ -81,7 +81,7 @@ export default async function DocsAsyncEffectsPage() {
           <h2 className="text-xl font-semibold">The Pain of Async State</h2>
           <p className="text-muted leading-relaxed">
             In standard React, making an API call usually requires three <code>useState</code> hooks: one for the data, one for <code>isLoading</code>, and one for <code>error</code>. 
-            <code>@react-store/core</code> automates this entirely.
+            <code>@musubi/core</code> automates this entirely.
           </p>
         </div>
 

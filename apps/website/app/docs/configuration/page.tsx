@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Configuration | React Store',
+  title: 'Configuration | Musubi',
 }
 
-const configCode = `import { createStore, request } from '@react-store/core';
+const configCode = `import { createStore, request } from '@musubi/core';
 import models from './models';
 
 export const store = createStore(models, {

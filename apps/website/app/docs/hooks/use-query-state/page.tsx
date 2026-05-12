@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useQueryState | React Store',
+  title: 'useQueryState | Musubi',
 }
 
-const basicCode = `import { useQueryState, parseAsInteger } from '@react-store/core';
+const basicCode = `import { useQueryState, parseAsInteger } from '@musubi/core';
 
 function Pagination() {
   // Syncs the "page" URL parameter with a fallback of 1
@@ -22,7 +22,7 @@ function Pagination() {
   );
 }`
 
-const batchingCode = `import { useQueryState, parseAsString, parseAsInteger } from '@react-store/core';
+const batchingCode = `import { useQueryState, parseAsString, parseAsInteger } from '@musubi/core';
 
 function Filters() {
   const [query, setQuery] = useQueryState('q', parseAsString.withDefault(''));
@@ -71,7 +71,7 @@ export default async function DocsUseQueryStatePage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">URL Batching</h2>
           <p className="text-muted leading-relaxed">
-            If you have multiple components updating different query parameters at the same time, updating the <code>window.history</code> sequentially would cause race conditions. <code>@react-store/core</code> intelligently batches synchronous updates together into a single history transition.
+            If you have multiple components updating different query parameters at the same time, updating the <code>window.history</code> sequentially would cause race conditions. <code>@musubi/core</code> intelligently batches synchronous updates together into a single history transition.
           </p>
           <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
             <CodeBlock code={batchingCode} lang="tsx" filename="Filters.tsx" />

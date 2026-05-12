@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'TypeScript Guide | React Store',
+  title: 'TypeScript Guide | Musubi',
 }
 
-const typeGuideCode = `import { createStore, createModel } from '@react-store/core';
+const typeGuideCode = `import { createStore, createModel } from '@musubi/core';
 
 // 1. Define your domain types
 interface User {
@@ -63,7 +63,7 @@ export default async function DocsTypeScriptPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            <code>@react-store/core</code> is written in TypeScript and is designed to provide end-to-end type safety without requiring you to manually define massive global state interfaces.
+            <code>@musubi/core</code> is written in TypeScript and is designed to provide end-to-end type safety without requiring you to manually define massive global state interfaces.
           </p>
         </div>
 

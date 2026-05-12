@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Effects State | React Store',
+  title: 'Effects State | Musubi',
 }
 
 const effectsCode = `import { store } from './store';

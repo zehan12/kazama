@@ -1,6 +1,6 @@
 'use client'
 
-import { useQueryState, parseAsInteger, parseAsString } from '@react-store/core';
+import { useQueryState, parseAsInteger, parseAsString } from '@musubi/core';
 
 export function URLStateDemoUI() {
   const [hello, setHello] = useQueryState("hello", parseAsString.withDefault(""));

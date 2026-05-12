@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 
 export const metadata: Metadata = {
-  title: 'Core Concepts | React Store',
+  title: 'Core Concepts | Musubi',
 }
 
 export default async function DocsCoreConceptsPage() {
@@ -10,7 +10,7 @@ export default async function DocsCoreConceptsPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Core Concepts"
-      description="Understand the philosophy and architecture behind @react-store/core."
+      description="Understand the philosophy and architecture behind @musubi/core."
     >
       <div className="flex flex-col gap-12 text-fg">
         <div className="space-y-4">

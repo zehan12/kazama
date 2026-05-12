@@ -3,16 +3,16 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Quick Start | React Store',
+  title: 'Quick Start | Musubi',
 }
 
-const installCode = `npm install @react-store/core
+const installCode = `npm install @musubi/core
 # or
-pnpm add @react-store/core
+pnpm add @musubi/core
 # or
-bun add @react-store/core`
+bun add @musubi/core`
 
-const basicUsage = `import { createStore } from '@react-store/core';
+const basicUsage = `import { createStore } from '@musubi/core';
 
 // 1. Define your models
 const models = {
@@ -49,7 +49,7 @@ export default async function DocsQuickStartPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Quick Start"
-      description="Learn how to install and set up your first store using @react-store/core."
+      description="Learn how to install and set up your first store using @musubi/core."
     >
       <div className="flex flex-col gap-12">
         <div className="space-y-4">

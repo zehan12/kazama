@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'HTTP Client | React Store',
+  title: 'HTTP Client | Musubi',
 }
 
-const configCode = `import { createStore, request } from '@react-store/core';
+const configCode = `import { createStore, request } from '@musubi/core';
 
 // 1. Configure the built-in request client (powered by Axios)
 request.interceptors.request.use((config) => {
@@ -33,7 +33,7 @@ export const store = createStore(models, {
   request: request 
 });`
 
-const multiInstanceCode = `import { createRequestInstance, setRequestInstance } from '@react-store/core';
+const multiInstanceCode = `import { createRequestInstance, setRequestInstance } from '@musubi/core';
 
 // Create a named instance for a specific microservice
 const authClient = createRequestInstance('authApi');
@@ -54,7 +54,7 @@ export default async function DocsRequestClientPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            <code>@react-store/core</code> exports a pre-configured <code>request</code> object. This is a lightweight wrapper around <strong>Axios</strong>, providing a familiar API for HTTP requests with support for interceptors.
+            <code>@musubi/core</code> exports a pre-configured <code>request</code> object. This is a lightweight wrapper around <strong>Axios</strong>, providing a familiar API for HTTP requests with support for interceptors.
           </p>
         </div>
 

@@ -13,13 +13,13 @@ export function Hero() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-fg leading-[1] mb-2">
-          React State Toolkit
+          musubi
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl font-light text-dim mb-1 font-sans">
-          State, URL, and API management
+          結び
         </p>
-        <p className="text-sm text-dim font-mono mb-6">
-          Lightweight · modular · zero boilerplate
+        <p className="text-sm text-dim font-mono mb-8">
+          Japanese · noun · &quot;connection&quot; · &quot;bringing together&quot;
         </p>
 
         <p className="font-medium text-fg mb-4">

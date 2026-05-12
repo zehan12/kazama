@@ -35,7 +35,7 @@ export function createStore(models: Record<string, any>, config?: StoreConfig) {
 
   const devTools =
     typeof window !== 'undefined' && (window as any).__REDUX_DEVTOOLS_EXTENSION__
-      ? (window as any).__REDUX_DEVTOOLS_EXTENSION__.connect({ name: config?.name || 'React Store' })
+      ? (window as any).__REDUX_DEVTOOLS_EXTENSION__.connect({ name: config?.name || 'Musubi' })
       : null;
 
   if (devTools) {

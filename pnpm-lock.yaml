@@ -14,7 +14,7 @@ importers:
 
   apps/website:
     dependencies:
-      '@react-store/core':
+      '@musubi/core':
         specifier: workspace:*
         version: link:../../packages/store
       developer-icons:
@@ -69,7 +69,7 @@ importers:
 
   examples/advanced:
     dependencies:
-      '@react-store/core':
+      '@musubi/core':
         specifier: workspace:*
         version: link:../../packages/store
       axios:
@@ -109,7 +109,7 @@ importers:
 
   examples/blog:
     dependencies:
-      '@react-store/core':
+      '@musubi/core':
         specifier: workspace:*
         version: link:../../packages/store
       axios:
@@ -149,7 +149,7 @@ importers:
 
   examples/query:
     dependencies:
-      '@react-store/core':
+      '@musubi/core':
         specifier: workspace:*
         version: link:../../packages/store
       axios:
@@ -189,7 +189,7 @@ importers:
 
   examples/request:
     dependencies:
-      '@react-store/core':
+      '@musubi/core':
         specifier: workspace:*
         version: link:../../packages/store
       axios:
@@ -229,7 +229,7 @@ importers:
 
   examples/store:
     dependencies:
-      '@react-store/core':
+      '@musubi/core':
         specifier: workspace:*
         version: link:../../packages/store
       axios:
@@ -269,7 +269,7 @@ importers:
 
   examples/todos:
     dependencies:
-      '@react-store/core':
+      '@musubi/core':
         specifier: workspace:*
         version: link:../../packages/store
       axios:
@@ -309,7 +309,7 @@ importers:
 
   examples/url-state:
     dependencies:
-      '@react-store/core':
+      '@musubi/core':
         specifier: workspace:*
         version: link:../../packages/store
       axios:

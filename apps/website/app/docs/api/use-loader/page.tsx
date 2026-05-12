@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useLoader | React Store',
+  title: 'useLoader | Musubi',
 }
 
-const basicCode = `import { useLoader } from '@react-store/core';
+const basicCode = `import { useLoader } from '@musubi/core';
 
 async function fetchUser() {
   const res = await fetch('/api/user');

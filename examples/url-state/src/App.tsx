@@ -1,4 +1,4 @@
-import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean, parseAsArrayOf } from '@react-store/core';
+import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean, parseAsArrayOf } from '@musubi/core';
 import './App.css';
 
 function App() {

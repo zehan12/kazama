@@ -1,4 +1,4 @@
-import { createStore } from '@react-store/core';
+import { createStore } from '@musubi/core';
 
 export const models = {
   settings: {
@@ -31,7 +31,7 @@ export const models = {
   todos: {
     state: {
       items: [
-        { id: 1, text: 'Learn React Store', done: true },
+        { id: 1, text: 'Learn Musubi', done: true },
         { id: 2, text: 'Master deeply nested state', done: false },
       ],
       filter: 'all' // 'all', 'active', 'completed'

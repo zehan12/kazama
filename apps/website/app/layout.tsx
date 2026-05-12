@@ -7,21 +7,21 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('http://localhost:3000'),
-  title: 'React Store',
+  title: 'Musubi',
   description:
     'A high-performance React store component powered by useSyncExternalStore and Immer.',
   openGraph: {
-    title: 'React Store',
+    title: 'Musubi',
     description:
       'A high-performance React store component powered by useSyncExternalStore and Immer.',
     url: 'https://react-store.test',
-    siteName: 'React Store',
+    siteName: 'Musubi',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'React Store',
+    title: 'Musubi',
     description:
       'A high-performance React store component powered by useSyncExternalStore and Immer.',
     images: ['/og-image.png'],

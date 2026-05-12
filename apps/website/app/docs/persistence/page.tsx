@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'State Persistence | React Store',
+  title: 'State Persistence | Musubi',
 }
 
-const persistCode = `import { createStore } from '@react-store/core';
+const persistCode = `import { createStore } from '@musubi/core';
 import models from './models';
 
 export const store = createStore(models, {

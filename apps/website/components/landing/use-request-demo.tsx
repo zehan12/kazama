@@ -10,7 +10,7 @@ export function UseRequestDemoUI() {
   const handleRequest = () => {
     setLoading(true)
     setTimeout(() => {
-      setData({ id: 42, title: 'Learn React Store', completed: false })
+      setData({ id: 42, title: 'Learn Musubi', completed: false })
       setLoading(false)
     }, 1000)
   }

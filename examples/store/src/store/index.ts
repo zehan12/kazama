@@ -1,4 +1,4 @@
-import { createStore } from '@react-store/core';
+import { createStore } from '@musubi/core';
 import * as models from '../models';
 
 export const store = createStore(models, {

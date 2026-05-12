@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useModel | React Store',
+  title: 'useModel | Musubi',
 }
 
 const useModelCode = `import { store } from './store';

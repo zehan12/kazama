@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useRequest | React Store',
+  title: 'useRequest | Musubi',
 }
 
 const useRequestCode = `import { store } from './store';
@@ -41,7 +41,7 @@ export default async function DocsUseRequestPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            <code>@react-store/core</code> exposes a <code>useRequest</code> hook on your generated store instance. This is a direct wrapper around the highly popular <code>ahooks</code> <code>useRequest</code> library, but it comes pre-injected with your configured HTTP client.
+            <code>@musubi/core</code> exposes a <code>useRequest</code> hook on your generated store instance. This is a direct wrapper around the highly popular <code>ahooks</code> <code>useRequest</code> library, but it comes pre-injected with your configured HTTP client.
           </p>
         </div>
 

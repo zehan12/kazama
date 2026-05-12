@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@react-store/core": "workspace:*",
+    "@musubi/core": "workspace:*",
     "developer-icons": "^7.0.1",
     "geist": "latest",
     "lucide-react": "latest",

@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Best Practices | React Store',
+  title: 'Best Practices | Musubi',
 }
 
 const badPattern = `// ❌ Anti-pattern: Monolithic Model

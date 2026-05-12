@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Time Travel | React Store',
+  title: 'Time Travel | Musubi',
 }
 
 const timeTravelCode = `import { store } from './store';
@@ -33,7 +33,7 @@ export default async function DocsTimeTravelPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            Because <code>@react-store/core</code> enforces immutable state updates via Immer, it naturally keeps a history of state transitions. The library exposes a simple API to traverse this history.
+            Because <code>@musubi/core</code> enforces immutable state updates via Immer, it naturally keeps a history of state transitions. The library exposes a simple API to traverse this history.
           </p>
         </div>
 

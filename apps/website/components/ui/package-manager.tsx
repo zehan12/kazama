@@ -9,10 +9,10 @@ export function PackageManager({ className }: { className?: string }) {
   const [active, setActive] = useState<'pnpm' | 'npm' | 'yarn' | 'bun'>('pnpm')
 
   const commands = {
-    pnpm: 'pnpm add @react-store/core',
-    npm: 'npm install @react-store/core',
-    yarn: 'yarn add @react-store/core',
-    bun: 'bun add @react-store/core',
+    pnpm: 'pnpm add @musubi/core',
+    npm: 'npm install @musubi/core',
+    yarn: 'yarn add @musubi/core',
+    bun: 'bun add @musubi/core',
   }
 
   const renderCommand = (cmd: string) => {

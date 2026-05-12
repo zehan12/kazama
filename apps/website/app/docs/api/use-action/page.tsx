@@ -3,11 +3,11 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useAction | React Store',
+  title: 'useAction | Musubi',
 }
 
-const actionCode = `import { useAction } from '@react-store/core';
-import { request } from '@react-store/core';
+const actionCode = `import { useAction } from '@musubi/core';
+import { request } from '@musubi/core';
 
 async function deleteUser(id: string) {
   return request.delete(\`/api/users/\${id}\`);

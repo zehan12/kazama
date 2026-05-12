@@ -3,16 +3,16 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Installation | React Store',
+  title: 'Installation | Musubi',
 }
 
-const installCode = `npm install @react-store/core
+const installCode = `npm install @musubi/core
 # or
-pnpm add @react-store/core
+pnpm add @musubi/core
 # or
-yarn add @react-store/core
+yarn add @musubi/core
 # or
-bun add @react-store/core`
+bun add @musubi/core`
 
 const peerDepsCode = `"peerDependencies": {
   "react": "^18.0.0 || ^19.0.0"
@@ -23,7 +23,7 @@ export default async function DocsInstallationPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Installation"
-      description="Learn how to install @react-store/core and its peer dependencies."
+      description="Learn how to install @musubi/core and its peer dependencies."
     >
       <div className="flex flex-col gap-12 text-fg">
         <div className="space-y-4">
@@ -39,7 +39,7 @@ export default async function DocsInstallationPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Peer Dependencies</h2>
           <p className="text-muted">
-            <code>@react-store/core</code> leverages modern React primitives like <code>useSyncExternalStore</code>. Therefore, it requires React 18 or higher.
+            <code>@musubi/core</code> leverages modern React primitives like <code>useSyncExternalStore</code>. Therefore, it requires React 18 or higher.
           </p>
           <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
             <CodeBlock code={peerDepsCode} lang="json" filename="package.json" />

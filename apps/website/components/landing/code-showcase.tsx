@@ -1,7 +1,7 @@
 import { CodeBlock } from '@/components/ui/code-block'
 import { CopyButton } from '@/components/ui/copy-button'
 
-const basicExample = `import { createStore } from '@react-store/core';
+const basicExample = `import { createStore } from '@musubi/core';
 import { user } from './models/user';
 
 const store = createStore({ user }, { name: 'AppStore' });

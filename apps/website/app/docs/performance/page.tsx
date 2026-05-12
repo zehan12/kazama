@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Performance | React Store',
+  title: 'Performance | Musubi',
 }
 
 const badRenderCode = `function Avatar() {
@@ -33,7 +33,7 @@ export default async function DocsPerformancePage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">The useSyncExternalStore Advantage</h2>
           <p className="text-muted leading-relaxed">
-            Because <code>@react-store/core</code> is built on top of React 18's <code>useSyncExternalStore</code>, it avoids the "zombie child" problems and tearing issues commonly associated with older Context-based state management libraries. State subscriptions are inherently concurrent-safe.
+            Because <code>@musubi/core</code> is built on top of React 18's <code>useSyncExternalStore</code>, it avoids the "zombie child" problems and tearing issues commonly associated with older Context-based state management libraries. State subscriptions are inherently concurrent-safe.
           </p>
         </div>
 

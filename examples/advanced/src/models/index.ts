@@ -1,4 +1,4 @@
-import { createModel } from '@react-store/core';
+import { createModel } from '@musubi/core';
 
 export const sharedData = createModel({
   state: {

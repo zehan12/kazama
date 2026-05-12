@@ -9,7 +9,7 @@ import { CodeBlock } from '@/components/ui/code-block'
 
 const urlStateCode = `"use client";
 
-import { parseAsInteger, useQueryState } from "@react-store/core";
+import { parseAsInteger, useQueryState } from "@musubi/core";
 
 export function Demo() {
   const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
@@ -33,7 +33,7 @@ export function Demo() {
 
 const requestCode = `"use client";
 
-import { useLoader, request } from "@react-store/core";
+import { useLoader, request } from "@musubi/core";
 
 // Use the built-in HTTP client
 async function fetchUser() {
@@ -80,7 +80,7 @@ export function TodoItem() {
   );
 }`
 
-const persistCode = `import { createStore } from '@react-store/core';
+const persistCode = `import { createStore } from '@musubi/core';
 
 export const store = createStore({
   settings: {
@@ -99,9 +99,9 @@ export const store = createStore({
   }
 });`
 
-const storeCode = `import { createStore } from '@react-store/core';
+const storeCode = `import { createStore } from '@musubi/core';
     state: {
-      items: [{ id: 1, text: 'Learn React Store', done: false }],
+      items: [{ id: 1, text: 'Learn Musubi', done: false }],
       filter: 'all' // 'all' | 'active' | 'completed'
     },
     reducers: {

@@ -1,4 +1,4 @@
-import { createRequestInstance, setRequestInstance } from '@react-store/core';
+import { createRequestInstance, setRequestInstance } from '@musubi/core';
 
 createRequestInstance();
 
@@ -14,7 +14,7 @@ setRequestInstance({
   }
 });
 
-import { createStore, useLoader, useAction } from '@react-store/core';
+import { createStore, useLoader, useAction } from '@musubi/core';
 export const store = createStore({});
 export const { useRequest } = store;
 export { useLoader, useAction };

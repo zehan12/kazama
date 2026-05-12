@@ -1,4 +1,4 @@
-import { createStore, createRequestInstance, setRequestInstance } from '@react-store/core';
+import { createStore, createRequestInstance, setRequestInstance } from '@musubi/core';
 import * as models from '../models';
 
 const requestClient = createRequestInstance()['default'];

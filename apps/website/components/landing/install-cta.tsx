@@ -13,10 +13,10 @@ export function InstallCta() {
         </p>
 
         <div className="flex flex-col gap-4">
-          <TerminalBlock command="npm install @react-store/core" label="npm.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="pnpm add @react-store/core" label="pnpm.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="yarn add @react-store/core" label="yarn.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="bun add @react-store/core" label="bun.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="npm install @musubi/core" label="npm.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="pnpm add @musubi/core" label="pnpm.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="yarn add @musubi/core" label="yarn.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="bun add @musubi/core" label="bun.sh" className="w-full sm:max-w-sm" />
         </div>
 
         <div className="flex items-center gap-4 mt-8">
@@ -32,7 +32,7 @@ export function InstallCta() {
             GitHub
           </a>
           <a
-            href="https://www.npmjs.com/package/@react-store/core"
+            href="https://www.npmjs.com/package/@musubi/core"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-sm text-dim hover:text-muted transition-colors font-mono"
@@ -44,7 +44,7 @@ export function InstallCta() {
 
         <div className="mt-16 pt-8 border-t border-line">
           <p className="text-xs font-mono text-dim">
-            @react-store/core · MIT License
+            @musubi/core · MIT License
           </p>
         </div>
       </div>
