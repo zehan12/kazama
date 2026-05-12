@@ -1,11 +1,13 @@
 import type { BundledLanguage } from 'shiki'
 import { codeToHtml } from 'shiki'
+import { cn } from '@/lib/cn'
 
 interface CodeBlockProps {
   code: string
   lang?: BundledLanguage
   filename?: string
   className?: string
+  theme?: string
 }
 
 export async function CodeBlock({
@@ -13,8 +15,12 @@ export async function CodeBlock({
   lang = 'tsx',
   filename,
   className,
+  theme,
 }: CodeBlockProps) {
-  const html = await codeToHtml(code.trim(), {
+  const html = await codeToHtml(code.trim(), theme ? {
+    lang,
+    theme,
+  } : {
     lang,
     themes: {
       light: 'vitesse-light',
@@ -36,7 +42,10 @@ export async function CodeBlock({
         </div>
       )}
       <div
-        className="[&_pre]:!bg-transparent [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre]:text-[12px] [&_pre]:leading-[1.7] md:[&_pre]:overflow-x-hidden md:[&_pre]:whitespace-pre-wrap md:[&_pre]:break-words md:[&_pre]:text-[13px] [&_code]:font-mono"
+        className={cn(
+          "[&_pre]:!bg-transparent [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre]:text-[12px] [&_pre]:leading-[1.7] md:[&_pre]:overflow-x-hidden md:[&_pre]:whitespace-pre-wrap md:[&_pre]:break-words md:[&_pre]:text-[13px] [&_code]:font-mono",
+          !theme && "shiki-dual-theme"
+        )}
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </div>

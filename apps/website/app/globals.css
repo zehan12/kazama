@@ -98,13 +98,13 @@
   }
 }
 
-html:not(.dark) .shiki,
-html:not(.dark) .shiki span {
+html:not(.dark) .shiki-dual-theme .shiki,
+html:not(.dark) .shiki-dual-theme .shiki span {
   color: var(--shiki-light) !important;
 }
 
-html.dark .shiki,
-html.dark .shiki span {
+html.dark .shiki-dual-theme .shiki,
+html.dark .shiki-dual-theme .shiki span {
   color: var(--shiki-dark) !important;
 }
 

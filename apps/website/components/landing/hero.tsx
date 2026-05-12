@@ -1,4 +1,4 @@
-import Link from 'next/link'
+"use client"
 import { HeroDemo } from '@/components/landing/hero-demo'
 import { PackageManager } from '@/components/ui/package-manager'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
@@ -39,8 +39,9 @@ export function Hero() {
           <div className="flex items-center gap-6 duration-300">
             <React className="w-8 h-8" />
             <NextJs className="w-8 h-8" />
-            <RemixLight className="w-6 h-6" />
-            <ViteJS className="w-6 h-6" />
+            <RemixLight className="w-6 h-6 hidden dark:block" />
+            <RemixDark className="w-6 h-6 block dark:hidden" />
+            <img src="vite.svg" alt="vite" className="w-6 h-6" />
             <Preact className="w-8 h-8" />
             <img src="https://nuqs.dev/tanstack-logo.png" alt="TanStack" className="w-8 h-8 object-contain" />
             <ReactRouter className="w-8 h-8" />
