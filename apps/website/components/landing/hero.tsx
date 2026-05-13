@@ -3,6 +3,7 @@ import { HeroDemo } from '@/components/landing/hero-demo'
 import { PackageManager } from '@/components/ui/package-manager'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { Preact, React, NextJs, RemixLight, RemixDark, ViteJS, ReactRouter } from 'developer-icons'
+import FrameworkSupport from './FrameworkSupport'
 
 export function Hero() {
   return (
@@ -34,20 +35,7 @@ export function Hero() {
           Powered by useSyncExternalStore and Immer for predictable updates. Features include time-travel debugging, granular re-renders, auto-tracking for async effects, and end-to-end TypeScript support.
         </p>
 
-        <div className="mt-12 mb-8">
-          <p className="text-xs font-mono text-dim mb-4 uppercase tracking-wider">Works seamlessly with</p>
-          <div className="flex items-center gap-6 duration-300">
-            <React className="w-8 h-8" />
-            <NextJs className="w-8 h-8" />
-            <RemixLight className="w-6 h-6 hidden dark:block" />
-            <RemixDark className="w-6 h-6 block dark:hidden" />
-            <img src="vite.svg" alt="vite" className="w-6 h-6" />
-            <Preact className="w-8 h-8" />
-            <img src="https://nuqs.dev/tanstack-logo.png" alt="TanStack" className="w-8 h-8 object-contain" />
-            <ReactRouter className="w-8 h-8" />
-          </div>
-        </div>
-
+        <FrameworkSupport />
         <HeroDemo />
         <PackageManager className="w-full sm:max-w-[450px]" />
       </div>
