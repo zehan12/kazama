@@ -96,6 +96,20 @@ class LoaderClient {
 
   private updateLoaderState(hash: string, partial: Partial<LoaderState>) {
     const current = this.cache.get(hash) || this.getDefaultState();
+    
+    // Bailout if no values actually changed to guarantee stable snapshot references
+    let hasChanges = false;
+    for (const key in partial) {
+      if (current[key as keyof LoaderState] !== partial[key as keyof LoaderState]) {
+        hasChanges = true;
+        break;
+      }
+    }
+    
+    if (!hasChanges && this.cache.has(hash)) {
+      return;
+    }
+
     const next = { ...current, ...partial };
     this.cache.set(hash, next);
     this.subscribers.get(hash)?.forEach(listener => listener());

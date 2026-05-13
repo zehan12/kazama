@@ -47,12 +47,6 @@ export function useQueryState<T = string>(key: string, parser?: Parser<T>) {
   const { history = 'replace', clearOnDefault = true, throttleMs = 50 } = options;
 
   const [value, setInternalValue] = useState<T | null>(() => {
-    if (typeof window === 'undefined') return parser?.defaultValue ?? null;
-    const searchParams = new URLSearchParams(window.location.search);
-    const urlVal = searchParams.get(key);
-    if (urlVal !== null) {
-      return parser?.parse ? parser.parse(urlVal) : (urlVal as unknown as T);
-    }
     return parser?.defaultValue ?? null;
   });
 
