@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['hiraki'],
+  transpilePackages: ['musubi'],
 }
 
 export default nextConfig

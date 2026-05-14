@@ -42,7 +42,7 @@ export default async function DocsTimeTravelPage() {
           <p className="text-muted leading-relaxed">
             The store instance exports <code>undo()</code> and <code>redo()</code> functions. Calling these will instantly revert or advance the global state, and all subscribed components will re-render automatically.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={timeTravelCode} lang="tsx" filename="EditorToolbar.tsx" />
           </div>
         </div>

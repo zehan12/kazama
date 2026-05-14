@@ -90,7 +90,7 @@ export default async function DocsAsyncEffectsPage() {
           <p className="text-muted leading-relaxed">
             Effects are defined as a function that returns an object of async functions. They receive the globally available <code>dispatchers</code> as an argument, allowing you to trigger reducers or other effects once your async task completes.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={effectsCode} lang="typescript" filename="store.ts" />
           </div>
         </div>
@@ -100,7 +100,7 @@ export default async function DocsAsyncEffectsPage() {
           <p className="text-muted leading-relaxed">
             You don't need to manually dispatch loading actions. Use the <code>useModelEffectsLoading</code> and <code>useModelEffectsError</code> hooks to tap into the automated tracking.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={componentCode} lang="tsx" filename="LoginForm.tsx" />
           </div>
         </div>

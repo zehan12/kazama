@@ -99,7 +99,7 @@ export function CodeBadge({ code, active = false, compact = false, className }: 
   return (
     <span
       className={cn(
-        'inline-flex max-w-full items-center overflow-hidden rounded-[var(--hiraki-radius)]',
+        'inline-flex max-w-full items-center overflow-hidden rounded-[var(--musubi-radius)]',
         'transition-colors duration-200',
         active
           ? 'shadow-[0_8px_20px_rgba(0,0,0,0.06)]'

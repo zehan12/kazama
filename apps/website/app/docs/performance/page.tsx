@@ -43,10 +43,10 @@ export default async function DocsPerformancePage() {
             By default, calling <code>useModel('user')</code> subscribes your component to the <em>entire</em> <code>user</code> model. Any change to any property in that model will trigger a re-render. To optimize this, you can pass a selector function to <code>useModelState</code>.
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+            <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
               <CodeBlock code={badRenderCode} lang="tsx" filename="Anti-pattern" />
             </div>
-            <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+            <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
               <CodeBlock code={goodRenderCode} lang="tsx" filename="Optimized" />
             </div>
           </div>

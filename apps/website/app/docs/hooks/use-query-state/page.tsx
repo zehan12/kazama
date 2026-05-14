@@ -48,7 +48,7 @@ export default async function DocsUseQueryStatePage() {
           <p className="text-muted">
             The <code>useQueryState</code> hook behaves exactly like <code>useState</code>, but it persists the state within the URL's search parameters. This makes your UI shareable, bookmarkable, and history-aware.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={basicCode} lang="tsx" filename="Pagination.tsx" />
           </div>
         </div>
@@ -73,7 +73,7 @@ export default async function DocsUseQueryStatePage() {
           <p className="text-muted leading-relaxed">
             If you have multiple components updating different query parameters at the same time, updating the <code>window.history</code> sequentially would cause race conditions. <code>@musubi/core</code> intelligently batches synchronous updates together into a single history transition.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={batchingCode} lang="tsx" filename="Filters.tsx" />
           </div>
         </div>

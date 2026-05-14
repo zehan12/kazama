@@ -81,7 +81,7 @@ export default async function DocsStateAndReducersPage() {
           <p className="text-muted leading-relaxed">
             You can <code>push</code> to arrays, delete keys, and reassign nested properties without having to spread objects (e.g. <code>...state</code>).
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={basicStateCode} lang="typescript" filename="store.ts" />
           </div>
         </div>
@@ -91,7 +91,7 @@ export default async function DocsStateAndReducersPage() {
           <p className="text-muted leading-relaxed">
             Unlike traditional Redux, there are no action types or manual dispatch functions. Your reducer names automatically become the names of your dispatcher functions.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={componentCode} lang="tsx" filename="TodoApp.tsx" />
           </div>
         </div>

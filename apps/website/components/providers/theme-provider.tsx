@@ -13,7 +13,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
-      storageKey="hiraki-theme"
+      storageKey="musubi-theme"
     >
       {children}
     </NextThemesProvider>

@@ -16,14 +16,14 @@ export async function TerminalBlock({
   return (
     <div
       className={cn(
-        'relative overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-surface',
+        'relative overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-surface',
         className,
       )}
     >
       <div className="absolute top-3 right-3 z-10">
         <CopyButton
           text={command}
-          className="rounded-[var(--hiraki-radius)] border border-line bg-base/80 px-2.5 py-1.5 backdrop-blur-sm"
+          className="rounded-[var(--musubi-radius)] border border-line bg-base/80 px-2.5 py-1.5 backdrop-blur-sm"
         />
       </div>
       <CodeBlock

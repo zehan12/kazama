@@ -63,7 +63,7 @@ export default async function DocsRequestClientPage() {
           <p className="text-muted leading-relaxed">
             You can configure the default <code>request</code> client by adding interceptors for authentication, error handling, or response transformation. Passing this client into the store configuration ensures that hooks like <code>useRequest</code> use your customized network layer.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={configCode} lang="typescript" filename="store.ts" />
           </div>
         </div>
@@ -73,7 +73,7 @@ export default async function DocsRequestClientPage() {
           <p className="text-muted leading-relaxed">
             If your application talks to multiple APIs with different base URLs or authentication strategies, you can use the instance factory methods.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={multiInstanceCode} lang="typescript" filename="api.ts" />
           </div>
         </div>

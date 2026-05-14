@@ -72,7 +72,7 @@ export default async function DocsTypeScriptPage() {
           <p className="text-muted leading-relaxed">
             The secret to perfect inference is the <code>createModel</code> utility. This is simply an identity function (it returns exactly what you pass it) at runtime. However, at compile time, it deeply infers the state, reducers, and effects of your model.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={typeGuideCode} lang="typescript" filename="models/auth.ts" />
           </div>
         </div>

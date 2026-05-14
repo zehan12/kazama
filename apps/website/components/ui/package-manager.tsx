@@ -27,7 +27,7 @@ export function PackageManager({ className }: { className?: string }) {
   }
 
   return (
-    <div className={cn('relative overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-surface text-sm shadow-sm', className)}>
+    <div className={cn('relative overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-surface text-sm shadow-sm', className)}>
       <div className="flex items-center gap-2 px-3 py-2 border-b border-line bg-base">
         <div className="bg-surface border border-line rounded p-1">
           <Terminal className="w-3.5 h-3.5 text-fg/70" />

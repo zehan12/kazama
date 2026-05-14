@@ -197,7 +197,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Synchronize your React state with the browser URL parameters natively. Features intelligent batching and type-safe parsers out of the box.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--hiraki-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
               <URLStateDemoUI />
               <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
                 <CodeBlock code={urlStateCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
@@ -214,7 +214,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Define your models and get deeply nested state mutations (via Immer), async effect tracking, and time-travel debugging with absolute zero boilerplate.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--hiraki-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
               <GlobalStoreDemoUI />
               <StoreCodeTabs 
                 storeTab={<CodeBlock code={storeCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />}
@@ -229,7 +229,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Manage cached network requests effortlessly with <code className="text-xs bg-raised px-1.5 py-0.5 rounded-md text-fg">useLoader</code>. Features suspense support, garbage collection, and automatic stale-while-revalidate background updates.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--hiraki-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
               <RequestDemoUI />
               <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
                 <CodeBlock code={requestCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
@@ -246,7 +246,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Need a quick network request tied to UI state? Our enhanced <code className="text-xs bg-raised px-1.5 py-0.5 rounded-md text-fg">useRequest</code> hook accepts URLs directly and gives you immediate loading and data states.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--hiraki-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
               <UseRequestDemoUI />
               <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
                 <CodeBlock code={useRequestCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
@@ -263,7 +263,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Persist your chosen models to <code className="text-xs bg-raised px-1.5 py-0.5 rounded-md text-fg">localStorage</code> or <code className="text-xs bg-raised px-1.5 py-0.5 rounded-md text-fg">sessionStorage</code> securely. It auto-hydrates on load and synchronizes state mutations seamlessly.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--hiraki-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
               <PersistDemoUI />
               <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
                 <CodeBlock code={persistCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />

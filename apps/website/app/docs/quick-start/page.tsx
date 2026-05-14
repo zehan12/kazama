@@ -55,7 +55,7 @@ export default async function DocsQuickStartPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-fg">Installation</h2>
           <p className="text-muted">Install the package using your favorite package manager.</p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={installCode} lang="bash" filename="terminal" />
           </div>
         </div>
@@ -63,7 +63,7 @@ export default async function DocsQuickStartPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-fg">Basic Usage</h2>
           <p className="text-muted">Create a centralized store by defining models, state, and reducers. We use Immer under the hood, so you can mutate state directly.</p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={basicUsage} lang="typescript" filename="store.ts" />
           </div>
         </div>
@@ -71,7 +71,7 @@ export default async function DocsQuickStartPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-fg">Connecting Components</h2>
           <p className="text-muted">Use the automatically generated hooks to subscribe to state changes and dispatch actions.</p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={basicComponent} lang="tsx" filename="Counter.tsx" />
           </div>
         </div>

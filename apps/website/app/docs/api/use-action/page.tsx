@@ -56,7 +56,7 @@ export default async function DocsUseActionPage() {
 
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Usage</h2>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={actionCode} lang="tsx" filename="UserRow.tsx" />
           </div>
         </div>

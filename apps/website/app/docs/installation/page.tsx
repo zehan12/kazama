@@ -31,7 +31,7 @@ export default async function DocsInstallationPage() {
           <p className="text-muted">
             You can install the library using your preferred Node package manager. The library ships with comprehensive TypeScript definitions out of the box.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={installCode} lang="bash" filename="terminal" />
           </div>
         </div>
@@ -41,7 +41,7 @@ export default async function DocsInstallationPage() {
           <p className="text-muted">
             <code>@musubi/core</code> leverages modern React primitives like <code>useSyncExternalStore</code>. Therefore, it requires React 18 or higher.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={peerDepsCode} lang="json" filename="package.json" />
           </div>
         </div>

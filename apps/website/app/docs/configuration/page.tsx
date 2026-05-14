@@ -37,7 +37,7 @@ export default async function DocsConfigurationPage() {
           <p className="text-muted leading-relaxed">
             The <code>createStore</code> function accepts a second argument: a configuration object. This object controls the global behavior of your store, persistence plugins, and HTTP injection.
           </p>
-          <div className="overflow-hidden rounded-[var(--hiraki-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={configCode} lang="typescript" filename="store.ts" />
           </div>
         </div>
