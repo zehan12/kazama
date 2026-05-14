@@ -1,0 +1,75 @@
+# Musubi (結び)
+
+Musubi is a high-performance React ecosystem for state, URL, and API management. It serves as a modern, lightweight, and modular alternative to Redux, built entirely on top of React's `useSyncExternalStore` and `immer` for predictable, immutable updates.
+
+"Musubi" translates to "connection" or "bringing together" in Japanese, reflecting the library's goal of unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
+
+## Project Structure
+
+The repository is structured as a monorepo using `pnpm` workspaces:
+
+- `packages/store/`: The core library (`@musubi/core`).
+- `apps/website/`: The Next.js 14 (App Router) documentation website.
+- `examples/`: Various reference applications (Next.js, Vite, React Router) demonstrating advanced workflows.
+
+## Core Features & Modules
+
+The `@musubi/core` library provides three main pillars:
+
+### 1. Global Client State (`createStore`, `createModel`, `useModel`)
+- Uses `immer` for immutable state transitions without boilerplate.
+- Exposes a Redux-like architecture with isolated models (state, reducers, effects).
+- Built-in time-travel debugging, devtools, and localStorage persistence.
+- Provides granular re-renders by allowing selectors inside `useModel`.
+
+### 2. URL State Management (`useQueryState`, parsers)
+- Automatically synchronizes React state with URL search parameters (`window.location.search`).
+- Type-safe string parsing using utility functions (`parseAsString`, `parseAsInteger`, etc.).
+- Hydration-safe implementation (defers window reads until after SSR).
+
+### 3. API & Data Fetching (`request`, `useLoader`, `useAction`)
+- A centralized request client built over `fetch` / `axios` with global interceptors.
+- `useLoader` for cache-first data fetching, polling, background revalidation (stale-while-revalidate), and Suspense support.
+- `useAction` for handling mutations and async operations.
+
+## Technology Stack
+
+- **Core Library**: React (`useSyncExternalStore`), TypeScript, Immer, Tsup (bundler).
+- **Documentation**: Next.js App Router, Tailwind CSS V4, developer-icons, Lucide React.
+- **Styling Paradigm**: The website utilizes a minimalist, "Compound/Radix" style interface with heavy use of CSS Grid, subtle borders, and monospace typography.
+
+## Architecture Guidelines for LLMs
+
+If you are modifying or extending Musubi, please adhere to the following principles:
+
+1. **Zero External Runtime Dependencies (Except Immer)**: The core library should remain exceptionally small (~3.8kB). Avoid adding third-party libraries for things that can be solved with native DOM/React APIs.
+2. **Hydration Safety**: Any hooks dealing with browser APIs (e.g., `window.location`, `localStorage`) must return deterministic default values during the initial render phase to avoid Next.js/React hydration mismatches. Sync from the browser strictly inside `useEffect`.
+3. **Reference Stability**: When using `useSyncExternalStore`, ensure that `subscribe` and `getSnapshot` functions are highly stable (wrapped in `useCallback`). Cache updates should employ shallow equality bailouts to prevent React from throwing "infinite loop" strict-mode errors.
+4. **Immutability First**: State mutations inside reducers should rely exclusively on `immer` drafts. Never mutate the top-level state object directly.
+5. **Aesthetic Consistency**: When adding documentation or UI components to `apps/website`, strictly follow the minimalist dark-mode design system. Avoid Tailwind colors like "blue-500" or "red-500". Rely on semantic variables (`bg-base`, `text-fg`, `border-line`, `text-dim`).
+
+## Key API Signatures
+
+```typescript
+// 1. Creating a Store
+import { createStore, createModel } from '@musubi/core';
+const counter = createModel({
+  state: { count: 0 },
+  reducers: { increment: (state) => { state.count += 1 } }
+});
+export const store = createStore({ models: { counter } });
+
+// 2. Consuming Store State
+const count = useModel(store, 'counter', state => state.count);
+const { increment } = useModel(store, 'counter');
+
+// 3. URL State
+const [search, setSearch] = useQueryState('q', parseAsString.withDefault(''));
+
+// 4. Data Loading
+const { data, isLoading } = useLoader({
+  key: ['user', id],
+  loader: () => fetchUser(id),
+  revalidateOnFocus: true
+});
+```
