@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="bg-base text-fg">
+      <body suppressHydrationWarning className="bg-base text-fg">
         <ThemeProvider>{children}</ThemeProvider>
         <Toaster position="bottom-right" />
       </body>
