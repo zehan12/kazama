@@ -14,9 +14,6 @@ importers:
 
   apps/website:
     dependencies:
-      '@musubi/core':
-        specifier: workspace:*
-        version: link:../../packages/store
       developer-icons:
         specifier: ^7.0.1
         version: 7.0.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -26,6 +23,9 @@ importers:
       lucide-react:
         specifier: latest
         version: 1.24.0(react@19.2.7)
+      musubi:
+        specifier: workspace:*
+        version: link:../../packages/musubi
       next:
         specifier: latest
         version: 16.2.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -69,15 +69,15 @@ importers:
 
   examples/advanced:
     dependencies:
-      '@musubi/core':
-        specifier: workspace:*
-        version: link:../../packages/store
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
+      musubi:
+        specifier: workspace:*
+        version: link:../../packages/musubi
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -109,15 +109,15 @@ importers:
 
   examples/blog:
     dependencies:
-      '@musubi/core':
-        specifier: workspace:*
-        version: link:../../packages/store
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
+      musubi:
+        specifier: workspace:*
+        version: link:../../packages/musubi
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -149,15 +149,15 @@ importers:
 
   examples/query:
     dependencies:
-      '@musubi/core':
-        specifier: workspace:*
-        version: link:../../packages/store
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
+      musubi:
+        specifier: workspace:*
+        version: link:../../packages/musubi
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -189,15 +189,15 @@ importers:
 
   examples/request:
     dependencies:
-      '@musubi/core':
-        specifier: workspace:*
-        version: link:../../packages/store
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
+      musubi:
+        specifier: workspace:*
+        version: link:../../packages/musubi
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -229,15 +229,15 @@ importers:
 
   examples/store:
     dependencies:
-      '@musubi/core':
-        specifier: workspace:*
-        version: link:../../packages/store
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
+      musubi:
+        specifier: workspace:*
+        version: link:../../packages/musubi
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -269,15 +269,15 @@ importers:
 
   examples/todos:
     dependencies:
-      '@musubi/core':
-        specifier: workspace:*
-        version: link:../../packages/store
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
+      musubi:
+        specifier: workspace:*
+        version: link:../../packages/musubi
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -309,15 +309,15 @@ importers:
 
   examples/url-state:
     dependencies:
-      '@musubi/core':
-        specifier: workspace:*
-        version: link:../../packages/store
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
+      musubi:
+        specifier: workspace:*
+        version: link:../../packages/musubi
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -347,7 +347,7 @@ importers:
         specifier: ^8.1.1
         version: 8.1.4(@types/node@24.13.3)(esbuild@0.27.7)(jiti@2.7.0)
 
-  packages/store:
+  packages/musubi:
     dependencies:
       ahooks:
         specifier: ^3.9.7
