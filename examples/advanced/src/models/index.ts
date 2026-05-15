@@ -1,4 +1,4 @@
-import { createModel } from '@musubi/core';
+import { createModel } from 'musubi';
 
 export const sharedData = createModel({
   state: {
