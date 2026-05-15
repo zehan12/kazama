@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLoader, useAction, request } from '@musubi/core';
+import { useLoader, useAction, request } from 'musubi';
 
 function App() {
   const [userId, setUserId] = useState(1);

@@ -1,4 +1,4 @@
-import { createRequestInstance, setRequestInstance } from '@musubi/core';
+import { createRequestInstance, setRequestInstance } from 'musubi';
 
 createRequestInstance();
 
@@ -14,7 +14,7 @@ setRequestInstance({
   }
 });
 
-import { createStore, useLoader, useAction } from '@musubi/core';
+import { createStore, useLoader, useAction } from 'musubi';
 export const store = createStore({});
 export const { useRequest } = store;
 export { useLoader, useAction };
