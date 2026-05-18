@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: 'useAction | Musubi',
 }
 
-const actionCode = `import { useAction } from '@musubi/core';
-import { request } from '@musubi/core';
+const actionCode = `import { useAction } from 'musubi';
+import { request } from 'musubi';
 
 async function deleteUser(id: string) {
   return request.delete(\`/api/users/\${id}\`);

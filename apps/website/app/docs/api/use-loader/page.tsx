@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'useLoader | Musubi',
 }
 
-const basicCode = `import { useLoader } from '@musubi/core';
+const basicCode = `import { useLoader } from 'musubi';
 
 async function fetchUser() {
   const res = await fetch('/api/user');

@@ -3,7 +3,7 @@ import { ApiTable, ApiRow } from "@/components/ui/api-table"
 
 export const metadata: Metadata = {
   title: "API Reference | Musubi",
-  description: "Complete API reference for @musubi/core",
+  description: "Complete API reference for musubi",
 }
 
 export default function ApiReferencePage() {
@@ -13,7 +13,7 @@ export default function ApiReferencePage() {
         <p className="text-sm font-mono text-dim mb-4">api</p>
         <h1 className="text-4xl font-bold text-fg mb-4 tracking-tight">Core API</h1>
         <p className="text-lg text-muted max-w-2xl leading-relaxed">
-          Every function, hook, configuration object, and default. The complete technical reference for <code className="text-sm bg-surface px-1.5 py-0.5 rounded-md text-fg">@musubi/core</code>.
+          Every function, hook, configuration object, and default. The complete technical reference for <code className="text-sm bg-surface px-1.5 py-0.5 rounded-md text-fg">musubi</code>.
         </p>
       </div>
 
