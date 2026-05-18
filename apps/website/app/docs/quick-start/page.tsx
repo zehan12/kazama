@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Quick Start | Musubi',
 }
 
-const installCode = `npm install @musubi/core
+const installCode = `npm install musubi
 # or
-pnpm add @musubi/core
+pnpm add musubi
 # or
-bun add @musubi/core`
+bun add musubi`
 
-const basicUsage = `import { createStore } from '@musubi/core';
+const basicUsage = `import { createStore } from 'musubi';
 
 // 1. Define your models
 const models = {
@@ -49,7 +49,7 @@ export default async function DocsQuickStartPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Quick Start"
-      description="Learn how to install and set up your first store using @musubi/core."
+      description="Learn how to install and set up your first store using musubi."
     >
       <div className="flex flex-col gap-12">
         <div className="space-y-4">

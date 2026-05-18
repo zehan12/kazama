@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'State & Reducers | Musubi',
 }
 
-const basicStateCode = `import { createStore } from '@musubi/core';
+const basicStateCode = `import { createStore } from 'musubi';
 
 const models = {
   todos: {
@@ -76,7 +76,7 @@ export default async function DocsStateAndReducersPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Writing Reducers</h2>
           <p className="text-muted leading-relaxed">
-            Reducers are synchronous functions that modify your state. Because <code>@musubi/core</code> uses <strong>Immer</strong> under the hood, the <code>state</code> argument you receive in a reducer is actually a mutable draft. 
+            Reducers are synchronous functions that modify your state. Because <code>musubi</code> uses <strong>Immer</strong> under the hood, the <code>state</code> argument you receive in a reducer is actually a mutable draft. 
           </p>
           <p className="text-muted leading-relaxed">
             You can <code>push</code> to arrays, delete keys, and reassign nested properties without having to spread objects (e.g. <code>...state</code>).

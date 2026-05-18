@@ -10,7 +10,7 @@ export default async function DocsCoreConceptsPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Core Concepts"
-      description="Understand the philosophy and architecture behind @musubi/core."
+      description="Understand the philosophy and architecture behind musubi."
     >
       <div className="flex flex-col gap-12 text-fg">
         <div className="space-y-4">

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Async Effects | Musubi',
 }
 
-const effectsCode = `import { createStore } from '@musubi/core';
+const effectsCode = `import { createStore } from 'musubi';
 
 const models = {
   auth: {
@@ -81,7 +81,7 @@ export default async function DocsAsyncEffectsPage() {
           <h2 className="text-xl font-semibold">The Pain of Async State</h2>
           <p className="text-muted leading-relaxed">
             In standard React, making an API call usually requires three <code>useState</code> hooks: one for the data, one for <code>isLoading</code>, and one for <code>error</code>. 
-            <code>@musubi/core</code> automates this entirely.
+            <code>musubi</code> automates this entirely.
           </p>
         </div>
 

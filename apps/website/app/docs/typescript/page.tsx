@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'TypeScript Guide | Musubi',
 }
 
-const typeGuideCode = `import { createStore, createModel } from '@musubi/core';
+const typeGuideCode = `import { createStore, createModel } from 'musubi';
 
 // 1. Define your domain types
 interface User {
@@ -63,7 +63,7 @@ export default async function DocsTypeScriptPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            <code>@musubi/core</code> is written in TypeScript and is designed to provide end-to-end type safety without requiring you to manually define massive global state interfaces.
+            <code>musubi</code> is written in TypeScript and is designed to provide end-to-end type safety without requiring you to manually define massive global state interfaces.
           </p>
         </div>
 

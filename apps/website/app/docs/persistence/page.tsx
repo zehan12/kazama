@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'State Persistence | Musubi',
 }
 
-const persistCode = `import { createStore } from '@musubi/core';
+const persistCode = `import { createStore } from 'musubi';
 import models from './models';
 
 export const store = createStore(models, {

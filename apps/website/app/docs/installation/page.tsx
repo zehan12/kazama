@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Installation | Musubi',
 }
 
-const installCode = `npm install @musubi/core
+const installCode = `npm install musubi
 # or
-pnpm add @musubi/core
+pnpm add musubi
 # or
-yarn add @musubi/core
+yarn add musubi
 # or
-bun add @musubi/core`
+bun add musubi`
 
 const peerDepsCode = `"peerDependencies": {
   "react": "^18.0.0 || ^19.0.0"
@@ -23,7 +23,7 @@ export default async function DocsInstallationPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Installation"
-      description="Learn how to install @musubi/core and its peer dependencies."
+      description="Learn how to install musubi and its peer dependencies."
     >
       <div className="flex flex-col gap-12 text-fg">
         <div className="space-y-4">
@@ -39,7 +39,7 @@ export default async function DocsInstallationPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Peer Dependencies</h2>
           <p className="text-muted">
-            <code>@musubi/core</code> leverages modern React primitives like <code>useSyncExternalStore</code>. Therefore, it requires React 18 or higher.
+            <code>musubi</code> leverages modern React primitives like <code>useSyncExternalStore</code>. Therefore, it requires React 18 or higher.
           </p>
           <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
             <CodeBlock code={peerDepsCode} lang="json" filename="package.json" />

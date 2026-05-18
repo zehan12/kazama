@@ -33,7 +33,7 @@ export default async function DocsPerformancePage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">The useSyncExternalStore Advantage</h2>
           <p className="text-muted leading-relaxed">
-            Because <code>@musubi/core</code> is built on top of React 18's <code>useSyncExternalStore</code>, it avoids the "zombie child" problems and tearing issues commonly associated with older Context-based state management libraries. State subscriptions are inherently concurrent-safe.
+            Because <code>musubi</code> is built on top of React 18's <code>useSyncExternalStore</code>, it avoids the "zombie child" problems and tearing issues commonly associated with older Context-based state management libraries. State subscriptions are inherently concurrent-safe.
           </p>
         </div>
 

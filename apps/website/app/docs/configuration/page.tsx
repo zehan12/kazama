@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Configuration | Musubi',
 }
 
-const configCode = `import { createStore, request } from '@musubi/core';
+const configCode = `import { createStore, request } from 'musubi';
 import models from './models';
 
 export const store = createStore(models, {
