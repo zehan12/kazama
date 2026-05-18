@@ -1,4 +1,4 @@
-import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean, parseAsArrayOf } from '@musubi/core';
+import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean, parseAsArrayOf } from 'musubi';
 import './App.css';
 
 function App() {

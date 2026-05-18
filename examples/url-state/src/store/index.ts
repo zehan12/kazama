@@ -1,4 +1,4 @@
-import { createStore } from '@musubi/core';
+import { createStore } from 'musubi';
 import * as models from '../models';
 
 export const store = createStore(models, {
