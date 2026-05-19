@@ -6,13 +6,15 @@ import { cn } from '@/lib/cn'
 import { Terminal } from 'lucide-react'
 
 export function PackageManager({ className }: { className?: string }) {
-  const [active, setActive] = useState<'pnpm' | 'npm' | 'yarn' | 'bun'>('pnpm')
+  const [active, setActive] = useState<'pnpm' | 'npm' | 'yarn' | 'bun' | 'deno' | 'ylt'>('pnpm')
 
   const commands = {
-    pnpm: 'pnpm add @musubi/core',
-    npm: 'npm install @musubi/core',
-    yarn: 'yarn add @musubi/core',
-    bun: 'bun add @musubi/core',
+    pnpm: 'pnpm add musubi',
+    npm: 'npm install musubi',
+    yarn: 'yarn add musubi',
+    bun: 'bun add musubi',
+    deno: 'deno add musubi',
+    ylt: 'ylt add musubi',
   }
 
   const renderCommand = (cmd: string) => {
@@ -33,7 +35,7 @@ export function PackageManager({ className }: { className?: string }) {
           <Terminal className="w-3.5 h-3.5 text-fg/70" />
         </div>
         <div className="flex items-center gap-1 ml-1">
-          {(['pnpm', 'npm', 'yarn', 'bun'] as const).map((pm) => (
+          {(['pnpm', 'npm', 'yarn', 'bun', 'deno', 'ylt'] as const).map((pm) => (
             <button
               key={pm}
               onClick={() => setActive(pm)}
