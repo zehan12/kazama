@@ -9,7 +9,7 @@ import { CodeBlock } from '@/components/ui/code-block'
 
 const urlStateCode = `"use client";
 
-import { parseAsInteger, useQueryState } from "@musubi/core";
+import { parseAsInteger, useQueryState } from "musubi";
 
 export function Demo() {
   const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
@@ -33,7 +33,7 @@ export function Demo() {
 
 const requestCode = `"use client";
 
-import { useLoader, request } from "@musubi/core";
+import { useLoader, request } from "musubi";
 
 // Use the built-in HTTP client
 async function fetchUser() {
@@ -61,7 +61,7 @@ export function Profile() {
 
 const useRequestCode = `"use client";
 
-import { useRequest } from "@/lib/store";
+import { useRequest } from "musubi";
 
 export function TodoItem() {
   // Pass a URL directly — the library's built-in HTTP client handles the rest
@@ -80,7 +80,7 @@ export function TodoItem() {
   );
 }`
 
-const persistCode = `import { createStore } from '@musubi/core';
+const persistCode = `import { createStore } from 'musubi';
 
 export const store = createStore({
   settings: {
@@ -99,7 +99,7 @@ export const store = createStore({
   }
 });`
 
-const storeCode = `import { createStore } from '@musubi/core';
+const storeCode = `import { createStore } from 'musubi';
     state: {
       items: [{ id: 1, text: 'Learn Musubi', done: false }],
       filter: 'all' // 'all' | 'active' | 'completed'
@@ -132,7 +132,7 @@ const storeCode = `import { createStore } from '@musubi/core';
 
 const appCode = `"use client";
 
-import { useModel, useModelEffectsState } from "@/lib/store";
+import { useModel, useModelEffectsState } from "musubi";
 import { useState } from "react";
 
 export function TaskBoard() {

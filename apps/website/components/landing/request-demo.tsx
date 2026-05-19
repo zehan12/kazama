@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { useLoader } from '@musubi/core'
+import { useLoader } from '../../../../packages/musubi/dist'
 
 function fetchUser() {
   return new Promise((resolve) => {
@@ -28,7 +28,7 @@ export function RequestDemoUI() {
           {isFetching ? 'Fetching...' : 'Refetch'}
         </Button>
       </div>
-      
+
       <div className="flex flex-col p-6">
         <div className="flex flex-col gap-4 p-5 bg-surface rounded-md border border-line">
           <div className="flex justify-between items-center pb-4 border-b border-line">
@@ -41,11 +41,11 @@ export function RequestDemoUI() {
               )}
             </span>
           </div>
-          
+
           <div className="flex flex-col">
             <span className="text-sm font-mono text-dim mb-2">Response Data</span>
             {isLoading && !data ? (
-               <div className="h-20 w-full animate-pulse bg-line/50 rounded-md"></div>
+              <div className="h-20 w-full animate-pulse bg-line/50 rounded-md"></div>
             ) : (
               <pre className="text-sm font-mono bg-[#0d0d0d] p-4 rounded-xl text-[#86efac] overflow-x-auto border border-line/40">
                 {JSON.stringify(data, null, 2)}
