@@ -1,4 +1,4 @@
-import { createStore } from '@musubi/core';
+import { createStore } from '../../../packages/musubi/dist';
 
 export const models = {
   settings: {
@@ -64,7 +64,7 @@ export const models = {
   }
 };
 
-const store = createStore(models, { 
+const store = createStore(models, {
   name: 'DemoStore',
   persist: {
     key: 'react-store-demo',
