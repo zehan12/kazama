@@ -1,8 +1,8 @@
-# Kizuna (絆)
+# Kazama (風間)
 
-Kizuna is a high-performance React ecosystem for state, URL, and API management. It serves as a modern, lightweight, and modular alternative to Redux, built entirely on top of React's `useSyncExternalStore` and `immer` for predictable, immutable updates.
+Kazama is a high-performance React ecosystem for state, URL, and API management. It serves as a modern, lightweight, and modular alternative to Redux, built entirely on top of React's `useSyncExternalStore` and `immer` for predictable, immutable updates.
 
-"Kizuna" translates to "connection" or "bringing together" in Japanese, reflecting the library's goal of unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
+"Kazama" translates to "connection" or "bringing together" in Japanese, reflecting the library's goal of unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
 
 ## Features
 
@@ -16,11 +16,11 @@ Kizuna is a high-performance React ecosystem for state, URL, and API management.
 ## Installation
 
 ```bash
-npm install kizuna
+npm install kazama
 # or
-pnpm add kizuna
+pnpm add kazama
 # or
-yarn add kizuna
+yarn add kazama
 ```
 
 ## Quick Start
@@ -30,7 +30,7 @@ yarn add kizuna
 Create a store with isolated models. Immer is built-in, so you can mutate the state directly in your reducers without needing to spread objects.
 
 ```tsx
-import { createStore, createModel, useModel } from 'kizuna';
+import { createStore, createModel, useModel } from 'kazama';
 
 // Define an isolated model
 const todos = createModel({
@@ -66,7 +66,7 @@ export function TaskBoard() {
   const [state, dispatchers] = useModel(store, 'todos');
   
   return (
-    <button onClick={() => dispatchers.add('Learn Kizuna')}>
+    <button onClick={() => dispatchers.add('Learn Kazama')}>
       Add Todo
     </button>
   );
@@ -78,7 +78,7 @@ export function TaskBoard() {
 Synchronize your React state with browser URL parameters natively and safely. Includes intelligent batching and handles SSR hydration perfectly.
 
 ```tsx
-import { useQueryState, parseAsInteger } from 'kizuna';
+import { useQueryState, parseAsInteger } from 'kazama';
 
 export function Demo() {
   const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
@@ -103,7 +103,7 @@ export function Demo() {
 Manage cached network requests effortlessly with `useLoader` and the built-in HTTP client. Includes garbage collection and stale-while-revalidate background updates.
 
 ```tsx
-import { useLoader, request } from "kizuna";
+import { useLoader, request } from "kazama";
 
 // Use the built-in HTTP client
 async function fetchUser(id: string) {
@@ -133,7 +133,7 @@ export function Profile({ id }) {
 For un-cached, immediate requests directly tied to UI state, you can use `useRequest`:
 
 ```tsx
-import { useRequest } from "kizuna";
+import { useRequest } from "kazama";
 
 export function TodoItem() {
   // Pass a URL directly — the library's built-in HTTP client handles the rest
@@ -155,7 +155,7 @@ export function TodoItem() {
 Persist chosen models to storage securely with auto-hydration.
 
 ```tsx
-import { createStore } from 'kizuna';
+import { createStore } from 'kazama';
 
 export const store = createStore({
   models: { /* your models */ }

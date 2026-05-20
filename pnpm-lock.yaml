@@ -20,9 +20,9 @@ importers:
       geist:
         specifier: latest
         version: 1.7.2(next@16.2.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
-      kizuna:
+      kazama:
         specifier: workspace:*
-        version: link:../../packages/kizuna
+        version: link:../../packages/kazama
       lucide-react:
         specifier: latest
         version: 1.24.0(react@19.2.7)
@@ -75,9 +75,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kizuna:
+      kazama:
         specifier: workspace:*
-        version: link:../../packages/kizuna
+        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -115,9 +115,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kizuna:
+      kazama:
         specifier: workspace:*
-        version: link:../../packages/kizuna
+        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -155,9 +155,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kizuna:
+      kazama:
         specifier: workspace:*
-        version: link:../../packages/kizuna
+        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -195,9 +195,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kizuna:
+      kazama:
         specifier: workspace:*
-        version: link:../../packages/kizuna
+        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -235,9 +235,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kizuna:
+      kazama:
         specifier: workspace:*
-        version: link:../../packages/kizuna
+        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -275,9 +275,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kizuna:
+      kazama:
         specifier: workspace:*
-        version: link:../../packages/kizuna
+        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -315,9 +315,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kizuna:
+      kazama:
         specifier: workspace:*
-        version: link:../../packages/kizuna
+        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -346,6 +346,31 @@ importers:
       vite:
         specifier: ^8.1.1
         version: 8.1.4(@types/node@24.13.3)(esbuild@0.27.7)(jiti@2.7.0)
+
+  packages/kazama:
+    dependencies:
+      ahooks:
+        specifier: ^3.9.7
+        version: 3.9.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      axios:
+        specifier: ^1.18.1
+        version: 1.18.1
+      immer:
+        specifier: ^10.0.0
+        version: 10.2.0
+      react:
+        specifier: ^18.0.0 || ^19.0.0
+        version: 19.2.7
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.17
+      tsup:
+        specifier: ^8.0.0
+        version: 8.5.1(jiti@2.7.0)(postcss@8.5.16)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
 
   packages/kizuna:
     dependencies:
