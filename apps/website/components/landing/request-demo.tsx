@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { useLoader } from '../../../../packages/musubi/dist'
+import { useLoader } from 'musubi'
 
 function fetchUser() {
   return new Promise((resolve) => {

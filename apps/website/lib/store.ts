@@ -1,4 +1,4 @@
-import { createStore } from '../../../packages/musubi/dist';
+import { createStore } from 'musubi';
 
 export const models = {
   settings: {

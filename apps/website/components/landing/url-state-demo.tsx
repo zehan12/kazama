@@ -1,6 +1,6 @@
 'use client'
 
-import { useQueryState, parseAsInteger, parseAsString } from '../../../../packages/musubi/dist';
+import { useQueryState, parseAsInteger, parseAsString } from 'musubi';
 
 export function URLStateDemoUI() {
   const [hello, setHello] = useQueryState("hello", parseAsString.withDefault(""));
