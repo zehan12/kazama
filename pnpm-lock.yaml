@@ -20,12 +20,12 @@ importers:
       geist:
         specifier: latest
         version: 1.7.2(next@16.2.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
+      kizuna:
+        specifier: workspace:*
+        version: link:../../packages/kizuna
       lucide-react:
         specifier: latest
         version: 1.24.0(react@19.2.7)
-      musubi:
-        specifier: workspace:*
-        version: link:../../packages/musubi
       next:
         specifier: latest
         version: 16.2.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -64,7 +64,7 @@ importers:
         specifier: latest
         version: 4.3.2
       typescript:
-        specifier: latest
+        specifier: ^7.0.2
         version: 7.0.2
 
   examples/advanced:
@@ -75,9 +75,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      musubi:
+      kizuna:
         specifier: workspace:*
-        version: link:../../packages/musubi
+        version: link:../../packages/kizuna
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -115,9 +115,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      musubi:
+      kizuna:
         specifier: workspace:*
-        version: link:../../packages/musubi
+        version: link:../../packages/kizuna
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -155,9 +155,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      musubi:
+      kizuna:
         specifier: workspace:*
-        version: link:../../packages/musubi
+        version: link:../../packages/kizuna
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -195,9 +195,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      musubi:
+      kizuna:
         specifier: workspace:*
-        version: link:../../packages/musubi
+        version: link:../../packages/kizuna
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -235,9 +235,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      musubi:
+      kizuna:
         specifier: workspace:*
-        version: link:../../packages/musubi
+        version: link:../../packages/kizuna
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -275,9 +275,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      musubi:
+      kizuna:
         specifier: workspace:*
-        version: link:../../packages/musubi
+        version: link:../../packages/kizuna
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -315,9 +315,9 @@ importers:
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      musubi:
+      kizuna:
         specifier: workspace:*
-        version: link:../../packages/musubi
+        version: link:../../packages/kizuna
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -347,7 +347,7 @@ importers:
         specifier: ^8.1.1
         version: 8.1.4(@types/node@24.13.3)(esbuild@0.27.7)(jiti@2.7.0)
 
-  packages/musubi:
+  packages/kizuna:
     dependencies:
       ahooks:
         specifier: ^3.9.7
