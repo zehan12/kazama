@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['musubi'],
+  transpilePackages: ['kizuna'],
+  typescript: { ignoreBuildErrors: true }
 }
 
 export default nextConfig

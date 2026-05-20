@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "musubi": "workspace:*",
+    "kizuna": "workspace:*",
     "developer-icons": "^7.0.1",
     "geist": "latest",
     "lucide-react": "latest",
@@ -28,6 +28,6 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "tailwindcss": "latest",
-    "typescript": "latest"
+    "typescript": "^7.0.2"
   }
 }
