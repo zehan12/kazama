@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @source "../";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --surface-base: #f7f7f8;
   --surface-surface: #ffffff;
