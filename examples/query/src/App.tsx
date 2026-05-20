@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLoader, useAction, request } from 'musubi';
+import { useLoader, useAction, request } from 'kizuna';
 
 function App() {
   const [userId, setUserId] = useState(1);

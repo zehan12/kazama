@@ -1,4 +1,4 @@
-import { createRequestInstance, setRequestInstance } from 'musubi';
+import { createRequestInstance, setRequestInstance } from 'kizuna';
 
 createRequestInstance();
 
@@ -16,6 +16,6 @@ setRequestInstance({
 
 // Since we only need the request functionality for this example,
 // we export a mock store that only exposes `useRequest`.
-import { createStore } from 'musubi';
+import { createStore } from 'kizuna';
 export const store = createStore({});
 export const { useRequest } = store;

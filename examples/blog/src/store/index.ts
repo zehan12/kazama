@@ -1,4 +1,4 @@
-import { createStore, createRequestInstance, setRequestInstance } from 'musubi';
+import { createStore, createRequestInstance, setRequestInstance } from 'kizuna';
 import * as models from '../models';
 
 const requestClient = createRequestInstance()['default'];
