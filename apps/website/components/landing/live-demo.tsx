@@ -9,7 +9,7 @@ import { CodeBlock } from '@/components/ui/code-block'
 
 const urlStateCode = `"use client";
 
-import { parseAsInteger, useQueryState } from "musubi";
+import { parseAsInteger, useQueryState } from "kizuna";
 
 export function Demo() {
   const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
@@ -33,7 +33,7 @@ export function Demo() {
 
 const requestCode = `"use client";
 
-import { useLoader, request } from "musubi";
+import { useLoader, request } from "kizuna";
 
 // Use the built-in HTTP client
 async function fetchUser() {
@@ -61,7 +61,7 @@ export function Profile() {
 
 const useRequestCode = `"use client";
 
-import { useRequest } from "musubi";
+import { useRequest } from "kizuna";
 
 export function TodoItem() {
   // Pass a URL directly — the library's built-in HTTP client handles the rest
@@ -80,7 +80,7 @@ export function TodoItem() {
   );
 }`
 
-const persistCode = `import { createStore } from 'musubi';
+const persistCode = `import { createStore } from 'kizuna';
 
 export const store = createStore({
   settings: {
@@ -99,9 +99,9 @@ export const store = createStore({
   }
 });`
 
-const storeCode = `import { createStore } from 'musubi';
+const storeCode = `import { createStore } from 'kizuna';
     state: {
-      items: [{ id: 1, text: 'Learn Musubi', done: false }],
+      items: [{ id: 1, text: 'Learn Kizuna', done: false }],
       filter: 'all' // 'all' | 'active' | 'completed'
     },
     reducers: {
@@ -132,7 +132,7 @@ const storeCode = `import { createStore } from 'musubi';
 
 const appCode = `"use client";
 
-import { useModel, useModelEffectsState } from "musubi";
+import { useModel, useModelEffectsState } from "kizuna";
 import { useState } from "react";
 
 export function TaskBoard() {
@@ -197,7 +197,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Synchronize your React state with the browser URL parameters natively. Features intelligent batching and type-safe parsers out of the box.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kizuna-radius)] p-6 shadow-sm w-full">
               <URLStateDemoUI />
               <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
                 <CodeBlock code={urlStateCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
@@ -214,7 +214,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Define your models and get deeply nested state mutations (via Immer), async effect tracking, and time-travel debugging with absolute zero boilerplate.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kizuna-radius)] p-6 shadow-sm w-full">
               <GlobalStoreDemoUI />
               <StoreCodeTabs 
                 storeTab={<CodeBlock code={storeCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />}
@@ -229,7 +229,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Manage cached network requests effortlessly with <code className="text-xs bg-raised px-1.5 py-0.5 rounded-md text-fg">useLoader</code>. Features suspense support, garbage collection, and automatic stale-while-revalidate background updates.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kizuna-radius)] p-6 shadow-sm w-full">
               <RequestDemoUI />
               <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
                 <CodeBlock code={requestCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
@@ -246,7 +246,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Need a quick network request tied to UI state? Our enhanced <code className="text-xs bg-raised px-1.5 py-0.5 rounded-md text-fg">useRequest</code> hook accepts URLs directly and gives you immediate loading and data states.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kizuna-radius)] p-6 shadow-sm w-full">
               <UseRequestDemoUI />
               <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
                 <CodeBlock code={useRequestCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
@@ -263,7 +263,7 @@ export function LiveDemo() {
             <p className="text-sm text-muted mb-6 leading-relaxed">
               Persist your chosen models to <code className="text-xs bg-raised px-1.5 py-0.5 rounded-md text-fg">localStorage</code> or <code className="text-xs bg-raised px-1.5 py-0.5 rounded-md text-fg">sessionStorage</code> securely. It auto-hydrates on load and synchronizes state mutations seamlessly.
             </p>
-            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--musubi-radius)] p-6 shadow-sm w-full">
+            <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kizuna-radius)] p-6 shadow-sm w-full">
               <PersistDemoUI />
               <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
                 <CodeBlock code={persistCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />

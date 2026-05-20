@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'TypeScript Guide | Musubi',
+  title: 'TypeScript Guide | Kizuna',
 }
 
-const typeGuideCode = `import { createStore, createModel } from 'musubi';
+const typeGuideCode = `import { createStore, createModel } from 'kizuna';
 
 // 1. Define your domain types
 interface User {
@@ -63,7 +63,7 @@ export default async function DocsTypeScriptPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            <code>musubi</code> is written in TypeScript and is designed to provide end-to-end type safety without requiring you to manually define massive global state interfaces.
+            <code>kizuna</code> is written in TypeScript and is designed to provide end-to-end type safety without requiring you to manually define massive global state interfaces.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default async function DocsTypeScriptPage() {
           <p className="text-muted leading-relaxed">
             The secret to perfect inference is the <code>createModel</code> utility. This is simply an identity function (it returns exactly what you pass it) at runtime. However, at compile time, it deeply infers the state, reducers, and effects of your model.
           </p>
-          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
             <CodeBlock code={typeGuideCode} lang="typescript" filename="models/auth.ts" />
           </div>
         </div>

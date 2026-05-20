@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'State Persistence | Musubi',
+  title: 'State Persistence | Kizuna',
 }
 
-const persistCode = `import { createStore } from 'musubi';
+const persistCode = `import { createStore } from 'kizuna';
 import models from './models';
 
 export const store = createStore(models, {
@@ -38,7 +38,7 @@ export default async function DocsPersistencePage() {
           <p className="text-muted leading-relaxed">
             When creating the store, pass a <code>persist</code> object in the configuration options. It will automatically rehydrate the state on load, and save the state whenever a reducer is dispatched.
           </p>
-          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
             <CodeBlock code={persistCode} lang="typescript" filename="store.ts" />
           </div>
         </div>

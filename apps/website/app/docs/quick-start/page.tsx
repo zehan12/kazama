@@ -3,16 +3,16 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Quick Start | Musubi',
+  title: 'Quick Start | Kizuna',
 }
 
-const installCode = `npm install musubi
+const installCode = `npm install kizuna
 # or
-pnpm add musubi
+pnpm add kizuna
 # or
-bun add musubi`
+bun add kizuna`
 
-const basicUsage = `import { createStore } from 'musubi';
+const basicUsage = `import { createStore } from 'kizuna';
 
 // 1. Define your models
 const models = {
@@ -49,13 +49,13 @@ export default async function DocsQuickStartPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Quick Start"
-      description="Learn how to install and set up your first store using musubi."
+      description="Learn how to install and set up your first store using kizuna."
     >
       <div className="flex flex-col gap-12">
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-fg">Installation</h2>
           <p className="text-muted">Install the package using your favorite package manager.</p>
-          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
             <CodeBlock code={installCode} lang="bash" filename="terminal" />
           </div>
         </div>
@@ -63,7 +63,7 @@ export default async function DocsQuickStartPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-fg">Basic Usage</h2>
           <p className="text-muted">Create a centralized store by defining models, state, and reducers. We use Immer under the hood, so you can mutate state directly.</p>
-          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
             <CodeBlock code={basicUsage} lang="typescript" filename="store.ts" />
           </div>
         </div>
@@ -71,7 +71,7 @@ export default async function DocsQuickStartPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-fg">Connecting Components</h2>
           <p className="text-muted">Use the automatically generated hooks to subscribe to state changes and dispatch actions.</p>
-          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
             <CodeBlock code={basicComponent} lang="tsx" filename="Counter.tsx" />
           </div>
         </div>

@@ -13,10 +13,10 @@ export function InstallCta() {
         </p>
 
         <div className="flex flex-col gap-4">
-          <TerminalBlock command="npm install musubi" label="npm.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="pnpm add musubi" label="pnpm.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="yarn add musubi" label="yarn.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="bun add musubi" label="bun.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="npm install kizuna" label="npm.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="pnpm add kizuna" label="pnpm.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="yarn add kizuna" label="yarn.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="bun add kizuna" label="bun.sh" className="w-full sm:max-w-sm" />
         </div>
 
         <div className="flex items-center gap-4 mt-8">
@@ -32,7 +32,7 @@ export function InstallCta() {
             GitHub
           </a>
           <a
-            href="https://www.npmjs.com/package/musubi"
+            href="https://www.npmjs.com/package/kizuna"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-sm text-dim hover:text-muted transition-colors font-mono"
@@ -44,7 +44,7 @@ export function InstallCta() {
 
         <div className="mt-16 pt-8 border-t border-line">
           <p className="text-xs font-mono text-dim">
-            musubi · MIT License
+            kizuna · MIT License
           </p>
         </div>
       </div>

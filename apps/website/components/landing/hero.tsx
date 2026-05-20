@@ -14,10 +14,10 @@ export function Hero() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-fg leading-[1] mb-2">
-          musubi
+          kizuna
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl font-light text-dim mb-1 font-sans">
-          結び
+          絆
         </p>
         <p className="text-sm text-dim font-mono mb-8">
           Japanese · noun · &quot;connection&quot; · &quot;bringing together&quot;

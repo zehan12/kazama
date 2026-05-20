@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useLoader | Musubi',
+  title: 'useLoader | Kizuna',
 }
 
-const basicCode = `import { useLoader } from 'musubi';
+const basicCode = `import { useLoader } from 'kizuna';
 
 async function fetchUser() {
   const res = await fetch('/api/user');
@@ -39,7 +39,7 @@ export default async function DocsUseLoaderPage() {
           <p className="text-muted">
             <code>useLoader</code> provides an experience similar to React Query or SWR. It handles aggressive caching, deduplication, automated polling, and background revalidation.
           </p>
-          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
             <CodeBlock code={basicCode} lang="tsx" filename="Profile.tsx" />
           </div>
         </div>

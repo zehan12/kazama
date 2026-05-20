@@ -1,20 +1,20 @@
-# Musubi (結び)
+# Kizuna (絆)
 
-Musubi is a high-performance React ecosystem for state, URL, and API management. It serves as a modern, lightweight, and modular alternative to Redux, built entirely on top of React's `useSyncExternalStore` and `immer` for predictable, immutable updates.
+Kizuna is a high-performance React ecosystem for state, URL, and API management. It serves as a modern, lightweight, and modular alternative to Redux, built entirely on top of React's `useSyncExternalStore` and `immer` for predictable, immutable updates.
 
-"Musubi" translates to "connection" or "bringing together" in Japanese, reflecting the library's goal of unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
+"Kizuna" translates to "connection" or "bringing together" in Japanese, reflecting the library's goal of unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
 
 ## Project Structure
 
 The repository is structured as a monorepo using `pnpm` workspaces:
 
-- `packages/musubi/`: The core library (`musubi`).
+- `packages/kizuna/`: The core library (`kizuna`).
 - `apps/website/`: The Next.js 14 (App Router) documentation website.
 - `examples/`: Various reference applications (Next.js, Vite, React Router) demonstrating advanced workflows.
 
 ## Core Features & Modules
 
-The `musubi` library provides three main pillars:
+The `kizuna` library provides three main pillars:
 
 ### 1. Global Client State (`createStore`, `createModel`, `useModel`)
 - Uses `immer` for immutable state transitions without boilerplate.
@@ -40,7 +40,7 @@ The `musubi` library provides three main pillars:
 
 ## Architecture Guidelines for LLMs
 
-If you are modifying or extending Musubi, please adhere to the following principles:
+If you are modifying or extending Kizuna, please adhere to the following principles:
 
 1. **Zero External Runtime Dependencies (Except Immer)**: The core library should remain exceptionally small (~3.8kB). Avoid adding third-party libraries for things that can be solved with native DOM/React APIs.
 2. **Hydration Safety**: Any hooks dealing with browser APIs (e.g., `window.location`, `localStorage`) must return deterministic default values during the initial render phase to avoid Next.js/React hydration mismatches. Sync from the browser strictly inside `useEffect`.
@@ -52,7 +52,7 @@ If you are modifying or extending Musubi, please adhere to the following princip
 
 ```typescript
 // 1. Creating a Store
-import { createStore, createModel } from 'musubi';
+import { createStore, createModel } from 'kizuna';
 const counter = createModel({
   state: { count: 0 },
   reducers: { increment: (state) => { state.count += 1 } }

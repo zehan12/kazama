@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Overview | Musubi',
+  title: 'Overview | Kizuna',
 }
 
 export default async function DocsOverviewPage() {
@@ -17,7 +17,7 @@ export default async function DocsOverviewPage() {
         </h1>
 
         <p className="text-[17px] text-muted leading-relaxed">
-          Musubi is for teams that want powerful state and API management without inheriting a massive boilerplate system. The library handles mutability, async tracking, suspense, and URL synchronization. Your product still owns the final logic.
+          Kizuna is for teams that want powerful state and API management without inheriting a massive boilerplate system. The library handles mutability, async tracking, suspense, and URL synchronization. Your product still owns the final logic.
         </p>
       </div>
 

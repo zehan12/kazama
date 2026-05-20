@@ -78,7 +78,7 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
 
-  --musubi-radius: 16px;
+  --kizuna-radius: 16px;
 }
 
 @layer base {

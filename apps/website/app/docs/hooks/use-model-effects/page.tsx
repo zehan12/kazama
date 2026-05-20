@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Effects State | Musubi',
+  title: 'Effects State | Kizuna',
 }
 
 const effectsCode = `import { store } from './store';
@@ -41,7 +41,7 @@ export default async function DocsEffectsStatePage() {
           <p className="text-muted leading-relaxed">
             When you define asynchronous <code>effects</code> in your models, the store automatically tracks their execution state. You can access this state using three specific hooks.
           </p>
-          <div className="overflow-hidden rounded-[var(--musubi-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
             <CodeBlock code={effectsCode} lang="tsx" filename="SubmitButton.tsx" />
           </div>
         </div>
