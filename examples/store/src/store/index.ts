@@ -1,4 +1,4 @@
-import { createStore } from 'kizuna';
+import { createStore } from 'kazama';
 import * as models from '../models';
 
 export const store = createStore(models, {

@@ -1,4 +1,4 @@
-import { createModel } from 'kizuna';
+import { createModel } from 'kazama';
 
 export const auth = createModel({
   state: {

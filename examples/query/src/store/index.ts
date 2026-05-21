@@ -1,4 +1,4 @@
-import { createRequestInstance, setRequestInstance } from 'kizuna';
+import { createRequestInstance, setRequestInstance } from 'kazama';
 
 createRequestInstance();
 
@@ -14,7 +14,7 @@ setRequestInstance({
   }
 });
 
-import { createStore, useLoader, useAction } from 'kizuna';
+import { createStore, useLoader, useAction } from 'kazama';
 export const store = createStore({});
 export const { useRequest } = store;
 export { useLoader, useAction };
