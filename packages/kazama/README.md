@@ -2,7 +2,7 @@
 
 Kazama is a high-performance React ecosystem for state, URL, and API management. It serves as a modern, lightweight, and modular alternative to Redux, built entirely on top of React's `useSyncExternalStore` and `immer` for predictable, immutable updates.
 
-"Kazama" translates to "connection" or "bringing together" in Japanese, reflecting the library's goal of unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
+"Kazama" translates to "between the winds" or "place of the wind" in Japanese, reflecting the library's swift, lightweight, and refreshing approach to unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
 
 ## Features
 
