@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useModel | Kizuna',
+  title: 'useModel | Kazama',
 }
 
 const useModelCode = `import { store } from './store';
@@ -49,7 +49,7 @@ export default async function DocsUseModelPage() {
           <p className="text-muted leading-relaxed">
             The <code>useModel</code> hook is the primary way to interact with your store inside React components. It returns a tuple containing the current state of the requested model and the auto-generated dispatchers.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={useModelCode} lang="tsx" filename="UserProfile.tsx" />
           </div>
         </div>
@@ -59,7 +59,7 @@ export default async function DocsUseModelPage() {
           <p className="text-muted leading-relaxed">
             By default, <code>useModel</code> will re-render your component whenever the state of that specific model changes. If you only need the dispatchers (for example, in a button component) or only need the state, you can use the isolated hooks to prevent unnecessary re-renders.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={isolatedCode} lang="tsx" filename="OptimizedComponents.tsx" />
           </div>
         </div>

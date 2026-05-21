@@ -13,7 +13,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
-      storageKey="kizuna-theme"
+      storageKey="kazama-theme"
     >
       {children}
     </NextThemesProvider>

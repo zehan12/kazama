@@ -1,7 +1,7 @@
 import { CodeBlock } from '@/components/ui/code-block'
 import { CopyButton } from '@/components/ui/copy-button'
 
-const basicExample = `import { createStore } from 'kizuna';
+const basicExample = `import { createStore } from 'kazama';
 import { user } from './models/user';
 
 const store = createStore({ user }, { name: 'AppStore' });
@@ -74,7 +74,7 @@ export function CodeShowcase() {
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
           <div className="min-w-0 flex flex-col gap-6">
-            <div className="min-w-0 border border-line bg-surface rounded-[var(--kizuna-radius)] overflow-hidden">
+            <div className="min-w-0 border border-line bg-surface rounded-[var(--kazama-radius)] overflow-hidden">
               <div className="flex items-center justify-between px-4 py-2 border-b border-line bg-raised">
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-1.5">
@@ -89,7 +89,7 @@ export function CodeShowcase() {
               <CodeBlock code={basicExample} lang="tsx" />
             </div>
 
-            <div className="min-w-0 border border-line bg-surface rounded-[var(--kizuna-radius)] overflow-hidden">
+            <div className="min-w-0 border border-line bg-surface rounded-[var(--kazama-radius)] overflow-hidden">
               <div className="flex items-center justify-between px-4 py-2 border-b border-line bg-raised">
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-1.5">
@@ -105,7 +105,7 @@ export function CodeShowcase() {
             </div>
           </div>
 
-          <div className="min-w-0 border border-line bg-surface rounded-[var(--kizuna-radius)] overflow-hidden">
+          <div className="min-w-0 border border-line bg-surface rounded-[var(--kazama-radius)] overflow-hidden">
             <div className="flex items-center justify-between px-4 py-2 border-b border-line bg-raised">
               <div className="flex items-center gap-2">
                 <div className="flex items-center gap-1.5">

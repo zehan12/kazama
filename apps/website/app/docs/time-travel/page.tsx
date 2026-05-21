@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Time Travel | Kizuna',
+  title: 'Time Travel | Kazama',
 }
 
 const timeTravelCode = `import { store } from './store';
@@ -33,7 +33,7 @@ export default async function DocsTimeTravelPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            Because <code>kizuna</code> enforces immutable state updates via Immer, it naturally keeps a history of state transitions. The library exposes a simple API to traverse this history.
+            Because <code>kazama</code> enforces immutable state updates via Immer, it naturally keeps a history of state transitions. The library exposes a simple API to traverse this history.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export default async function DocsTimeTravelPage() {
           <p className="text-muted leading-relaxed">
             The store instance exports <code>undo()</code> and <code>redo()</code> functions. Calling these will instantly revert or advance the global state, and all subscribed components will re-render automatically.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={timeTravelCode} lang="tsx" filename="EditorToolbar.tsx" />
           </div>
         </div>

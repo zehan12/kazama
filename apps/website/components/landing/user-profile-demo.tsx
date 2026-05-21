@@ -10,7 +10,7 @@ export function UserProfileDemo() {
 
   return (
     <div className={cn(
-      'flex flex-col text-left bg-base border border-line rounded-[var(--kizuna-radius)] overflow-hidden',
+      'flex flex-col text-left bg-base border border-line rounded-[var(--kazama-radius)] overflow-hidden',
       'w-full shadow-sm flex flex-col'
     )}>
       {/* Header */}

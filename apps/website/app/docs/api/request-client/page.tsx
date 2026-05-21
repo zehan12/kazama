@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'HTTP Client | Kizuna',
+  title: 'HTTP Client | Kazama',
 }
 
-const configCode = `import { createStore, request } from 'kizuna';
+const configCode = `import { createStore, request } from 'kazama';
 
 // 1. Configure the built-in request client (powered by Axios)
 request.interceptors.request.use((config) => {
@@ -33,7 +33,7 @@ export const store = createStore(models, {
   request: request 
 });`
 
-const multiInstanceCode = `import { createRequestInstance, setRequestInstance } from 'kizuna';
+const multiInstanceCode = `import { createRequestInstance, setRequestInstance } from 'kazama';
 
 // Create a named instance for a specific microservice
 const authClient = createRequestInstance('authApi');
@@ -54,7 +54,7 @@ export default async function DocsRequestClientPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            <code>kizuna</code> exports a pre-configured <code>request</code> object. This is a lightweight wrapper around <strong>Axios</strong>, providing a familiar API for HTTP requests with support for interceptors.
+            <code>kazama</code> exports a pre-configured <code>request</code> object. This is a lightweight wrapper around <strong>Axios</strong>, providing a familiar API for HTTP requests with support for interceptors.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default async function DocsRequestClientPage() {
           <p className="text-muted leading-relaxed">
             You can configure the default <code>request</code> client by adding interceptors for authentication, error handling, or response transformation. Passing this client into the store configuration ensures that hooks like <code>useRequest</code> use your customized network layer.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={configCode} lang="typescript" filename="store.ts" />
           </div>
         </div>
@@ -73,7 +73,7 @@ export default async function DocsRequestClientPage() {
           <p className="text-muted leading-relaxed">
             If your application talks to multiple APIs with different base URLs or authentication strategies, you can use the instance factory methods.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={multiInstanceCode} lang="typescript" filename="api.ts" />
           </div>
         </div>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 
 export const metadata: Metadata = {
-  title: 'Introduction | Kizuna',
+  title: 'Introduction | Kazama',
 }
 
 export default async function DocsIntroductionPage() {
@@ -10,13 +10,13 @@ export default async function DocsIntroductionPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Introduction"
-      description="Welcome to kizuna, the modern, all-in-one state and API management library for React."
+      description="Welcome to kazama, the modern, all-in-one state and API management library for React."
     >
       <div className="flex flex-col gap-12 text-fg">
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold">What is kizuna?</h2>
+          <h2 className="text-xl font-semibold">What is kazama?</h2>
           <p className="text-muted leading-relaxed">
-            <code>kizuna</code> is a comprehensive library designed to eliminate the boilerplate associated with state management, data fetching, and URL synchronization in modern React applications. 
+            <code>kazama</code> is a comprehensive library designed to eliminate the boilerplate associated with state management, data fetching, and URL synchronization in modern React applications. 
           </p>
           <p className="text-muted leading-relaxed">
             By leveraging React 18's <code>useSyncExternalStore</code> and the immutable drafting power of <code>Immer</code>, we provide a developer experience that is type-safe, highly performant, and incredibly simple.
@@ -29,7 +29,7 @@ export default async function DocsIntroductionPage() {
             Historically, React developers have had to stitch together multiple libraries to build production-ready applications. You might use Redux or Zustand for global state, React Query or SWR for data fetching, Nuqs for URL state, and Axios for HTTP requests.
           </p>
           <p className="text-muted leading-relaxed">
-            This fragmentation leads to context switching, bundle size bloat, and complex synchronization logic. <code>kizuna</code> unifies these concerns into a single, cohesive architecture.
+            This fragmentation leads to context switching, bundle size bloat, and complex synchronization logic. <code>kazama</code> unifies these concerns into a single, cohesive architecture.
           </p>
         </div>
 

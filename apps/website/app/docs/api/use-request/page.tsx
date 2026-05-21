@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useRequest | Kizuna',
+  title: 'useRequest | Kazama',
 }
 
 const useRequestCode = `import { store } from './store';
@@ -41,13 +41,13 @@ export default async function DocsUseRequestPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Overview</h2>
           <p className="text-muted leading-relaxed">
-            <code>kizuna</code> exposes a <code>useRequest</code> hook on your generated store instance. This is a direct wrapper around the highly popular <code>ahooks</code> <code>useRequest</code> library, but it comes pre-injected with your configured HTTP client.
+            <code>kazama</code> exposes a <code>useRequest</code> hook on your generated store instance. This is a direct wrapper around the highly popular <code>ahooks</code> <code>useRequest</code> library, but it comes pre-injected with your configured HTTP client.
           </p>
         </div>
 
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Usage</h2>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={useRequestCode} lang="tsx" filename="DashboardStats.tsx" />
           </div>
         </div>

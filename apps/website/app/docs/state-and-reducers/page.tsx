@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'State & Reducers | Kizuna',
+  title: 'State & Reducers | Kazama',
 }
 
-const basicStateCode = `import { createStore } from 'kizuna';
+const basicStateCode = `import { createStore } from 'kazama';
 
 const models = {
   todos: {
@@ -76,12 +76,12 @@ export default async function DocsStateAndReducersPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Writing Reducers</h2>
           <p className="text-muted leading-relaxed">
-            Reducers are synchronous functions that modify your state. Because <code>kizuna</code> uses <strong>Immer</strong> under the hood, the <code>state</code> argument you receive in a reducer is actually a mutable draft. 
+            Reducers are synchronous functions that modify your state. Because <code>kazama</code> uses <strong>Immer</strong> under the hood, the <code>state</code> argument you receive in a reducer is actually a mutable draft. 
           </p>
           <p className="text-muted leading-relaxed">
             You can <code>push</code> to arrays, delete keys, and reassign nested properties without having to spread objects (e.g. <code>...state</code>).
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={basicStateCode} lang="typescript" filename="store.ts" />
           </div>
         </div>
@@ -91,7 +91,7 @@ export default async function DocsStateAndReducersPage() {
           <p className="text-muted leading-relaxed">
             Unlike traditional Redux, there are no action types or manual dispatch functions. Your reducer names automatically become the names of your dispatcher functions.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={componentCode} lang="tsx" filename="TodoApp.tsx" />
           </div>
         </div>

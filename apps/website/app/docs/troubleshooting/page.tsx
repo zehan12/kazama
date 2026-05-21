@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 
 export const metadata: Metadata = {
-  title: 'Troubleshooting | Kizuna',
+  title: 'Troubleshooting | Kazama',
 }
 
 export default async function DocsTroubleshootingPage() {

@@ -37,7 +37,7 @@ export function FeaturesGrid() {
   return (
     <section className="w-full border-b border-line">
       <div className="max-w-4xl mx-auto px-4 py-10 sm:px-6 sm:py-16">
-        <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-surface">
+        <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-surface">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => {
             const Icon = f.icon

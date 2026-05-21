@@ -2,7 +2,7 @@ export const docsNav = [
   {
     title: 'Getting Started',
     items: [
-      { href: '/docs', label: 'Overview', description: 'What is kizuna?' },
+      { href: '/docs', label: 'Overview', description: 'What is kazama?' },
       { href: '/docs/installation', label: 'Installation', description: 'Install the package' },
       { href: '/docs/quick-start', label: 'Quick Start', description: 'Build your first store' },
       { href: '/docs/core-concepts', label: 'Core Concepts', description: 'Learn the fundamental concepts' },

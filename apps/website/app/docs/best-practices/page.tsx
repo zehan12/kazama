@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Best Practices | Kizuna',
+  title: 'Best Practices | Kazama',
 }
 
 const badPattern = `// ❌ Anti-pattern: Monolithic Model
@@ -42,10 +42,10 @@ export default async function DocsBestPracticesPage() {
             Avoid throwing all of your application state into a single, massive model. Break your state down into logical domains (e.g., Auth, Tasks, Settings, UI). This makes your codebase easier to navigate and improves React's rendering performance, as components will only subscribe to the specific domain they care about.
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+            <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
               <CodeBlock code={badPattern} lang="typescript" filename="Anti-pattern" />
             </div>
-            <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+            <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
               <CodeBlock code={goodPattern} lang="typescript" filename="Best Practice" />
             </div>
           </div>

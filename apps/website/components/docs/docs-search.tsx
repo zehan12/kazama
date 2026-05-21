@@ -26,7 +26,7 @@ export function DocsSearch() {
   return (
     <button
       onClick={() => toast('Search is coming soon!', { description: 'This feature is currently under development.' })}
-      className="flex w-full items-center justify-between rounded-[var(--kizuna-radius)] border border-line bg-surface px-3 py-2 text-sm text-dim transition-colors hover:border-line hover:text-fg"
+      className="flex w-full items-center justify-between rounded-[var(--kazama-radius)] border border-line bg-surface px-3 py-2 text-sm text-dim transition-colors hover:border-line hover:text-fg"
     >
       <div className="flex items-center gap-2">
         <Search className="h-4 w-4" />

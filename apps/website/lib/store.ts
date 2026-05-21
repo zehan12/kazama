@@ -1,4 +1,4 @@
-import { createStore } from 'kizuna';
+import { createStore } from 'kazama';
 
 export const models = {
   settings: {
@@ -31,7 +31,7 @@ export const models = {
   todos: {
     state: {
       items: [
-        { id: 1, text: 'Learn Kizuna', done: true },
+        { id: 1, text: 'Learn Kazama', done: true },
         { id: 2, text: 'Master deeply nested state', done: false },
       ],
       filter: 'all' // 'all', 'active', 'completed'

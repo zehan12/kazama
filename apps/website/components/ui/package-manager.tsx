@@ -9,12 +9,12 @@ export function PackageManager({ className }: { className?: string }) {
   const [active, setActive] = useState<'pnpm' | 'npm' | 'yarn' | 'bun' | 'deno' | 'ylt'>('pnpm')
 
   const commands = {
-    pnpm: 'pnpm add kizuna',
-    npm: 'npm install kizuna',
-    yarn: 'yarn add kizuna',
-    bun: 'bun add kizuna',
-    deno: 'deno add kizuna',
-    ylt: 'ylt add kizuna',
+    pnpm: 'pnpm add kazama',
+    npm: 'npm install kazama',
+    yarn: 'yarn add kazama',
+    bun: 'bun add kazama',
+    deno: 'deno add kazama',
+    ylt: 'ylt add kazama',
   }
 
   const renderCommand = (cmd: string) => {
@@ -29,7 +29,7 @@ export function PackageManager({ className }: { className?: string }) {
   }
 
   return (
-    <div className={cn('relative overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-surface text-sm shadow-sm', className)}>
+    <div className={cn('relative overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-surface text-sm shadow-sm', className)}>
       <div className="flex items-center gap-2 px-3 py-2 border-b border-line bg-base">
         <div className="bg-surface border border-line rounded p-1">
           <Terminal className="w-3.5 h-3.5 text-fg/70" />

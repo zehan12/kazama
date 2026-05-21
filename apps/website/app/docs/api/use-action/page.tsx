@@ -3,11 +3,11 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useAction | Kizuna',
+  title: 'useAction | Kazama',
 }
 
-const actionCode = `import { useAction } from 'kizuna';
-import { request } from 'kizuna';
+const actionCode = `import { useAction } from 'kazama';
+import { request } from 'kazama';
 
 async function deleteUser(id: string) {
   return request.delete(\`/api/users/\${id}\`);
@@ -56,7 +56,7 @@ export default async function DocsUseActionPage() {
 
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Usage</h2>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={actionCode} lang="tsx" filename="UserRow.tsx" />
           </div>
         </div>

@@ -3,10 +3,10 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'useQueryState | Kizuna',
+  title: 'useQueryState | Kazama',
 }
 
-const basicCode = `import { useQueryState, parseAsInteger } from 'kizuna';
+const basicCode = `import { useQueryState, parseAsInteger } from 'kazama';
 
 function Pagination() {
   // Syncs the "page" URL parameter with a fallback of 1
@@ -22,7 +22,7 @@ function Pagination() {
   );
 }`
 
-const batchingCode = `import { useQueryState, parseAsString, parseAsInteger } from 'kizuna';
+const batchingCode = `import { useQueryState, parseAsString, parseAsInteger } from 'kazama';
 
 function Filters() {
   const [query, setQuery] = useQueryState('q', parseAsString.withDefault(''));
@@ -48,7 +48,7 @@ export default async function DocsUseQueryStatePage() {
           <p className="text-muted">
             The <code>useQueryState</code> hook behaves exactly like <code>useState</code>, but it persists the state within the URL's search parameters. This makes your UI shareable, bookmarkable, and history-aware.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={basicCode} lang="tsx" filename="Pagination.tsx" />
           </div>
         </div>
@@ -71,9 +71,9 @@ export default async function DocsUseQueryStatePage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">URL Batching</h2>
           <p className="text-muted leading-relaxed">
-            If you have multiple components updating different query parameters at the same time, updating the <code>window.history</code> sequentially would cause race conditions. <code>kizuna</code> intelligently batches synchronous updates together into a single history transition.
+            If you have multiple components updating different query parameters at the same time, updating the <code>window.history</code> sequentially would cause race conditions. <code>kazama</code> intelligently batches synchronous updates together into a single history transition.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={batchingCode} lang="tsx" filename="Filters.tsx" />
           </div>
         </div>

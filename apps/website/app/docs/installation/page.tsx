@@ -3,16 +3,16 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Installation | Kizuna',
+  title: 'Installation | Kazama',
 }
 
-const installCode = `npm install kizuna
+const installCode = `npm install kazama
 # or
-pnpm add kizuna
+pnpm add kazama
 # or
-yarn add kizuna
+yarn add kazama
 # or
-bun add kizuna`
+bun add kazama`
 
 const peerDepsCode = `"peerDependencies": {
   "react": "^18.0.0 || ^19.0.0"
@@ -23,7 +23,7 @@ export default async function DocsInstallationPage() {
     <DocsPageFrame
       eyebrow="getting started"
       title="Installation"
-      description="Learn how to install kizuna and its peer dependencies."
+      description="Learn how to install kazama and its peer dependencies."
     >
       <div className="flex flex-col gap-12 text-fg">
         <div className="space-y-4">
@@ -31,7 +31,7 @@ export default async function DocsInstallationPage() {
           <p className="text-muted">
             You can install the library using your preferred Node package manager. The library ships with comprehensive TypeScript definitions out of the box.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={installCode} lang="bash" filename="terminal" />
           </div>
         </div>
@@ -39,9 +39,9 @@ export default async function DocsInstallationPage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Peer Dependencies</h2>
           <p className="text-muted">
-            <code>kizuna</code> leverages modern React primitives like <code>useSyncExternalStore</code>. Therefore, it requires React 18 or higher.
+            <code>kazama</code> leverages modern React primitives like <code>useSyncExternalStore</code>. Therefore, it requires React 18 or higher.
           </p>
-          <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+          <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
             <CodeBlock code={peerDepsCode} lang="json" filename="package.json" />
           </div>
         </div>

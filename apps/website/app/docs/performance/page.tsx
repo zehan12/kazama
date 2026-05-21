@@ -3,7 +3,7 @@ import { DocsPageFrame } from '@/components/docs/docs-page-frame'
 import { CodeBlock } from '@/components/ui/code-block'
 
 export const metadata: Metadata = {
-  title: 'Performance | Kizuna',
+  title: 'Performance | Kazama',
 }
 
 const badRenderCode = `function Avatar() {
@@ -33,7 +33,7 @@ export default async function DocsPerformancePage() {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">The useSyncExternalStore Advantage</h2>
           <p className="text-muted leading-relaxed">
-            Because <code>kizuna</code> is built on top of React 18's <code>useSyncExternalStore</code>, it avoids the "zombie child" problems and tearing issues commonly associated with older Context-based state management libraries. State subscriptions are inherently concurrent-safe.
+            Because <code>kazama</code> is built on top of React 18's <code>useSyncExternalStore</code>, it avoids the "zombie child" problems and tearing issues commonly associated with older Context-based state management libraries. State subscriptions are inherently concurrent-safe.
           </p>
         </div>
 
@@ -43,10 +43,10 @@ export default async function DocsPerformancePage() {
             By default, calling <code>useModel('user')</code> subscribes your component to the <em>entire</em> <code>user</code> model. Any change to any property in that model will trigger a re-render. To optimize this, you can pass a selector function to <code>useModelState</code>.
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+            <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
               <CodeBlock code={badRenderCode} lang="tsx" filename="Anti-pattern" />
             </div>
-            <div className="overflow-hidden rounded-[var(--kizuna-radius)] border border-line bg-base">
+            <div className="overflow-hidden rounded-[var(--kazama-radius)] border border-line bg-base">
               <CodeBlock code={goodRenderCode} lang="tsx" filename="Optimized" />
             </div>
           </div>
