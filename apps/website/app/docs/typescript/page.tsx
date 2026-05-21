@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'TypeScript Guide | Kazama',
 }
 
-const typeGuideCode = `import { createStore, createModel } from 'kazama';
+const typeGuideCode = `import { createStore, createModel } from '@zehankhan/kazama';
 
 // 1. Define your domain types
 interface User {

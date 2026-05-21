@@ -16,11 +16,11 @@ Kazama is a high-performance React ecosystem for state, URL, and API management.
 ## Installation
 
 ```bash
-npm install kazama
+npm install @zehankhan/kazama
 # or
-pnpm add kazama
+pnpm add @zehankhan/kazama
 # or
-yarn add kazama
+yarn add @zehankhan/kazama
 ```
 
 ## Quick Start
@@ -30,7 +30,7 @@ yarn add kazama
 Create a store with isolated models. Immer is built-in, so you can mutate the state directly in your reducers without needing to spread objects.
 
 ```tsx
-import { createStore, createModel, useModel } from 'kazama';
+import { createStore, createModel, useModel } from '@zehankhan/kazama';
 
 // Define an isolated model
 const todos = createModel({
@@ -78,7 +78,7 @@ export function TaskBoard() {
 Synchronize your React state with browser URL parameters natively and safely. Includes intelligent batching and handles SSR hydration perfectly.
 
 ```tsx
-import { useQueryState, parseAsInteger } from 'kazama';
+import { useQueryState, parseAsInteger } from '@zehankhan/kazama';
 
 export function Demo() {
   const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
@@ -103,7 +103,7 @@ export function Demo() {
 Manage cached network requests effortlessly with `useLoader` and the built-in HTTP client. Includes garbage collection and stale-while-revalidate background updates.
 
 ```tsx
-import { useLoader, request } from "kazama";
+import { useLoader, request } from "@zehankhan/kazama";
 
 // Use the built-in HTTP client
 async function fetchUser(id: string) {
@@ -133,7 +133,7 @@ export function Profile({ id }) {
 For un-cached, immediate requests directly tied to UI state, you can use `useRequest`:
 
 ```tsx
-import { useRequest } from "kazama";
+import { useRequest } from "@zehankhan/kazama";
 
 export function TodoItem() {
   // Pass a URL directly — the library's built-in HTTP client handles the rest
@@ -155,7 +155,7 @@ export function TodoItem() {
 Persist chosen models to storage securely with auto-hydration.
 
 ```tsx
-import { createStore } from 'kazama';
+import { createStore } from '@zehankhan/kazama';
 
 export const store = createStore({
   models: { /* your models */ }

@@ -1,4 +1,4 @@
-import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean, parseAsArrayOf } from 'kazama';
+import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean, parseAsArrayOf } from '@zehankhan/kazama';
 import './App.css';
 
 function App() {

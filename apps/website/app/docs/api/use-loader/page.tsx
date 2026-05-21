@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'useLoader | Kazama',
 }
 
-const basicCode = `import { useLoader } from 'kazama';
+const basicCode = `import { useLoader } from '@zehankhan/kazama';
 
 async function fetchUser() {
   const res = await fetch('/api/user');

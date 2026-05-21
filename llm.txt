@@ -52,7 +52,7 @@ If you are modifying or extending Kazama, please adhere to the following princip
 
 ```typescript
 // 1. Creating a Store
-import { createStore, createModel } from 'kazama';
+import { createStore, createModel } from '@zehankhan/kazama';
 const counter = createModel({
   state: { count: 0 },
   reducers: { increment: (state) => { state.count += 1 } }

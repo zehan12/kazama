@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Configuration | Kazama',
 }
 
-const configCode = `import { createStore, request } from 'kazama';
+const configCode = `import { createStore, request } from '@zehankhan/kazama';
 import models from './models';
 
 export const store = createStore(models, {

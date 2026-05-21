@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'useQueryState | Kazama',
 }
 
-const basicCode = `import { useQueryState, parseAsInteger } from 'kazama';
+const basicCode = `import { useQueryState, parseAsInteger } from '@zehankhan/kazama';
 
 function Pagination() {
   // Syncs the "page" URL parameter with a fallback of 1
@@ -22,7 +22,7 @@ function Pagination() {
   );
 }`
 
-const batchingCode = `import { useQueryState, parseAsString, parseAsInteger } from 'kazama';
+const batchingCode = `import { useQueryState, parseAsString, parseAsInteger } from '@zehankhan/kazama';
 
 function Filters() {
   const [query, setQuery] = useQueryState('q', parseAsString.withDefault(''));

@@ -1,6 +1,6 @@
 'use client'
 
-import { useQueryState, parseAsInteger, parseAsString } from 'kazama';
+import { useQueryState, parseAsInteger, parseAsString } from '@zehankhan/kazama';
 
 export function URLStateDemoUI() {
   const [hello, setHello] = useQueryState("hello", parseAsString.withDefault(""));

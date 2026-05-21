@@ -9,7 +9,7 @@ import { CodeBlock } from '@/components/ui/code-block'
 
 const urlStateCode = `"use client";
 
-import { parseAsInteger, useQueryState } from "kazama";
+import { parseAsInteger, useQueryState } from "@zehankhan/kazama";
 
 export function Demo() {
   const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
@@ -33,7 +33,7 @@ export function Demo() {
 
 const requestCode = `"use client";
 
-import { useLoader, request } from "kazama";
+import { useLoader, request } from "@zehankhan/kazama";
 
 // Use the built-in HTTP client
 async function fetchUser() {
@@ -61,7 +61,7 @@ export function Profile() {
 
 const useRequestCode = `"use client";
 
-import { useRequest } from "kazama";
+import { useRequest } from "@zehankhan/kazama";
 
 export function TodoItem() {
   // Pass a URL directly — the library's built-in HTTP client handles the rest
@@ -80,7 +80,7 @@ export function TodoItem() {
   );
 }`
 
-const persistCode = `import { createStore } from 'kazama';
+const persistCode = `import { createStore } from '@zehankhan/kazama';
 
 export const store = createStore({
   settings: {
@@ -99,7 +99,7 @@ export const store = createStore({
   }
 });`
 
-const storeCode = `import { createStore } from 'kazama';
+const storeCode = `import { createStore } from '@zehankhan/kazama';
     state: {
       items: [{ id: 1, text: 'Learn Kazama', done: false }],
       filter: 'all' // 'all' | 'active' | 'completed'
@@ -132,7 +132,7 @@ const storeCode = `import { createStore } from 'kazama';
 
 const appCode = `"use client";
 
-import { useModel, useModelEffectsState } from "kazama";
+import { useModel, useModelEffectsState } from "@zehankhan/kazama";
 import { useState } from "react";
 
 export function TaskBoard() {

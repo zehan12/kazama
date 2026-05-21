@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: 'Installation | Kazama',
 }
 
-const installCode = `npm install kazama
+const installCode = `npm install @zehankhan/kazama
 # or
-pnpm add kazama
+pnpm add @zehankhan/kazama
 # or
-yarn add kazama
+yarn add @zehankhan/kazama
 # or
 bun add kazama`
 

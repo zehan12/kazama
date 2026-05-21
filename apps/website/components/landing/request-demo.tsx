@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { useLoader } from 'kazama'
+import { useLoader } from '@zehankhan/kazama'
 
 function fetchUser() {
   return new Promise((resolve) => {

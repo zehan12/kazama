@@ -1,4 +1,4 @@
-import { createModel } from 'kazama';
+import { createModel } from '@zehankhan/kazama';
 
 export const sharedData = createModel({
   state: {

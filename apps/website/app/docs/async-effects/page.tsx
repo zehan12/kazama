@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Async Effects | Kazama',
 }
 
-const effectsCode = `import { createStore } from 'kazama';
+const effectsCode = `import { createStore } from '@zehankhan/kazama';
 
 const models = {
   auth: {

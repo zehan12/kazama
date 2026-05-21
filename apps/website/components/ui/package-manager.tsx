@@ -9,9 +9,9 @@ export function PackageManager({ className }: { className?: string }) {
   const [active, setActive] = useState<'pnpm' | 'npm' | 'yarn' | 'bun' | 'deno' | 'ylt'>('pnpm')
 
   const commands = {
-    pnpm: 'pnpm add kazama',
-    npm: 'npm install kazama',
-    yarn: 'yarn add kazama',
+    pnpm: 'pnpm add @zehankhan/kazama',
+    npm: 'npm install @zehankhan/kazama',
+    yarn: 'yarn add @zehankhan/kazama',
     bun: 'bun add kazama',
     deno: 'deno add kazama',
     ylt: 'ylt add kazama',

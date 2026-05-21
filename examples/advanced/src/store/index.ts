@@ -1,4 +1,4 @@
-import { createStore, createRequestInstance, setRequestInstance } from 'kazama';
+import { createStore, createRequestInstance, setRequestInstance } from '@zehankhan/kazama';
 import * as models from '../models';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';

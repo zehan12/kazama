@@ -1,4 +1,4 @@
-import { createStore } from 'kazama';
+import { createStore } from '@zehankhan/kazama';
 
 export const models = {
   settings: {

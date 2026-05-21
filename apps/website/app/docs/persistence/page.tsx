@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'State Persistence | Kazama',
 }
 
-const persistCode = `import { createStore } from 'kazama';
+const persistCode = `import { createStore } from '@zehankhan/kazama';
 import models from './models';
 
 export const store = createStore(models, {
