@@ -44,6 +44,46 @@ pnpm add @zehankhan/kazama
 yarn add @zehankhan/kazama
 ```
 
+### Quick Start (Global State)
+
+Create a store with isolated models. Immer is built-in, so you can mutate the state directly in your reducers without needing to spread objects.
+
+```tsx
+import { createStore, createModel, useModel } from '@zehankhan/kazama';
+
+// 1. Define an isolated model
+const todos = createModel({
+  state: {
+    items: [],
+  },
+  reducers: {
+    add(state, text: string) {
+      state.items.unshift({ id: Date.now(), text, done: false });
+    },
+    toggle(state, id: number) {
+      const item = state.items.find(i => i.id === id);
+      if (item) item.done = !item.done; 
+    }
+  }
+});
+
+// 2. Construct the store
+export const store = createStore({
+  models: { todos }
+});
+
+// 3. Consume state in your components
+export function TaskBoard() {
+  const [state, dispatchers] = useModel(store, 'todos');
+  
+  return (
+    <button onClick={() => dispatchers.add('Learn Kazama')}>
+      Add Todo
+    </button>
+  );
+}
+```
+
 ### Local Development
 
 If you'd like to contribute or run the workspace locally:
