@@ -85,6 +85,63 @@ export function TaskBoard() {
 }
 ```
 
+### URL State Management
+
+Synchronize your React state with browser URL parameters natively and safely. Includes intelligent batching and handles SSR hydration perfectly.
+
+```tsx
+import { useQueryState, parseAsInteger } from '@zehankhan/kazama';
+
+export function Demo() {
+  const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
+  const [count, setCount] = useQueryState("count", parseAsInteger.withDefault(0));
+  
+  return (
+    <>
+      <button onClick={() => setCount((c) => c + 1)}>Count: {count}</button>
+      <input
+        value={hello}
+        placeholder="Enter your name"
+        onChange={(e) => setHello(e.target.value || null)}
+      />
+      <p>Hello, {hello || "anonymous visitor"}!</p>
+    </>
+  );
+}
+```
+
+### Server State & Data Fetching
+
+Manage cached network requests effortlessly with `useLoader` and the built-in HTTP client. Includes garbage collection and stale-while-revalidate background updates.
+
+```tsx
+import { useLoader, request } from "@zehankhan/kazama";
+
+// Use the built-in HTTP client
+async function fetchUser(id: string) {
+  return await request.get(`/api/user/${id}`);
+}
+
+export function Profile({ id }) {
+  const { data, isLoading, isFetching, refetch } = useLoader({
+    key: ['user', id],
+    loader: () => fetchUser(id),
+    revalidateOnFocus: true
+  });
+  
+  if (isLoading) return <p>Loading...</p>;
+  
+  return (
+    <div>
+      <p>Name: {data.name}</p>
+      <button onClick={refetch}>
+        {isFetching ? 'Updating...' : 'Refresh'}
+      </button>
+    </div>
+  );
+}
+```
+
 ### Local Development
 
 If you'd like to contribute or run the workspace locally:
