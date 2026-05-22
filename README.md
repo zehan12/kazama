@@ -4,7 +4,8 @@ A high-performance React ecosystem for state, URL, and API management. It serves
 
 "Kazama" translates to "between the winds" or "place of the wind" in Japanese, reflecting the library's swift, lightweight, and refreshing approach to unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
 
-📦 **NPM Package**: [https://www.npmjs.com/package/@zehankhan/kazama](https://www.npmjs.com/package/@zehankhan/kazama)
+📦 **NPM Package**: [https://www.npmjs.com/package/@zehankhan/kazama](https://www.npmjs.com/package/@zehankhan/kazama)  
+🐙 **GitHub**: [https://github.com/zehan12/kazama](https://github.com/zehan12/kazama)
 
 ---
 

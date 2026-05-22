@@ -54,7 +54,7 @@ export function DocsSidebar() {
       {/* Footer Links */}
       <div className="flex flex-col gap-1 py-4">
         <a
-          href="https://github.com/react-store/core"
+          href="https://github.com/zehan12/kazama"
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-2 text-[14px] font-medium text-muted hover:text-fg px-3 py-2 rounded-md hover:bg-line/50 transition-colors"

@@ -23,7 +23,7 @@ export function HeroDemo() {
           Docs
         </Link>
         <a
-          href="https://github.com/ice-lab/react-store"
+          href="https://github.com/zehan12/kazama"
           target="_blank"
           rel="noreferrer"
           className="inline-flex h-11 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[var(--kazama-radius)] px-5 text-sm font-medium text-muted transition-colors hover:text-fg"

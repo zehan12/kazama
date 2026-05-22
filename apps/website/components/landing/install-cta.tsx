@@ -21,7 +21,7 @@ export function InstallCta() {
 
         <div className="flex items-center gap-4 mt-8">
           <a
-            href="https://github.com/ice-lab/react-store"
+            href="https://github.com/zehan12/kazama"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-sm text-dim hover:text-muted transition-colors font-mono"

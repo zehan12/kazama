@@ -47,7 +47,7 @@ export function DocsHeader() {
               <div className="h-5 w-px bg-line hidden sm:block" />
               
               <a 
-                href="https://github.com/react-store/core" 
+                href="https://github.com/zehan12/kazama" 
                 target="_blank" 
                 rel="noreferrer"
                 className="text-muted hover:text-fg transition-colors hidden sm:block"
