@@ -38,7 +38,7 @@ export function StoreCodeTabs({ storeTab, appTab }: StoreCodeTabsProps) {
         {activeTab === 'store' ? storeTab : appTab}
         <div className="absolute top-4 right-4">
           <CopyButton 
-            text={isValidElement(activeTab === 'store' ? storeTab : appTab) && (activeTab === 'store' ? storeTab : appTab)?.props?.code || ""} 
+            text={isValidElement(activeTab === 'store' ? storeTab : appTab) ? ((activeTab === 'store' ? storeTab : appTab) as any).props.code || "" : ""} 
             className="text-dim hover:text-fg bg-base border border-line rounded-md px-2 py-1 shadow-sm" 
           />
         </div>
