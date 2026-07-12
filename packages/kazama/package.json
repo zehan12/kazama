@@ -1,6 +1,6 @@
 {
   "name": "@zehankhan/kazama",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React-based store library using useSyncExternalStore and Immer",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
