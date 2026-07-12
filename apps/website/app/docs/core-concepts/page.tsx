@@ -46,7 +46,7 @@ export default async function DocsCoreConceptsPage() {
             Managing loading spinners and error messages for API calls is a universal pain point. In our architecture, every asynchronous <code>effect</code> automatically manages its own <code>isLoading</code> and <code>error</code> states globally. 
           </p>
           <p className="text-muted leading-relaxed">
-            Components can easily tap into these variables using the <code>useModelEffectsState</code> hook.
+            Components can easily tap into these variables using the <code>useModelEffectsLoading</code> and <code>useModelEffectsError</code> hooks.
           </p>
         </div>
       </div>

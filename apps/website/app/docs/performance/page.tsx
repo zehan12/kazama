@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const badRenderCode = `function Avatar() {
   // ❌ Subscribes to the entire user model. 
   // Will re-render if the user's "email" or "preferences" change!
-  const [user] = store.useModel('user');
+  const [user] = useModel('user');
   
   return <img src={user.avatarUrl} />;
 }`
@@ -17,7 +17,7 @@ const badRenderCode = `function Avatar() {
 const goodRenderCode = `function Avatar() {
   // ✅ Subscribes ONLY to the avatarUrl.
   // Will NOT re-render if other user properties change.
-  const avatarUrl = store.useModelState('user', (state) => state.avatarUrl);
+  const avatarUrl = useModelState('user', (state) => state.avatarUrl);
   
   return <img src={avatarUrl} />;
 }`

@@ -27,14 +27,13 @@ const models = {
 };
 
 // 2. Create the store
-const store = createStore(models, { name: 'MyStore' });
-export default store;`
+export const { useModel } = createStore(models, { name: 'MyStore' });`
 
-const basicComponent = `import store from './store';
+const basicComponent = `import { useModel } from './store';
 
 function Counter() {
   // 3. Connect to the store using hooks
-  const [state, dispatchers] = store.useModel('counter');
+  const [state, dispatchers] = useModel('counter');
 
   return (
     <div>

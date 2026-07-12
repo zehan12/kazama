@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'useRequest | Kazama',
 }
 
-const useRequestCode = `import { store } from './store';
+const useRequestCode = `import { useModel, useModelState, useModelDispatchers, useModelEffectsLoading, useModelEffectsError } from './store';
 
 function DashboardStats() {
   // Uses the globally configured Axios instance under the hood

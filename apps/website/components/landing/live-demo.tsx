@@ -133,19 +133,19 @@ const storeCode = `import { createStore } from '@zehankhan/kazama';
 
 const appCode = `"use client";
 
-import { useModel, useModelEffectsState } from "@zehankhan/kazama";
+import { useModel, useModelEffectsLoading } from "./store";
 import { useState } from "react";
 
 export function TaskBoard() {
   const [state, dispatchers] = useModel('todos');
-  const { sync } = useModelEffectsState('todos');
+  const loading = useModelEffectsLoading('todos');
   const [text, setText] = useState('');
 
   return (
     <div>
       <div className="header">
-        <button onClick={() => dispatchers.sync()} disabled={sync?.isLoading}>
-          {sync?.isLoading ? 'Syncing...' : 'Sync Data'}
+        <button onClick={() => dispatchers.sync()} disabled={loading.sync}>
+          {loading.sync ? 'Syncing...' : 'Sync Data'}
         </button>
       </div>
 

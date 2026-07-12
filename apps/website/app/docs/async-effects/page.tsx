@@ -45,14 +45,14 @@ const models = {
   }
 };`
 
-const componentCode = `import { store } from './store';
+const componentCode = `import { useModel, useModelState, useModelDispatchers, useModelEffectsLoading, useModelEffectsError } from './store';
 
 function LoginForm() {
-  const dispatchers = store.useModelDispatchers('auth');
+  const dispatchers = useModelDispatchers('auth');
   
   // Magically track loading and error states for specific effects!
-  const loading = store.useModelEffectsLoading('auth');
-  const errors = store.useModelEffectsError('auth');
+  const loading = useModelEffectsLoading('auth');
+  const errors = useModelEffectsError('auth');
 
   const handleLogin = () => {
     dispatchers.login({ username: 'admin', password: 'password' });

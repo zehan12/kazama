@@ -6,7 +6,7 @@ import { user } from './models/user';
 
 const store = createStore({ user }, { name: 'AppStore' });
 
-export const { useModel, useModelEffectsState } = store;
+export const { useModel, useModelEffectsLoading, useModelEffectsError } = store;
 export default store;`
 
 const modelExample = `
@@ -33,28 +33,29 @@ export const user = {
   })
 };`
 
-const componentExample = `import { useModel, useModelEffectsState } from './store';
+const componentExample = `import { useModel, useModelEffectsLoading, useModelEffectsError } from './store';
 
 function UserProfile() {
   const [state, dispatchers] = useModel('user');
-  const { getUserInfo } = useModelEffectsState('user');
+  const loading = useModelEffectsLoading('user');
+  const errors = useModelEffectsError('user');
 
   return (
     <div>
       <span>Username: {state.username}</span>
       <span>ID: {state.id}</span>
       
-      {getUserInfo.error && (
+      {errors.getUserInfo?.value && (
         <span style={{ color: 'red' }}>
-          {String(getUserInfo.error.message || 'Error occurred')}
+          {String(errors.getUserInfo.error.message || 'Error occurred')}
         </span>
       )}
 
       <button 
         onClick={() => dispatchers.getUserInfo()}
-        disabled={getUserInfo.isLoading}
+        disabled={loading.getUserInfo}
       >
-        {getUserInfo.isLoading ? 'Loading...' : 'Fetch User'}
+        {loading.getUserInfo ? 'Loading...' : 'Fetch User'}
       </button>
     </div>
   );

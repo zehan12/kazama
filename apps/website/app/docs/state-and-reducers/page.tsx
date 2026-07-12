@@ -32,10 +32,10 @@ const models = {
 
 export const store = createStore(models);`
 
-const componentCode = `import { store } from './store';
+const componentCode = `import { useModel, useModelState, useModelDispatchers, useModelEffectsLoading, useModelEffectsError } from './store';
 
 function TodoApp() {
-  const [state, dispatchers] = store.useModel('todos');
+  const [state, dispatchers] = useModel('todos');
 
   return (
     <div>

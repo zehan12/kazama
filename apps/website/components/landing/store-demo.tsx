@@ -2,12 +2,12 @@
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/cn'
-import store, { useModel, useModelEffectsState } from '@/lib/store'
+import store, { useModel, useModelEffectsLoading } from '@/lib/store'
 import { useState } from 'react'
 
 export function GlobalStoreDemoUI() {
   const [state, dispatchers] = useModel('todos');
-  const { sync } = useModelEffectsState('todos');
+  const loading = useModelEffectsLoading('todos');
   const [inputValue, setInputValue] = useState('');
 
   const handleAdd = (e: React.FormEvent) => {
@@ -40,8 +40,8 @@ export function GlobalStoreDemoUI() {
             {activeCount} active {activeCount === 1 ? 'task' : 'tasks'} remaining
           </span>
         </div>
-        <Button size="sm" onClick={() => dispatchers.sync()} disabled={sync?.isLoading}>
-          {sync?.isLoading ? 'Syncing to Cloud...' : 'Sync Data'}
+        <Button size="sm" onClick={() => dispatchers.sync()} disabled={loading.sync}>
+          {loading.sync ? 'Syncing to Cloud...' : 'Sync Data'}
         </Button>
       </div>
       

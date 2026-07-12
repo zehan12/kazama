@@ -2,11 +2,12 @@
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/cn'
-import store, { useModel, useModelEffectsState } from '@/lib/store'
+import store, { useModel, useModelEffectsLoading, useModelEffectsError } from '@/lib/store'
 
 export function UserProfileDemo() {
   const [state, dispatchers] = useModel('user');
-  const { getUserInfo } = useModelEffectsState('user');
+  const loading = useModelEffectsLoading('user');
+  const errors = useModelEffectsError('user');
 
   return (
     <div className={cn(
@@ -19,11 +20,11 @@ export function UserProfileDemo() {
           User Profile
         </h3>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => dispatchers.reset()} disabled={getUserInfo.isLoading || state.id === '000'}>
+          <Button variant="outline" size="sm" onClick={() => dispatchers.reset()} disabled={loading.getUserInfo || state.id === '000'}>
             Reset
           </Button>
-          <Button size="sm" onClick={() => dispatchers.getUserInfo()} disabled={getUserInfo.isLoading}>
-            {getUserInfo.isLoading ? 'Fetching...' : 'Fetch User'}
+          <Button size="sm" onClick={() => dispatchers.getUserInfo()} disabled={loading.getUserInfo}>
+            {loading.getUserInfo ? 'Fetching...' : 'Fetch User'}
           </Button>
         </div>
       </div>
@@ -34,10 +35,10 @@ export function UserProfileDemo() {
           <div className="flex justify-between items-center pb-4 border-b border-line">
             <span className="text-sm font-mono text-dim">Status (Auto-tracked)</span>
             <span className="text-sm font-mono font-medium">
-              {getUserInfo.isLoading ? (
+              {loading.getUserInfo ? (
                 <span className="text-[#febc2e]">isLoading: true</span>
-              ) : getUserInfo.error ? (
-                <span className="text-[#ff5f57]">error: {String(getUserInfo.error.message || 'Error')}</span>
+              ) : errors.getUserInfo?.value ? (
+                <span className="text-[#ff5f57]">error: {String(errors.getUserInfo.error.message || 'Error')}</span>
               ) : (
                 <span className="text-[#28c840]">Idle</span>
               )}

@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: 'useModel | Kazama',
 }
 
-const useModelCode = `import { store } from './store';
+const useModelCode = `import { useModel, useModelState, useModelDispatchers, useModelEffectsLoading, useModelEffectsError } from './store';
 
 function UserProfile() {
   // Returns a tuple: [state, dispatchers]
-  const [userState, dispatchers] = store.useModel('user');
+  const [userState, dispatchers] = useModel('user');
 
   return (
     <div>
@@ -22,17 +22,17 @@ function UserProfile() {
   );
 }`
 
-const isolatedCode = `import { store } from './store';
+const isolatedCode = `import { useModel, useModelState, useModelDispatchers, useModelEffectsLoading, useModelEffectsError } from './store';
 
 function UserAvatar() {
   // Only subscribes to state, avoiding dispatcher recreation
-  const userState = store.useModelState('user');
+  const userState = useModelState('user');
   return <img src={userState.avatarUrl} alt="Avatar" />;
 }
 
 function LogoutButton() {
   // Only subscribes to dispatchers, will never re-render when state changes
-  const dispatchers = store.useModelDispatchers('auth');
+  const dispatchers = useModelDispatchers('auth');
   return <button onClick={() => dispatchers.logout()}>Logout</button>;
 }`
 

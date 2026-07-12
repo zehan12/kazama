@@ -83,7 +83,7 @@ export default async function DocsTypeScriptPage() {
             Because the store is typed from the models, your React components get perfect autocomplete:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-muted">
-            <li><code>store.useModel('auth')</code> will autocomplete the model keys.</li>
+            <li><code>useModel('auth')</code> will autocomplete the model keys.</li>
             <li>The <code>state</code> returned will be inferred as <code>AuthState</code>.</li>
             <li>The <code>dispatchers</code> object will correctly require the arguments defined in your reducers and effects.</li>
           </ul>

@@ -88,5 +88,5 @@ const store = createStore(models, {
   }
 });
 
-export const { useModel, useModelState, useModelDispatchers, useModelEffectsState, useRequest } = store;
+export const { useModel, useModelState, useModelDispatchers, useModelEffectsLoading, useModelEffectsError, useRequest } = store;
 export default store;

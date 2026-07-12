@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   title: 'Effects State | Kazama',
 }
 
-const effectsCode = `import { store } from './store';
+const effectsCode = `import { useModel, useModelState, useModelDispatchers, useModelEffectsLoading, useModelEffectsError } from './store';
 
 function SubmitButton() {
   // Returns an object containing the loading state for all effects in the 'form' model
-  const loading = store.useModelEffectsLoading('form');
+  const loading = useModelEffectsLoading('form');
   
   // Returns an object containing the error state for all effects
-  const errors = store.useModelEffectsError('form');
+  const errors = useModelEffectsError('form');
 
   return (
     <div className="flex flex-col gap-2">
@@ -56,10 +56,6 @@ export default async function DocsEffectsStatePage() {
             <li>
               <strong><code>useModelEffectsError(modelKey)</code></strong>: 
               Returns an object where the keys are the names of your effects, and the values are an object containing <code>&#123; value: boolean, error: any &#125;</code>.
-            </li>
-            <li>
-              <strong><code>useModelEffectsState(modelKey)</code></strong>: 
-              Returns a combined object containing both the loading and error states for all effects. Useful if you need both in a single subscription.
             </li>
           </ul>
         </div>

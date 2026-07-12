@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Time Travel | Kazama',
 }
 
-const timeTravelCode = `import { store } from './store';
+const timeTravelCode = `import { useModel, useModelState, useModelDispatchers, useModelEffectsLoading, useModelEffectsError } from './store';
 
 function EditorToolbar() {
   return (
