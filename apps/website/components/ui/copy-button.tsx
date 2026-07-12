@@ -16,9 +16,7 @@ export function CopyButton({ text, className }: CopyButtonProps) {
   function handleCopy() {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true)
-      toast.success('Copied to clipboard', {
-        description: text,
-      })
+      toast.success('Copied to clipboard')
       setTimeout(() => setCopied(false), 2000)
     })
   }

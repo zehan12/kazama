@@ -8,6 +8,10 @@ interface CodeBlockProps {
   filename?: string
   className?: string
   theme?: string
+  themes?: {
+    light: string
+    dark: string
+  }
 }
 
 export async function CodeBlock({
@@ -16,13 +20,14 @@ export async function CodeBlock({
   filename,
   className,
   theme,
+  themes,
 }: CodeBlockProps) {
   const html = await codeToHtml(code.trim(), theme ? {
     lang,
     theme,
   } : {
     lang,
-    themes: {
+    themes: themes || {
       light: 'vitesse-light',
       dark: 'vitesse-dark',
     },

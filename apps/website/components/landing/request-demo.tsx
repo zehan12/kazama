@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { useLoader } from '@zehankhan/kazama'
+import { JsonViewer } from '@/components/ui/json-viewer'
 
 function fetchUser() {
   return new Promise((resolve) => {
@@ -47,9 +48,9 @@ export function RequestDemoUI() {
             {isLoading && !data ? (
               <div className="h-20 w-full animate-pulse bg-line/50 rounded-md"></div>
             ) : (
-              <pre className="text-sm font-mono bg-[#0d0d0d] p-4 rounded-xl text-[#86efac] overflow-x-auto border border-line/40">
-                {JSON.stringify(data, null, 2)}
-              </pre>
+              <div className="overflow-hidden bg-surface rounded-[var(--kazama-radius)] border border-line">
+                <JsonViewer data={data} className="p-4 overflow-x-auto text-sm" />
+              </div>
             )}
           </div>
         </div>

@@ -2,6 +2,8 @@
 
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
+import { useRequest } from '@zehankhan/kazama'
+import { JsonViewer } from '@/components/ui/json-viewer'
 
 export function UseRequestDemoUI() {
   const [loading, setLoading] = useState(false)
@@ -46,9 +48,9 @@ export function UseRequestDemoUI() {
             {loading && !data ? (
                <div className="h-20 w-full animate-pulse bg-line/50 rounded-md"></div>
             ) : data ? (
-              <pre className="text-sm font-mono bg-[#0d0d0d] p-4 rounded-xl text-[#86efac] overflow-x-auto border border-line/40">
-                {JSON.stringify(data, null, 2)}
-              </pre>
+              <div className="overflow-hidden bg-surface rounded-[var(--kazama-radius)] border border-line">
+                <JsonViewer data={data} className="p-4 overflow-x-auto text-sm" />
+              </div>
             ) : (
                <div className="h-20 w-full border border-dashed border-line/50 rounded-md flex items-center justify-center">
                  <span className="text-dim text-sm">Click 'Fire Request' to load data</span>

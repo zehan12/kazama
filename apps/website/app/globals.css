@@ -115,6 +115,10 @@ html.dark .shiki-dual-theme .shiki span {
   background-color: transparent !important;
 }
 
+html.dark .shiki-dual-theme .shiki span {
+  color: var(--shiki-dark) !important;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--surface-elevated) transparent;

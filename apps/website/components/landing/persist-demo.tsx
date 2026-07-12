@@ -3,6 +3,7 @@
 import { useModel } from "@/lib/store";
 import { useState, useEffect } from "react";
 import { Moon, Sun, Bell, BellOff } from "lucide-react";
+import { JsonViewer } from "@/components/ui/json-viewer";
 
 export function PersistDemoUI() {
   const [state, dispatchers] = useModel('settings');
@@ -68,8 +69,8 @@ export function PersistDemoUI() {
             <span className="text-[10px] uppercase font-bold text-[#28c840] tracking-widest">Live</span>
           </div>
         </div>
-        <div className="p-4 overflow-x-auto text-[13px] font-mono text-fg whitespace-pre min-h-[140px] leading-relaxed">
-          {localStorageValue || 'Waiting...'}
+        <div className="overflow-hidden bg-surface min-h-[140px]">
+          <JsonViewer data={localStorageValue || 'Waiting...'} className="p-4 overflow-x-auto" />
         </div>
       </div>
     </div>
