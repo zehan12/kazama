@@ -49,12 +49,16 @@ export function HeroDemo() {
             </p>
           </div>
 
-          <div className="flex items-center p-4 bg-base rounded-md border border-line overflow-x-auto whitespace-nowrap scrollbar-hide">
-            <div className="flex items-center gap-2 text-lg font-mono min-w-0">
+          <div className="flex items-center p-4 bg-base rounded-md border border-line">
+            <div className="flex items-center gap-2 text-lg font-mono">
               <span className="text-dim shrink-0">Count:</span>
               <NumberFlow
                 value={state.count}
-                format={{ minimumIntegerDigits: 2 }}
+                format={{ 
+                  minimumIntegerDigits: 2,
+                  notation: Math.abs(state.count) >= 1e11 ? 'scientific' : 'standard',
+                  maximumFractionDigits: 2
+                }}
                 className="font-semibold text-fg"
                 animated={true}
               />
