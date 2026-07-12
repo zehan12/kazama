@@ -10,7 +10,7 @@ const installCode = `npm install @zehankhan/kazama
 # or
 pnpm add @zehankhan/kazama
 # or
-bun add kazama`
+bun add @zehankhan/kazama`
 
 const basicUsage = `import { createStore } from '@zehankhan/kazama';
 

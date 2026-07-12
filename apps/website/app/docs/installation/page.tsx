@@ -12,7 +12,7 @@ pnpm add @zehankhan/kazama
 # or
 yarn add @zehankhan/kazama
 # or
-bun add kazama`
+bun add @zehankhan/kazama`
 
 const peerDepsCode = `"peerDependencies": {
   "react": "^18.0.0 || ^19.0.0"
