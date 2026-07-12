@@ -2,13 +2,12 @@
 
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
-import { useRequest } from '@zehankhan/kazama'
 import { JsonViewer } from '@/components/ui/json-viewer'
 
 export function UseRequestDemoUI() {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState<any>(null)
-  
+
   const handleRequest = () => {
     setLoading(true)
     setTimeout(() => {
@@ -27,7 +26,7 @@ export function UseRequestDemoUI() {
           {loading ? 'Requesting...' : 'Fire Request'}
         </Button>
       </div>
-      
+
       <div className="flex flex-col p-6">
         <div className="flex flex-col gap-4 p-5 bg-surface rounded-md border border-line">
           <div className="flex justify-between items-center pb-4 border-b border-line">
@@ -42,19 +41,19 @@ export function UseRequestDemoUI() {
               )}
             </span>
           </div>
-          
+
           <div className="flex flex-col">
             <span className="text-sm font-mono text-dim mb-2">Data</span>
             {loading && !data ? (
-               <div className="h-20 w-full animate-pulse bg-line/50 rounded-md"></div>
+              <div className="h-20 w-full animate-pulse bg-line/50 rounded-md"></div>
             ) : data ? (
               <div className="overflow-hidden bg-surface rounded-[var(--kazama-radius)] border border-line">
                 <JsonViewer data={data} className="p-4 overflow-x-auto text-sm" />
               </div>
             ) : (
-               <div className="h-20 w-full border border-dashed border-line/50 rounded-md flex items-center justify-center">
-                 <span className="text-dim text-sm">Click 'Fire Request' to load data</span>
-               </div>
+              <div className="h-20 w-full border border-dashed border-line/50 rounded-md flex items-center justify-center">
+                <span className="text-dim text-sm">Click 'Fire Request' to load data</span>
+              </div>
             )}
           </div>
         </div>
