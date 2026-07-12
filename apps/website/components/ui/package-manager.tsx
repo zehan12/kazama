@@ -12,9 +12,9 @@ export function PackageManager({ className }: { className?: string }) {
     pnpm: 'pnpm add @zehankhan/kazama',
     npm: 'npm install @zehankhan/kazama',
     yarn: 'yarn add @zehankhan/kazama',
-    bun: 'bun add kazama',
-    deno: 'deno add kazama',
-    ylt: 'ylt add kazama',
+    bun: 'bun add @zehankhan/kazama',
+    deno: 'deno add @zehankhan/kazama',
+    ylt: 'ylt add @zehankhan/kazama',
   }
 
   const renderCommand = (cmd: string) => {
