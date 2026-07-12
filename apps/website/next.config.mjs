@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['kazama'],
+  transpilePackages: ['@zehankhan/kazama'],
   typescript: { ignoreBuildErrors: true }
 }
 
