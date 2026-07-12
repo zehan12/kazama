@@ -48,37 +48,41 @@ export function HeroDemo() {
               Test out the reactive state updates.
             </p>
           </div>
-          
-          <div className="flex items-center justify-between p-4 bg-base rounded-md border border-line">
-            <div className="flex items-center gap-2 text-lg font-mono">
-              <span className="text-dim">Count:</span>
-              <NumberFlow 
-                value={state.count} 
-                format={{ minimumIntegerDigits: 2 }} 
+
+          <div className="flex items-center p-4 bg-base rounded-md border border-line overflow-x-auto whitespace-nowrap scrollbar-hide">
+            <div className="flex items-center gap-2 text-lg font-mono min-w-0">
+              <span className="text-dim shrink-0">Count:</span>
+              <NumberFlow
+                value={state.count}
+                format={{ minimumIntegerDigits: 2 }}
                 className="font-semibold text-fg"
                 animated={true}
               />
             </div>
-            <div className="flex flex-wrap gap-2">
-              <Button variant="outline" size="sm" onClick={() => dispatchers.sub5()}>
-                -5
-              </Button>
-              <Button variant="outline" size="sm" onClick={() => dispatchers.decrement()}>
-                <Minus className="w-4 h-4" />
-              </Button>
-              <Button variant="outline" size="sm" onClick={() => dispatchers.increment()}>
-                <Plus className="w-4 h-4" />
-              </Button>
-              <Button variant="outline" size="sm" onClick={() => dispatchers.add5()}>
-                +5
-              </Button>
-              <Button variant="outline" size="sm" onClick={() => dispatchers.mul5()}>
-                x5
-              </Button>
-              <Button variant="outline" size="sm" onClick={() => dispatchers.pow2()}>
-                x²
-              </Button>
-            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button variant="outline" size="sm" onClick={() => dispatchers.sub5()}>
+              -5
+            </Button>
+            <Button variant="outline" size="sm" onClick={() => dispatchers.decrement()}>
+              <Minus className="w-4 h-4" />
+            </Button>
+            <Button variant="outline" size="sm" onClick={() => dispatchers.increment()}>
+              <Plus className="w-4 h-4" />
+            </Button>
+            <Button variant="outline" size="sm" onClick={() => dispatchers.add5()}>
+              +5
+            </Button>
+            <Button variant="outline" size="sm" onClick={() => dispatchers.mul5()}>
+              x5
+            </Button>
+            <Button variant="outline" size="sm" onClick={() => dispatchers.pow2()}>
+              x²
+            </Button>
+            <div className="w-full h-px bg-line my-1" />
+            <Button variant="secondary" size="sm" className="w-full" onClick={() => dispatchers.reset()}>
+              Reset Counter
+            </Button>
           </div>
         </div>
       </div>

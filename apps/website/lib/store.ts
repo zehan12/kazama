@@ -37,6 +37,9 @@ export const models = {
       },
       pow2(state: { count: number }) {
         state.count = Math.pow(state.count, 2);
+      },
+      reset(state: { count: number }) {
+        state.count = 0;
       }
     }
   },
