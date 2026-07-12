@@ -5,6 +5,7 @@ import { Plus, Minus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/cn'
 import { useModel } from '@/lib/store'
+import NumberFlow from '@number-flow/react'
 
 export function HeroDemo() {
   const [state, dispatchers] = useModel('counter')
@@ -49,13 +50,33 @@ export function HeroDemo() {
           </div>
           
           <div className="flex items-center justify-between p-4 bg-base rounded-md border border-line">
-            <span className="text-lg font-mono">Count: {state.count}</span>
-            <div className="flex gap-2">
-              <Button variant="secondary" size="sm" onClick={() => dispatchers.decrement()}>
+            <div className="flex items-center gap-2 text-lg font-mono">
+              <span className="text-dim">Count:</span>
+              <NumberFlow 
+                value={state.count} 
+                format={{ minimumIntegerDigits: 2 }} 
+                className="font-semibold text-fg"
+                animated={true}
+              />
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Button variant="outline" size="sm" onClick={() => dispatchers.sub5()}>
+                -5
+              </Button>
+              <Button variant="outline" size="sm" onClick={() => dispatchers.decrement()}>
                 <Minus className="w-4 h-4" />
               </Button>
-              <Button variant="secondary" size="sm" onClick={() => dispatchers.increment()}>
+              <Button variant="outline" size="sm" onClick={() => dispatchers.increment()}>
                 <Plus className="w-4 h-4" />
+              </Button>
+              <Button variant="outline" size="sm" onClick={() => dispatchers.add5()}>
+                +5
+              </Button>
+              <Button variant="outline" size="sm" onClick={() => dispatchers.mul5()}>
+                x5
+              </Button>
+              <Button variant="outline" size="sm" onClick={() => dispatchers.pow2()}>
+                x²
               </Button>
             </div>
           </div>

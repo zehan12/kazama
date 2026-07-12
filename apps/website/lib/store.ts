@@ -25,6 +25,18 @@ export const models = {
       },
       decrement(state: { count: number }) {
         state.count -= 1;
+      },
+      add5(state: { count: number }) {
+        state.count += 5;
+      },
+      sub5(state: { count: number }) {
+        state.count -= 5;
+      },
+      mul5(state: { count: number }) {
+        state.count *= 5;
+      },
+      pow2(state: { count: number }) {
+        state.count = Math.pow(state.count, 2);
       }
     }
   },
