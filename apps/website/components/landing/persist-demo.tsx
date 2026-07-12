@@ -57,8 +57,8 @@ export function PersistDemoUI() {
         </p>
       </div>
 
-      <div className="w-full md:w-1/2 bg-[#0d0d0d] border border-line/40 rounded-xl overflow-hidden relative shadow-inner">
-        <div className="px-4 py-2.5 border-b border-line/20 bg-surface/80 flex justify-between items-center">
+      <div className="w-full md:w-1/2 bg-surface border border-line rounded-[var(--kazama-radius)] overflow-hidden relative shadow-inner">
+        <div className="px-4 py-2.5 border-b border-line bg-raised flex justify-between items-center">
           <span className="text-[11px] font-mono text-dim tracking-wider">localStorage</span>
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
@@ -68,7 +68,7 @@ export function PersistDemoUI() {
             <span className="text-[10px] uppercase font-bold text-[#28c840] tracking-widest">Live</span>
           </div>
         </div>
-        <div className="p-4 overflow-x-auto text-[13px] font-mono text-[#e5e5e5] whitespace-pre min-h-[140px] leading-relaxed">
+        <div className="p-4 overflow-x-auto text-[13px] font-mono text-fg whitespace-pre min-h-[140px] leading-relaxed">
           {localStorageValue || 'Waiting...'}
         </div>
       </div>

@@ -199,9 +199,9 @@ export function LiveDemo() {
             </p>
             <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kazama-radius)] p-6 shadow-sm w-full">
               <URLStateDemoUI />
-              <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
-                <CodeBlock code={urlStateCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
-                <button className="absolute top-4 right-4 text-dim hover:text-white transition-colors cursor-pointer bg-transparent border-none p-1">
+              <div className="w-full overflow-hidden border border-line bg-surface rounded-[var(--kazama-radius)] relative mt-2">
+                <CodeBlock code={urlStateCode} lang="tsx" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
+                <button className="absolute top-4 right-4 text-dim hover:text-fg transition-colors cursor-pointer bg-transparent border-none p-1">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
               </div>
@@ -217,8 +217,8 @@ export function LiveDemo() {
             <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kazama-radius)] p-6 shadow-sm w-full">
               <GlobalStoreDemoUI />
               <StoreCodeTabs 
-                storeTab={<CodeBlock code={storeCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />}
-                appTab={<CodeBlock code={appCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />}
+                storeTab={<CodeBlock code={storeCode} lang="tsx" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />}
+                appTab={<CodeBlock code={appCode} lang="tsx" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />}
               />
             </div>
           </div>
@@ -231,9 +231,9 @@ export function LiveDemo() {
             </p>
             <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kazama-radius)] p-6 shadow-sm w-full">
               <RequestDemoUI />
-              <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
-                <CodeBlock code={requestCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
-                <button className="absolute top-4 right-4 text-dim hover:text-white transition-colors cursor-pointer bg-transparent border-none p-1">
+              <div className="w-full overflow-hidden border border-line bg-surface rounded-[var(--kazama-radius)] relative mt-2">
+                <CodeBlock code={requestCode} lang="tsx" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
+                <button className="absolute top-4 right-4 text-dim hover:text-fg transition-colors cursor-pointer bg-transparent border-none p-1">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
               </div>
@@ -248,9 +248,9 @@ export function LiveDemo() {
             </p>
             <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kazama-radius)] p-6 shadow-sm w-full">
               <UseRequestDemoUI />
-              <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
-                <CodeBlock code={useRequestCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
-                <button className="absolute top-4 right-4 text-dim hover:text-white transition-colors cursor-pointer bg-transparent border-none p-1">
+              <div className="w-full overflow-hidden border border-line bg-surface rounded-[var(--kazama-radius)] relative mt-2">
+                <CodeBlock code={useRequestCode} lang="tsx" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
+                <button className="absolute top-4 right-4 text-dim hover:text-fg transition-colors cursor-pointer bg-transparent border-none p-1">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
               </div>
@@ -265,9 +265,9 @@ export function LiveDemo() {
             </p>
             <div className="flex flex-col items-start bg-base border border-line rounded-[var(--kazama-radius)] p-6 shadow-sm w-full">
               <PersistDemoUI />
-              <div className="w-full overflow-hidden border border-line/40 bg-[#0d0d0d] rounded-xl relative mt-2">
-                <CodeBlock code={persistCode} lang="tsx" theme="one-dark-pro" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
-                <button className="absolute top-4 right-4 text-dim hover:text-white transition-colors cursor-pointer bg-transparent border-none p-1">
+              <div className="w-full overflow-hidden border border-line bg-surface rounded-[var(--kazama-radius)] relative mt-2">
+                <CodeBlock code={persistCode} lang="tsx" className="[&_pre]:!bg-transparent [&_pre]:!p-6" />
+                <button className="absolute top-4 right-4 text-dim hover:text-fg transition-colors cursor-pointer bg-transparent border-none p-1">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
               </div>
