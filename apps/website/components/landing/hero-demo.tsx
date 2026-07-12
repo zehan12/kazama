@@ -56,7 +56,7 @@ export function HeroDemo() {
                 value={state.count}
                 format={{ 
                   minimumIntegerDigits: 2,
-                  notation: Math.abs(state.count) >= 1e11 ? 'scientific' : 'standard',
+                  notation: Math.abs(state.count) >= 1e11 ? 'compact' : 'standard',
                   maximumFractionDigits: 2
                 }}
                 className="font-semibold text-fg"
