@@ -1,4 +1,4 @@
-import { createRequestInstance, setRequestInstance } from '@zehankhan/kazama';
+import { createRequestInstance, setRequestInstance } from 'kazama-core';
 
 createRequestInstance();
 
@@ -16,6 +16,6 @@ setRequestInstance({
 
 // Since we only need the request functionality for this example,
 // we export a mock store that only exposes `useRequest`.
-import { createStore } from '@zehankhan/kazama';
+import { createStore } from 'kazama-core';
 export const store = createStore({});
 export const { useRequest } = store;

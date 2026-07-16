@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'HTTP Client | Kazama',
 }
 
-const configCode = `import { createStore, request } from '@zehankhan/kazama';
+const configCode = `import { createStore, request } from 'kazama-core';
 
 // 1. Configure the built-in request client (powered by Axios)
 request.interceptors.request.use((config) => {
@@ -33,7 +33,7 @@ export const store = createStore(models, {
   request: request 
 });`
 
-const multiInstanceCode = `import { createRequestInstance, setRequestInstance } from '@zehankhan/kazama';
+const multiInstanceCode = `import { createRequestInstance, setRequestInstance } from 'kazama-core';
 
 // Create a named instance for a specific microservice
 const authClient = createRequestInstance('authApi');

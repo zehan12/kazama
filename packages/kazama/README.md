@@ -4,7 +4,7 @@ Kazama is a high-performance React ecosystem for state, URL, and API management.
 
 "Kazama" translates to "between the winds" or "place of the wind" in Japanese, reflecting the library's swift, lightweight, and refreshing approach to unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
 
-📦 **NPM Package**: [https://www.npmjs.com/package/@zehankhan/kazama](https://www.npmjs.com/package/@zehankhan/kazama)  
+📦 **NPM Package**: [https://www.npmjs.com/package/kazama-core](https://www.npmjs.com/package/kazama-core)  
 🐙 **GitHub**: [https://github.com/zehan12/kazama](https://github.com/zehan12/kazama)
 
 ## Features
@@ -19,11 +19,11 @@ Kazama is a high-performance React ecosystem for state, URL, and API management.
 ## Installation
 
 ```bash
-npm install @zehankhan/kazama
+npm install kazama-core
 # or
-pnpm add @zehankhan/kazama
+pnpm add kazama-core
 # or
-yarn add @zehankhan/kazama
+yarn add kazama-core
 ```
 
 ## Quick Start
@@ -33,7 +33,7 @@ yarn add @zehankhan/kazama
 Create a store with isolated models. Immer is built-in, so you can mutate the state directly in your reducers without needing to spread objects.
 
 ```tsx
-import { createStore, createModel, useModel } from '@zehankhan/kazama';
+import { createStore, createModel, useModel } from 'kazama-core';
 
 // Define an isolated model
 const todos = createModel({
@@ -81,7 +81,7 @@ export function TaskBoard() {
 Synchronize your React state with browser URL parameters natively and safely. Includes intelligent batching and handles SSR hydration perfectly.
 
 ```tsx
-import { useQueryState, parseAsInteger } from '@zehankhan/kazama';
+import { useQueryState, parseAsInteger } from 'kazama-core';
 
 export function Demo() {
   const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
@@ -106,7 +106,7 @@ export function Demo() {
 Manage cached network requests effortlessly with `useLoader` and the built-in HTTP client. Includes garbage collection and stale-while-revalidate background updates.
 
 ```tsx
-import { useLoader, request } from "@zehankhan/kazama";
+import { useLoader, request } from "kazama-core";
 
 // Use the built-in HTTP client
 async function fetchUser(id: string) {
@@ -136,7 +136,7 @@ export function Profile({ id }) {
 For un-cached, immediate requests directly tied to UI state, you can use `useRequest`:
 
 ```tsx
-import { useRequest } from "@zehankhan/kazama";
+import { useRequest } from "kazama-core";
 
 export function TodoItem() {
   // Pass a URL directly — the library's built-in HTTP client handles the rest
@@ -158,7 +158,7 @@ export function TodoItem() {
 Persist chosen models to storage securely with auto-hydration.
 
 ```tsx
-import { createStore } from '@zehankhan/kazama';
+import { createStore } from 'kazama-core';
 
 export const store = createStore({
   models: { /* your models */ }

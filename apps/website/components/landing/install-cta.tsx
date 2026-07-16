@@ -13,10 +13,10 @@ export function InstallCta() {
         </p>
 
         <div className="flex flex-col gap-4">
-          <TerminalBlock command="npm install @zehankhan/kazama" label="npm.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="pnpm add @zehankhan/kazama" label="pnpm.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="yarn add @zehankhan/kazama" label="yarn.sh" className="w-full sm:max-w-sm" />
-          <TerminalBlock command="bun add @zehankhan/kazama" label="bun.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="npm install kazama-core" label="npm.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="pnpm add kazama-core" label="pnpm.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="yarn add kazama-core" label="yarn.sh" className="w-full sm:max-w-sm" />
+          <TerminalBlock command="bun add kazama-core" label="bun.sh" className="w-full sm:max-w-sm" />
         </div>
 
         <div className="flex items-center gap-4 mt-8">

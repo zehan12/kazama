@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLoader, useAction, request } from '@zehankhan/kazama';
+import { useLoader, useAction, request } from 'kazama-core';
 
 function App() {
   const [userId, setUserId] = useState(1);

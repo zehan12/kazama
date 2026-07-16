@@ -1,4 +1,4 @@
-import { createStore } from '@zehankhan/kazama';
+import { createStore } from 'kazama-core';
 
 export const models = {
   settings: {
