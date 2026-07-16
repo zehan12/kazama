@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'useLoader | Kazama',
 }
 
-const basicCode = `import { useLoader } from 'kazama-core';
+const basicCode = `import { useLoader } from '@kazama/core';
 
 async function fetchUser() {
   const res = await fetch('/api/user');

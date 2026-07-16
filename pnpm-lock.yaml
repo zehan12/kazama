@@ -14,6 +14,9 @@ importers:
 
   apps/website:
     dependencies:
+      '@kazama/core':
+        specifier: workspace:*
+        version: link:../../packages/kazama
       '@number-flow/react':
         specifier: ^0.6.1
         version: 0.6.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -23,9 +26,6 @@ importers:
       geist:
         specifier: latest
         version: 1.7.2(next@16.2.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
-      kazama-core:
-        specifier: workspace:*
-        version: link:../../packages/kazama
       lucide-react:
         specifier: latest
         version: 1.24.0(react@19.2.7)
@@ -72,15 +72,15 @@ importers:
 
   examples/advanced:
     dependencies:
+      '@kazama/core':
+        specifier: workspace:*
+        version: link:../../packages/kazama
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kazama-core:
-        specifier: workspace:*
-        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -112,15 +112,15 @@ importers:
 
   examples/blog:
     dependencies:
+      '@kazama/core':
+        specifier: workspace:*
+        version: link:../../packages/kazama
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kazama-core:
-        specifier: workspace:*
-        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -152,15 +152,15 @@ importers:
 
   examples/query:
     dependencies:
+      '@kazama/core':
+        specifier: workspace:*
+        version: link:../../packages/kazama
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kazama-core:
-        specifier: workspace:*
-        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -192,15 +192,15 @@ importers:
 
   examples/request:
     dependencies:
+      '@kazama/core':
+        specifier: workspace:*
+        version: link:../../packages/kazama
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kazama-core:
-        specifier: workspace:*
-        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -232,15 +232,15 @@ importers:
 
   examples/store:
     dependencies:
+      '@kazama/core':
+        specifier: workspace:*
+        version: link:../../packages/kazama
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kazama-core:
-        specifier: workspace:*
-        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -272,15 +272,15 @@ importers:
 
   examples/todos:
     dependencies:
+      '@kazama/core':
+        specifier: workspace:*
+        version: link:../../packages/kazama
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kazama-core:
-        specifier: workspace:*
-        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -312,15 +312,15 @@ importers:
 
   examples/url-state:
     dependencies:
+      '@kazama/core':
+        specifier: workspace:*
+        version: link:../../packages/kazama
       axios:
         specifier: ^1.18.1
         version: 1.18.1
       axios-mock-adapter:
         specifier: ^2.1.0
         version: 2.1.0(axios@1.18.1)
-      kazama-core:
-        specifier: workspace:*
-        version: link:../../packages/kazama
       react:
         specifier: ^19.2.7
         version: 19.2.7
