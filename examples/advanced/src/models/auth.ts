@@ -1,4 +1,4 @@
-import { createModel } from '@kazama/core';
+import { createModel } from 'kazama-core';
 
 export const auth = createModel({
   state: {

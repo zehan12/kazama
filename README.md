@@ -4,7 +4,7 @@ A high-performance React ecosystem for state, URL, and API management. It serves
 
 "Kazama" translates to "between the winds" or "place of the wind" in Japanese, reflecting the library's swift, lightweight, and refreshing approach to unifying various forms of React state (client state, server state, URL state) into a single cohesive toolkit.
 
-📦 **NPM Package**: [https://www.npmjs.com/package/@kazama/core](https://www.npmjs.com/package/@kazama/core)  
+📦 **NPM Package**: [https://www.npmjs.com/package/kazama-core](https://www.npmjs.com/package/kazama-core)  
 🐙 **GitHub**: [https://github.com/zehan12/kazama](https://github.com/zehan12/kazama)
 
 ---
@@ -38,11 +38,11 @@ Located in the `examples/` directory, these apps showcase different patterns and
 To install the library into your own project, use your preferred package manager:
 
 ```bash
-npm install @kazama/core
+npm install kazama-core
 # or
-pnpm add @kazama/core
+pnpm add kazama-core
 # or
-yarn add @kazama/core
+yarn add kazama-core
 ```
 
 ### Quick Start (Global State)
@@ -50,7 +50,7 @@ yarn add @kazama/core
 Create a store with isolated models. Immer is built-in, so you can mutate the state directly in your reducers without needing to spread objects.
 
 ```tsx
-import { createStore, createModel, useModel } from '@kazama/core';
+import { createStore, createModel, useModel } from 'kazama-core';
 
 // 1. Define an isolated model
 const todos = createModel({
@@ -90,7 +90,7 @@ export function TaskBoard() {
 Synchronize your React state with browser URL parameters natively and safely. Includes intelligent batching and handles SSR hydration perfectly.
 
 ```tsx
-import { useQueryState, parseAsInteger } from '@kazama/core';
+import { useQueryState, parseAsInteger } from 'kazama-core';
 
 export function Demo() {
   const [hello, setHello] = useQueryState("hello", { defaultValue: "" });
@@ -115,7 +115,7 @@ export function Demo() {
 Manage cached network requests effortlessly with `useLoader` and the built-in HTTP client. Includes garbage collection and stale-while-revalidate background updates.
 
 ```tsx
-import { useLoader, request } from "@kazama/core";
+import { useLoader, request } from "kazama-core";
 
 // Use the built-in HTTP client
 async function fetchUser(id: string) {

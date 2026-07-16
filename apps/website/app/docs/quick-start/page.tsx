@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Quick Start | Kazama',
 }
 
-const installCode = `npm install @kazama/core
+const installCode = `npm install kazama-core
 # or
-pnpm add @kazama/core
+pnpm add kazama-core
 # or
-bun add @kazama/core`
+bun add kazama-core`
 
-const basicUsage = `import { createStore } from '@kazama/core';
+const basicUsage = `import { createStore } from 'kazama-core';
 
 // 1. Define your models
 const models = {

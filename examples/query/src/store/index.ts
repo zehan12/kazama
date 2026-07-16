@@ -1,4 +1,4 @@
-import { createRequestInstance, setRequestInstance } from '@kazama/core';
+import { createRequestInstance, setRequestInstance } from 'kazama-core';
 
 createRequestInstance();
 
@@ -14,7 +14,7 @@ setRequestInstance({
   }
 });
 
-import { createStore, useLoader, useAction } from '@kazama/core';
+import { createStore, useLoader, useAction } from 'kazama-core';
 export const store = createStore({});
 export const { useRequest } = store;
 export { useLoader, useAction };

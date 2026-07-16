@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { useLoader } from '@kazama/core'
+import { useLoader } from 'kazama-core'
 import { JsonViewer } from '@/components/ui/json-viewer'
 
 function fetchUser() {

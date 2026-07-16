@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Installation | Kazama',
 }
 
-const installCode = `npm install @kazama/core
+const installCode = `npm install kazama-core
 # or
-pnpm add @kazama/core
+pnpm add kazama-core
 # or
-yarn add @kazama/core
+yarn add kazama-core
 # or
-bun add @kazama/core`
+bun add kazama-core`
 
 const peerDepsCode = `"peerDependencies": {
   "react": "^18.0.0 || ^19.0.0"

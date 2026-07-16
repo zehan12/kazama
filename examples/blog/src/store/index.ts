@@ -1,4 +1,4 @@
-import { createStore, createRequestInstance, setRequestInstance } from '@kazama/core';
+import { createStore, createRequestInstance, setRequestInstance } from 'kazama-core';
 import * as models from '../models';
 
 const requestClient = createRequestInstance()['default'];

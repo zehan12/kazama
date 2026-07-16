@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@number-flow/react": "^0.6.1",
-    "@kazama/core": "workspace:*",
+    "kazama-core": "workspace:*",
     "developer-icons": "^7.0.1",
     "geist": "latest",
     "lucide-react": "latest",

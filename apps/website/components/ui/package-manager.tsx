@@ -9,12 +9,12 @@ export function PackageManager({ className }: { className?: string }) {
   const [active, setActive] = useState<'pnpm' | 'npm' | 'yarn' | 'bun' | 'deno' | 'ylt'>('pnpm')
 
   const commands = {
-    pnpm: 'pnpm add @kazama/core',
-    npm: 'npm install @kazama/core',
-    yarn: 'yarn add @kazama/core',
-    bun: 'bun add @kazama/core',
-    deno: 'deno add @kazama/core',
-    ylt: 'ylt add @kazama/core',
+    pnpm: 'pnpm add kazama-core',
+    npm: 'npm install kazama-core',
+    yarn: 'yarn add kazama-core',
+    bun: 'bun add kazama-core',
+    deno: 'deno add kazama-core',
+    ylt: 'ylt add kazama-core',
   }
 
   const renderCommand = (cmd: string) => {

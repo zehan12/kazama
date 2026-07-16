@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'State & Reducers | Kazama',
 }
 
-const basicStateCode = `import { createStore } from '@kazama/core';
+const basicStateCode = `import { createStore } from 'kazama-core';
 
 const models = {
   todos: {

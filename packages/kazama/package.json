@@ -1,5 +1,5 @@
 {
-  "name": "@kazama/core",
+  "name": "kazama-core",
   "version": "1.0.0",
   "description": "A React-based store library using useSyncExternalStore and Immer",
   "main": "dist/index.js",

@@ -1,6 +1,6 @@
 'use client'
 
-import { useQueryState, parseAsInteger, parseAsString } from '@kazama/core';
+import { useQueryState, parseAsInteger, parseAsString } from 'kazama-core';
 
 export function URLStateDemoUI() {
   const [hello, setHello] = useQueryState("hello", parseAsString.withDefault(""));
